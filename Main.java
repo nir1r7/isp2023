@@ -7,8 +7,8 @@ public class Main implements ActionListener {
 
     JButton[] levels = {new JButton("Level 1"), new JButton("Level 2"), new JButton("Level 3")};
 
-    boolean l2 = true;
-    boolean l3 = true;
+    boolean l2 = false;
+    boolean l3 = false;
 
     public Main() {
         frame = new JFrame("ISP");
