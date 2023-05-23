@@ -13,7 +13,7 @@ public class Main implements ActionListener {
     public Main() {
         frame = new JFrame("ISP");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800, 500);
+        frame.setSize(1920, 1080);
         frame.setLayout(new GridLayout());
 
         mainmenu();
@@ -78,7 +78,7 @@ public class Main implements ActionListener {
     }
 
     public void level1(){
-        frame.setSize(800, 501);
+        frame.setSize(0, 0);
         frame.getContentPane().removeAll();
         
         JPanel intro = new JPanel(new GridLayout(4,3));
@@ -108,21 +108,21 @@ public class Main implements ActionListener {
 
         frame.add(intro);
 
-        frame.setSize(800, 500);
+        frame.setSize(1920, 1080);
     }
 
     public void level2(){
-        frame.setSize(800, 501);
+        frame.setSize(1920, 1080);
         frame.getContentPane().removeAll();
         frame.add(new JLabel("TESTINGZ 2", 0));
-        frame.setSize(800, 500);
+        frame.setSize(1920, 1080);
     }
 
     public void level3(){
-        frame.setSize(800, 501);
+        frame.setSize(1920, 1080);
         frame.getContentPane().removeAll();
 
-        frame.setSize(800, 500);
+        frame.setSize(1920, 1080);
     }
 
     class Empty extends JComponent {
