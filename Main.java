@@ -2,142 +2,82 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Main implements ActionListener {
-    JFrame frame;
-
-    JButton[] levels = {new JButton("Level 1"), new JButton("Level 2"), new JButton("Level 3")};
+public class Main implements MouseListener, MouseMotionListener {
+    Drawing draw;
+    
+    int state = 0;
 
     boolean l2 = false;
     boolean l3 = false;
 
     public Main() {
-        frame = new JFrame("ISP");
+        JFrame frame = new JFrame("Finals Frenzy");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        draw = new Drawing();
+        draw.addMouseListener(this);
+        draw.addMouseMotionListener(this);
+        frame.add(draw);
+
         frame.setSize(1920, 1080);
-        frame.setLayout(new GridLayout());
-
-        mainmenu();
-
         frame.setVisible(true);
     }
 
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == levels[0]){
-            level1();
-        }
-        else if (e.getSource() == levels[1] && l2){
-            level2();
-        }
-        else if (e.getSource() == levels[2] && l3){
-            level3();
-        }
+    public void mouseDragged(MouseEvent e) {
+
     }
 
-    public static int strength() {
-        return (int) (256 * Math.random());
+    public void mouseMoved(MouseEvent e) {
+
     }
 
-    public void mainmenu(){
-        JPanel mainmenu = new JPanel(new GridLayout(5,3));
-
-        JPanel menu = new JPanel();
-        menu.setLayout(new GridLayout(3,1));
-
-        for (int i = 0; i < levels.length; i++){
-
-            levels[i].addActionListener(this);
-            levels[i].setFont(new Font("Serif", Font.PLAIN, 18));
-            menu.add(levels[i]);
-
-        }
-
-        JLabel title = new JLabel("Main Menu", 0 );
-        title.setFont(new Font("Serif", Font.BOLD, 34));
-
-        mainmenu.add(new Empty());
-        mainmenu.add(new Empty());
-        mainmenu.add(new Empty());
-        mainmenu.add(new Empty());
-
-        mainmenu.add(title);
-
-        mainmenu.add(new Empty());
-        mainmenu.add(new Empty());
-
-        mainmenu.add(menu);
-
-        mainmenu.add(new Empty());
-        mainmenu.add(new Empty());
-        mainmenu.add(new Empty());
-        mainmenu.add(new Empty());
-        mainmenu.add(new Empty());
-        mainmenu.add(new Empty());
-        mainmenu.add(new Empty());
-
-        frame.add(mainmenu);
+    public void mouseClicked(MouseEvent e) {
+        state++;
+        draw.repaint();
     }
 
-    public void level1(){
-        frame.setSize(0, 0);
-        frame.getContentPane().removeAll();
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    public void mouseExited(MouseEvent e) {
+
+    }
+
+
+
+    class Drawing extends JComponent{
         
-        JPanel intro = new JPanel(new GridLayout(4,3));
+        public Drawing(){
 
-        intro.add(new JLabel("Level 1: Introduction", 0));
-
-        intro.add(new Empty()); intro.add(new Empty());
-        intro.add(new Empty()); intro.add(new Empty());
-
-        JPanel op1Container = new JPanel(new GridLayout(3,1));
-        op1Container.add(new Empty());
-        op1Container.add(new JButton("Yes!"));
-        op1Container.add(new Empty());
-
-        JPanel op2Container = new JPanel(new GridLayout(3,1));
-        op2Container.add(new JButton("Not really..."));
-        op2Container.add(new Empty());
-        op2Container.add(new Empty());
-
-        intro.add(op1Container);
-        intro.add(new Empty()); intro.add(new Empty());
-        intro.add(op2Container);
-
-        intro.add(new JLabel("TESTINGZ 1", 0));
-        intro.add(new JLabel("TESTINGZ 1", 0));
-        intro.add(new JLabel("TESTINGZ 1", 0));
-
-        frame.add(intro);
-
-        frame.setSize(1920, 1080);
-    }
-
-    public void level2(){
-        frame.setSize(1920, 1080);
-        frame.getContentPane().removeAll();
-        frame.add(new JLabel("TESTINGZ 2", 0));
-        frame.setSize(1920, 1080);
-    }
-
-    public void level3(){
-        frame.setSize(1920, 1080);
-        frame.getContentPane().removeAll();
-
-        frame.setSize(1920, 1080);
-    }
-
-    class Empty extends JComponent {
-        int w;
-        int h;
-
-        public Empty(){
-            w = 10;
-            h = 10;
         }
 
-        public void paint(Graphics g) {
-            g.setColor(Color.RED);
-            g.fillRect(0, 0, w, h);
+        public void paint(Graphics g){
+            if (state == 0){
+                splashScreen(g);
+            }
+            else if (state == 1){
+                enterName(g);
+            }
+            else if (state == 2){
+                
+            }
+        }
+
+        public void splashScreen(Graphics g){
+            g.fillRect(0, 0, 100, 100);
+        }
+
+        public void enterName(Graphics g){
+            g.drawString("TESTINGZ", 300,300);
         }
     }
-
 }
