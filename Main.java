@@ -52,14 +52,12 @@ public class Main implements MouseListener, MouseMotionListener {
 
     }
 
-
-
     class Drawing extends JComponent{
         
         public Drawing(){
 
         }
-
+        
         public void paint(Graphics g){
             if (state == 0){
                 splashScreen(g);
