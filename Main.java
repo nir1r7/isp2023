@@ -102,9 +102,9 @@ public class Main implements ActionListener {
         intro.add(new Empty()); intro.add(new Empty());
         intro.add(op2Container);
 
-        intro.add(new JLabel("TESTINGZ 3", 0));
-        intro.add(new JLabel("TESTINGZ 3", 0));
-        intro.add(new JLabel("TESTINGZ 3", 0));
+        intro.add(new JLabel("TESTINGZ 1", 0));
+        intro.add(new JLabel("TESTINGZ 1", 0));
+        intro.add(new JLabel("TESTINGZ 1", 0));
 
         frame.add(intro);
 
