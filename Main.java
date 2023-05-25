@@ -85,7 +85,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                 splashScreen(g);
             }
             else if (state == 1){
-                enterName(g);
+                enterName();
             }
             else if (state == 2){
                 mainMenu(g);
@@ -113,12 +113,11 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
             g.drawString("Continue", 620, 535);        
         }
 
-        public void enterName(Graphics g){
+        public void enterName(){
             name = (JOptionPane.showInputDialog(this, "Enter your name: "));
             System.out.println("TEST");
-            frame.setSize(width, height+1);
             state++;
-            frame.setSize(width, height);
+            SwingUtilities.updateComponentTreeUI(this);
         }
 
         public void mainMenu(Graphics g){
