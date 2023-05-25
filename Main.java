@@ -14,6 +14,8 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
     boolean l2 = false;
     boolean l3 = false;
 
+    String name;
+
     public Main() {
         frame = new JFrame("Finals Frenzy");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -39,6 +41,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         if (state == 0 && e.getX() >= 580 && e.getX() <= 780 && e.getY() >= 500 && e.getY() <= 550){
             state++;
         }
+
         draw.repaint();
     }
 
@@ -83,7 +86,6 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
             }
             else if (state == 1){
                 enterName(g);
-                state++; // temporary
             }
             else if (state == 2){
                 mainMenu(g);
@@ -112,9 +114,11 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         }
 
         public void enterName(Graphics g){
-            g.drawString("TESTINGZ", 300,300);
-
-            // Not possible (at least i dont think so)
+            name = (JOptionPane.showInputDialog(this, "Enter your name: "));
+            System.out.println("TEST");
+            frame.setSize(width, height+1);
+            state++;
+            frame.setSize(width, height);
         }
 
         public void mainMenu(Graphics g){
