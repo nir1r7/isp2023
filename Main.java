@@ -39,8 +39,6 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         if (state == 0 && e.getX() >= 580 && e.getX() <= 780 && e.getY() >= 500 && e.getY() <= 550){
             state++;
         }
-        else if (true){}
-
         draw.repaint();
     }
 
