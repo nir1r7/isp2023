@@ -41,7 +41,12 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         if (state == 0 && e.getX() >= 580 && e.getX() <= 780 && e.getY() >= 500 && e.getY() <= 550){
             state++;
         }
-        else {state = 3;}
+        else if(state == 2 && e.getX() >= 512 && e.getX() <= 812 && e.getY() >= 200 && e.getY() <= 250){
+            state++;
+        }
+        else if (state == 3){
+
+        }
 
         draw.repaint();
     }
@@ -92,7 +97,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                 mainMenu(g);
             }
             else if (state == 3){
-                level1(g);
+                level1introduction(g);
             }
         }
 
@@ -118,8 +123,9 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         }
 
         public void enterName(Graphics g){
-            name = (JOptionPane.showInputDialog(this, "Enter your name: "));
+            name = (JOptionPane.showInputDialog(this, "Enter your name: ")); // make sure to error trap
             System.out.println("TEST");
+
             frame.setSize(width, height+1);
             state++;
             frame.setSize(width, height);
@@ -153,10 +159,20 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
             }
         }
 
-        public void level1(Graphics g){
-            Level1 l1 = new Level1(g);
+        public void level1introduction(Graphics g){
+            Font f1 = new Font("Serif", Font.PLAIN, 25);
+            draw.setFont(f1);
 
-            l1.display(g);
+            int y = 250;
+
+            g.drawString("Hello " + name + ", my name is Pixel! I will be helping over the coming weeks to make sure", 300, height - 150);
+            g.drawString("you succeed on your exams! First things first, have you been using your time efficiently?", 300, height - 115);
+
+            g.drawRect(width - 450, y, 300, 50);
+            g.drawRect(width - 450, y + 150, 300, 50);
+
+            g.drawString("Yes!", width - 440, y + 35);
+            g.drawString("Not really...", width - 440, y + 185);
         }
     }
 }
