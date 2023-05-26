@@ -16,6 +16,9 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
 
     String name;
 
+    int x = 700; int y = 350;
+    int score = 0;
+
     public Main() {
         frame = new JFrame("Finals Frenzy");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -23,6 +26,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         draw = new Drawing();
         draw.addMouseListener(this);
         draw.addMouseMotionListener(this);
+        draw.addKeyListener(this);
         frame.add(draw);
 
         frame.setSize(width, height);
@@ -41,6 +45,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         if (state == 0 && e.getX() >= 580 && e.getX() <= 780 && e.getY() >= 500 && e.getY() <= 550){
             state++;
         }
+
         else if(state == 2 && e.getX() >= 512 && e.getX() <= 812 && e.getY() >= 200 && e.getY() <= 250){
             state++;
         }
@@ -72,7 +77,8 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
     }
 
     public void keyPressed(KeyEvent e) {
-
+        int keyCode = e.getKeyCode();
+        System.out.println(keyCode);
     }
 
     public void keyReleased(KeyEvent e) {
@@ -91,11 +97,13 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                 splashScreen(g);
             }
             else if (state == 1){
-                enterName(g);
+                enterName();
             }
             else if (state == 2){
+                SwingUtilities.updateComponentTreeUI(this);
                 mainMenu(g);
             }
+
             else if (state == 3){
                 level1introduction(g);
             }
@@ -119,16 +127,21 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
             g.setColor(Color.BLACK);
 
             g.drawRect(580, 500, 200, 50);
-            g.drawString("Continue", 620, 535);        
+            g.drawString("Continue", 620, 535);
         }
+
+
+        public void enterName(){
+            name = (JOptionPane.showInputDialog(this, "Enter your name: "));
+            System.out.println("TEST");
 
         public void enterName(Graphics g){
             name = (JOptionPane.showInputDialog(this, "Enter your name: ")); // make sure to error trap
             System.out.println("TEST");
 
             frame.setSize(width, height+1);
+          
             state++;
-            frame.setSize(width, height);
         }
 
         public void mainMenu(Graphics g){
@@ -158,7 +171,12 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                 g.drawLine(x,y + 100, x + 20,y + 80);
             }
         }
+        public void level3(Graphics g) {
+            int a = x - 10;
+            int b = x - 10;
 
+            g.fillOval(a, b, 10 * 2, 10 * 2);
+          
         public void level1introduction(Graphics g){
             Font f1 = new Font("Serif", Font.PLAIN, 25);
             draw.setFont(f1);
@@ -173,6 +191,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
 
             g.drawString("Yes!", width - 440, y + 35);
             g.drawString("Not really...", width - 440, y + 185);
+          
         }
     }
 }
