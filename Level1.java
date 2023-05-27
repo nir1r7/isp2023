@@ -1,8 +1,8 @@
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.*;
 
-public class Level1 implements MouseListener {
+public class Level1 extends MouseAdapter {
     int slideNum = 0;
     int width = 1400;
     int height = 700;
@@ -35,28 +35,18 @@ public class Level1 implements MouseListener {
         g.drawRect(width - 450, y + 150, 300, 50);
     }
 
-    @Override
+    public void level1(Graphics g) {
+        switch (slideNum) {
+            case 0:
+                level1introduction(g);
+                break;
+            case 1:
+                level1dialog(g);
+                break;
+        }
+    }
+
     public void mouseClicked(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-
+        if (slideNum == 0) slideNum++;
     }
 }
