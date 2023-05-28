@@ -5,6 +5,10 @@ import javax.swing.*;
 public class Main implements MouseListener, MouseMotionListener, KeyListener {
     JFrame frame;
     Drawing draw;
+    Level1 l1 = new Level1();
+    SplashScreen s = new SplashScreen();
+    MainMenu m = new MainMenu();
+
 
     int width = 1400;
     int height = 700;
@@ -47,7 +51,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         } else if (state == 2 && e.getX() >= 512 && e.getX() <= 812 && e.getY() >= 200 && e.getY() <= 250) {
             state++;
         } else if (state == 3) {
-
+            l1.updateSlide();
         }
 
         draw.repaint();
@@ -108,15 +112,13 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
 
         public void paint(Graphics g) {
             if (state == 0) {
-                SplashScreen s = new SplashScreen();
                 s.splashScreen(g);
             } else if (state == 1) {
                 enterName();
             } else if (state == 2) {
-                MainMenu m = new MainMenu();
                 m.mainMenu(g);
             } else if (state == 3) {
-                level3(g);
+                l1.level1(g);
                 repaint();
             }
         }
@@ -139,7 +141,5 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         public void level3(Graphics g) {
             g.fillRect(x, y, 20, 20);
         }
-
-
     }
 }

@@ -46,7 +46,7 @@ public class Level1 extends MouseAdapter {
         }
     }
 
-    public void mouseClicked(MouseEvent e) {
-        if (slideNum == 0) slideNum++;
+    public void updateSlide() {
+        slideNum++;
     }
 }
