@@ -1,6 +1,5 @@
 import java.awt.*;
 import java.awt.event.MouseAdapter;
-import java.awt.event.*;
 
 public class Level1 extends MouseAdapter {
     int slideNum = 0;

@@ -127,7 +127,6 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
 
         public void enterName() {
             name = (JOptionPane.showInputDialog(this, "Enter your name: ")); // make sure to error trap
-            System.out.println("TEST");
 
             frame.setSize(width, height + 1);
 
