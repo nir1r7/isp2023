@@ -27,7 +27,7 @@ public class Level1 extends MouseAdapter {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
 
-        Slide s = new Slide("...");
+        Slide s = new Slide("Text goes here:");
         s.display(g);
 
         int y = 250;
