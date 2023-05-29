@@ -16,12 +16,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
 
     int state = 0;
 
-
     String name;
-
-    int x = 700;
-    int y = 350;
-    int score = 0;
 
     public Main() {
         frame = new JFrame("Finals Frenzy");
@@ -82,19 +77,19 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
             int keyCode = e.getKeyCode();
             switch (keyCode) {
                 case KeyEvent.VK_UP:
-                    y -= 10;
+                    l3.updateY(-10);
                     System.out.println("UP");
                     break;
                 case KeyEvent.VK_DOWN:
-                    y += 10;
+                    l3.updateY(10);
                     System.out.println("DOWN");
                     break;
                 case KeyEvent.VK_LEFT:
-                    x -= 10;
+                    l3.updateX(-10);
                     System.out.println("LEFT");
                     break;
                 case KeyEvent.VK_RIGHT:
-                    x += 10;
+                    l3.updateX(10);
                     System.out.println("RIGHT");
                     break;
             }
@@ -123,7 +118,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                 l1.level1(g);
                 repaint();
             } else if (state == 5) {
-                l3.level3(g, x, y);
+                l3.level3(g);
                 repaint();
             }
         }
