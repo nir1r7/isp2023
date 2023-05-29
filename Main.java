@@ -48,6 +48,8 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
             state++;
         } else if (state == 3) {
             l1.updateSlide();
+            state++;
+            state++; // to be removed
         }
         draw.repaint();
     }
