@@ -14,7 +14,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
     int width = 1400;
     int height = 700;
 
-    int state = 5;
+    int state = 0;
 
 
     String name;
