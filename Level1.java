@@ -10,31 +10,33 @@ public class Level1 extends MouseAdapter {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
 
+        Slide s = new Slide("Hello player, my name is Pixel! I will be helping over the coming weeks to make sure " + 
+        "you succeed on your exams! First things first, have you been using your time efficiently?");
+        s.display(g);
+
         int y = 250;
 
-        g.drawString("Hello player, my name is Pixel! I will be helping over the coming weeks to make sure", 300, height - 150);
-        g.drawString("you succeed on your exams! First things first, have you been using your time efficiently?", 300, height - 115);
+        Button b1 = new Button("Yes!", 950, y, 300, 50);
+        Button b2 = new Button("Not really...", 950, y + 150, 300, 50);
 
-        g.drawRect(width - 450, y, 300, 50);
-        g.drawRect(width - 450, y + 150, 300, 50);
-
-        g.drawString("Yes!", width - 440, y + 35);
-        g.drawString("Not really...", width - 440, y + 185);
-
+        b1.display(g);
+        b2.display(g);
     }
 
     public void level1dialog(Graphics g) {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
 
-        Slide s = new Slide("you succeed on your exams! First things first, have you been using your time efficiently?");
+        Slide s = new Slide("...");
         s.display(g);
 
         int y = 250;
 
+        Button b1 = new Button("Organised and free of distractions!", 950, y, 300, 50);
+        Button b2 = new Button("Messy and full of distractions :(", 950, y + 150, 300, 50);
 
-        g.drawRect(width - 450, y, 300, 50);
-        g.drawRect(width - 450, y + 150, 300, 50);
+        b1.display(g);
+        b2.display(g);
     }
 
     public void level1(Graphics g) {

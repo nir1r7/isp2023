@@ -28,6 +28,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         draw.addMouseMotionListener(this);
         draw.addKeyListener(this);
         draw.setFocusable(true);
+
         frame.add(draw);
 
         frame.setSize(width, height);
@@ -114,25 +115,32 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         }
 
         public void paint(Graphics g) {
-            if (state == 0) {
-                s.splashScreen(g);
-            } else if (state == 1) {
-                enterName();
-            } else if (state == 2) {
-                m.mainMenu(g);
-            } else if (state == 3) {
-                l1.level1(g);
-                repaint();
-            } else if (state == 4){
-                l2.level2(g);
-                repaint();
-            } else if (state == 5) {
-                l3.level3(g);
-                repaint();
+            switch(state){
+                case 0:
+                    s.splashScreen(g);
+                    break;
+                case 1:
+                    enterName();
+                    break;
+                case 2:
+                    m.mainMenu(g);
+                    break;
+                case 3:
+                    l1.level1(g);
+                    repaint();
+                    break;
+                case 4:
+                    l2.level2(g);
+                    repaint();
+                    break;
+                case 5:
+                    l3.level3(g);
+                    repaint();
+                    break;
+                case 6:
+                case 7:
             }
         }
-
-
 
         public void enterName() {
             name = (JOptionPane.showInputDialog(this, "Enter your name: ")); //TODO errortrap input
