@@ -5,6 +5,7 @@ public class Level1 extends MouseAdapter {
     int slideNum = 0;
     int width = 1400;
     int height = 700;
+
     public void level1introduction(Graphics g) {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
@@ -19,16 +20,18 @@ public class Level1 extends MouseAdapter {
 
         g.drawString("Yes!", width - 440, y + 35);
         g.drawString("Not really...", width - 440, y + 185);
+
     }
 
     public void level1dialog(Graphics g) {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
 
+        Slide s = new Slide("you succeed on your exams! First things first, have you been using your time efficiently?");
+        s.display(g);
+
         int y = 250;
 
-        g.drawString("New Slide", 300, height - 150);
-        g.drawString("you succeed on your exams! First things first, have you been using your time efficiently?", 300, height - 115);
 
         g.drawRect(width - 450, y, 300, 50);
         g.drawRect(width - 450, y + 150, 300, 50);
@@ -41,6 +44,14 @@ public class Level1 extends MouseAdapter {
                 break;
             case 1:
                 level1dialog(g);
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
                 break;
         }
     }

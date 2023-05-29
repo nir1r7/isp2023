@@ -49,7 +49,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
             state++;
         } else if (state == 3) {
             l1.updateSlide();
-            state++;
+            //state++;
         } else if (state == 4){
             state++;
         } else if (state == 5){
@@ -144,5 +144,8 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
             frame.setSize(width, height);
         }
 
+        public void updateState(){
+            state++;
+        }
     }
 }

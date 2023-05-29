@@ -13,12 +13,16 @@ public class Slide {
         g.setFont(f1);
 
         int y = 250;
+        int x = 350;
 
         for (int i = 0; i < txt.length(); i++){
             if (i % 80 == 0){
                 y += 30;
+                x = 350;
             }
-            g.drawString(txt.substring(i,i+1), 350, y);
+            g.drawString(txt.substring(i,i+1), x, y);
+
+            x += 15;
         }
 
 
