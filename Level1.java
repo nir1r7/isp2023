@@ -48,4 +48,8 @@ public class Level1 extends MouseAdapter {
     public void updateSlide() {
         slideNum++;
     }
+
+    public int getSlideNum(){
+        return slideNum;
+    }
 }

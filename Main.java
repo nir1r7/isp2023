@@ -6,6 +6,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
     JFrame frame;
     Drawing draw;
     Level1 l1 = new Level1();
+    Level2 l2 = new Level2();
     Level3 l3 = new Level3();
     SplashScreen s = new SplashScreen();
     MainMenu m = new MainMenu();
@@ -49,7 +50,10 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         } else if (state == 3) {
             l1.updateSlide();
             state++;
-            state++; // to be removed
+        } else if (state == 4){
+            state++;
+        } else if (state == 5){
+
         }
         draw.repaint();
     }
@@ -118,6 +122,9 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                 m.mainMenu(g);
             } else if (state == 3) {
                 l1.level1(g);
+                repaint();
+            } else if (state == 4){
+                l2.level2(g);
                 repaint();
             } else if (state == 5) {
                 l3.level3(g);
