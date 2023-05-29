@@ -6,6 +6,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
     JFrame frame;
     Drawing draw;
     Level1 l1 = new Level1();
+    Level3 l3 = new Level3();
     SplashScreen s = new SplashScreen();
     MainMenu m = new MainMenu();
 
@@ -13,7 +14,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
     int width = 1400;
     int height = 700;
 
-    int state = 0;
+    int state = 5;
 
 
     String name;
@@ -77,24 +78,26 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
     }
 
     public void keyPressed(KeyEvent e) {
-        int keyCode = e.getKeyCode();
-        switch (keyCode) {
-            case KeyEvent.VK_UP:
-                y -= 10;
-                System.out.println("UP");
-                break;
-            case KeyEvent.VK_DOWN:
-                y += 10;
-                System.out.println("DOWN");
-                break;
-            case KeyEvent.VK_LEFT:
-                x -= 10;
-                System.out.println("LEFT");
-                break;
-            case KeyEvent.VK_RIGHT:
-                x += 10;
-                System.out.println("RIGHT");
-                break;
+        if (state == 5) {
+            int keyCode = e.getKeyCode();
+            switch (keyCode) {
+                case KeyEvent.VK_UP:
+                    y -= 10;
+                    System.out.println("UP");
+                    break;
+                case KeyEvent.VK_DOWN:
+                    y += 10;
+                    System.out.println("DOWN");
+                    break;
+                case KeyEvent.VK_LEFT:
+                    x -= 10;
+                    System.out.println("LEFT");
+                    break;
+                case KeyEvent.VK_RIGHT:
+                    x += 10;
+                    System.out.println("RIGHT");
+                    break;
+            }
         }
     }
 
@@ -119,6 +122,9 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
             } else if (state == 3) {
                 l1.level1(g);
                 repaint();
+            } else if (state == 5) {
+                l3.level3(g, x, y);
+                repaint();
             }
         }
 
@@ -134,10 +140,5 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
             frame.setSize(width, height);
         }
 
-
-
-        public void level3(Graphics g) {
-            g.fillRect(x, y, 20, 20);
-        }
     }
 }
