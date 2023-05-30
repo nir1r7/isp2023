@@ -15,7 +15,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
     int width = 1400;
     int height = 700;
 
-    int state = 0;
+    int state = 5;
 
     String name;
 
@@ -79,32 +79,18 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
 
     }
 
-    public void keyPressed(KeyEvent e) {
-        if (state == 5) {
-            int keyCode = e.getKeyCode();
-            switch (keyCode) {
-                case KeyEvent.VK_UP:
-                    l3.updateY(-10);
-                    System.out.println("UP");
-                    break;
-                case KeyEvent.VK_DOWN:
-                    l3.updateY(10);
-                    System.out.println("DOWN");
-                    break;
-                case KeyEvent.VK_LEFT:
-                    l3.updateX(-10);
-                    System.out.println("LEFT");
-                    break;
-                case KeyEvent.VK_RIGHT:
-                    l3.updateX(10);
-                    System.out.println("RIGHT");
-                    break;
-            }
-        }
+    public void keyReleased(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_LEFT) l3.setLeft(false);
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT) l3.setRight(false);
+        if (e.getKeyCode() == KeyEvent.VK_UP) l3.setUp(false);
+        if (e.getKeyCode() == KeyEvent.VK_DOWN) l3.setDown(false);
     }
 
-    public void keyReleased(KeyEvent e) {
-
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_LEFT) l3.setLeft(true);
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT) l3.setRight(true);
+        if (e.getKeyCode() == KeyEvent.VK_UP) l3.setUp(true);
+        if (e.getKeyCode() == KeyEvent.VK_DOWN) l3.setDown(true);
     }
 
     public void updateState() {
