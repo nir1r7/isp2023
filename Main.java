@@ -107,6 +107,9 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
 
     }
 
+    public void updateState() {
+        state++;
+    }
 
     class Drawing extends JComponent {
 
@@ -150,10 +153,6 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
             state++;
 
             frame.setSize(width, height);
-        }
-
-        public void updateState(){
-            state++;
         }
     }
 }
