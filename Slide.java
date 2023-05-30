@@ -46,7 +46,6 @@ public class Slide {
         }
         g.drawString(lines[index], x, y);
 
-        
         try {
             BufferedImage bot = ImageIO.read(new File("./static/img/pixelbot.png"));
             BufferedImage logo = ImageIO.read(new File("./static/img/Elevanslogo.png"));
