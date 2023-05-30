@@ -41,6 +41,7 @@ public class Level3 extends KeyAdapter {
     public void setLeft(boolean left) {
         this.left = left;
     }
+
     public void setRight(boolean right) {
         this.right = right;
     }
