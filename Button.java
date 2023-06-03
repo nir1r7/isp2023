@@ -46,4 +46,11 @@ public class Button{
         y -= (index + 1)*35;
         g.drawRect(x, y, w, h);
     }
+
+    public boolean isClicked(int xCoord, int yCoord){
+        if (xCoord >= x && xCoord <= x + w && yCoord >= y && yCoord <= y + h){
+            return true;
+        }
+        return false;
+    }
 }

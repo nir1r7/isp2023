@@ -15,7 +15,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
     int width = 1400;
     int height = 700;
 
-    int state = 5;
+    int state = 0;
 
     String name;
 
@@ -45,12 +45,51 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
 
     public void mouseClicked(MouseEvent e) {
         if (state == 0 && e.getX() >= 580 && e.getX() <= 780 && e.getY() >= 500 && e.getY() <= 550) {
-            state++;
+            state = 2;
         } else if (state == 2 && e.getX() >= 512 && e.getX() <= 812 && e.getY() >= 200 && e.getY() <= 250) {
-            state++;
+            state = 3;
         } else if (state == 3) {
-            l1.updateSlide();
-            //state++;
+
+            // only the slides with buttons
+            switch(l1.getSlideNum()){
+                case 0:
+                    if (l1.y0.isClicked(e.getX(), e.getY())){
+                        l1.setSlide(1);
+                    }
+                    if (l1.n0.isClicked(e.getX(), e.getY())){
+                        l1.setSlide(2);
+                    }
+                    break;
+                case 1:
+                case 2:
+                    l1.setSlide(3);
+                    break;
+                case 3:
+                    if (l1.y1.isClicked(e.getX(), e.getY())){
+                        l1.setSlide(4);
+                    }
+                    if (l1.n1.isClicked(e.getX(), e.getY())){
+                        l1.setSlide(5);
+                    }
+                    break;
+                case 4:
+                case 5:
+                    l1.setSlide(6);
+                case 6:
+                    if (l1.y1.isClicked(e.getX(), e.getY())){
+                        l1.setSlide(7);
+                    }
+                    if (l1.n1.isClicked(e.getX(), e.getY())){
+                        l1.setSlide(8);
+                    }
+                    break;
+                case 7:
+                case 8:
+                    state = 2;
+                    m.l2 = true;
+            }
+            
+            
         } else if (state == 4){
             state++;
         } else if (state == 5){
