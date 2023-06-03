@@ -49,8 +49,6 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         } else if (state == 2 && e.getX() >= 512 && e.getX() <= 812 && e.getY() >= 200 && e.getY() <= 250) {
             state = 3;
         } else if (state == 3) {
-
-            // only the slides with buttons
             switch(l1.getSlideNum()){
                 case 0:
                     if (l1.y0.isClicked(e.getX(), e.getY())){
@@ -87,9 +85,8 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                 case 8:
                     state = 2;
                     m.l2 = true;
-            }
-            
-            
+                    l1.setSlide(0);
+            }            
         } else if (state == 4){
             state++;
         } else if (state == 5){
@@ -130,10 +127,6 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) l3.setRight(true);
         if (e.getKeyCode() == KeyEvent.VK_UP) l3.setUp(true);
         if (e.getKeyCode() == KeyEvent.VK_DOWN) l3.setDown(true);
-    }
-
-    public void updateState() {
-        state++;
     }
 
     class Drawing extends JComponent {

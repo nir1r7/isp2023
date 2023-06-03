@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 
 public class Level1 extends MouseAdapter {
-    int slideNum = 0;
+    int slideNum;
     int width = 1400;
     int height = 700;
 
@@ -14,6 +14,10 @@ public class Level1 extends MouseAdapter {
     Button n2;
     Button y3;
     Button n3;
+
+    public Level1(){
+        slideNum = 0;
+    }
 
     public void slide0(Graphics g) {
         Font f1 = new Font("Serif", Font.PLAIN, 25);

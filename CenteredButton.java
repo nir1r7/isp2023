@@ -1,20 +1,14 @@
 import java.awt.*;
 
-public class Button{
+public class CenteredButton extends Button{
     String txt;
     int x;
     int y;
     int w;
     int h;
     
-    public Button(String text, int x, int y, int w, int h){
-        txt = text;
-
-        this.x = x;
-        this.y = y;
-
-        this.w = w;
-        this.h = h;
+    public CenteredButton(String text, int x, int y, int w, int h){
+        super(text, x, y, w, h);
     }
 
     public void display(Graphics g){
