@@ -27,7 +27,7 @@ public class Level1 extends MouseAdapter {
         "you succeed on your exams! First things first, have you been using your time efficiently?");
         s.display(g);
 
-        int y = 250;
+        int y = 200;
 
         y0 = new Button("Yes!", 950, y, 300, 50);
         n0 = new Button("Not really...", 950, y + 150, 300, 50);
@@ -43,7 +43,7 @@ public class Level1 extends MouseAdapter {
         Slide s = new Slide("One of the most important things that people ignore when studying is the study environment. Having a clean and organised study environment can improve your focus. Minimizing any distractions can help you use your study time more efficiently. How does your study environment look like?");
         s.display(g);
 
-        int y = 250;
+        int y = 200;
 
         y1 = new Button("Organised and free of distractions!", 950, y, 300, 50);
         n1 = new Button("Messy and full of distractions :(", 950, y + 150, 300, 50);
@@ -59,7 +59,7 @@ public class Level1 extends MouseAdapter {
         Slide s = new Slide("Another important study tip to get ready for you exams is to study on a schedule. Studying at the same time every day helps build a habit of studying faster. By sticking to a schedule, studying will become easier, almost like second nature. Do you currently have a study schedule?");
         s.display(g);
 
-        int y = 250;
+        int y = 200;
 
         y2 = new Button("Yes! Of Course!", 950, y, 300, 50);
         n2 = new Button("Not yet…", 950, y + 150, 300, 50);

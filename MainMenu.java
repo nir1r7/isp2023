@@ -3,6 +3,11 @@ import java.awt.*;
 public class MainMenu {
     boolean l2 = false;
     boolean l3 = false;
+
+    CenteredButton level1Button;
+    CenteredButton level2Button;
+    CenteredButton level3Button;
+
     public void mainMenu(Graphics g) {
         Font f1 = new Font("Serif", Font.BOLD, 45);
         g.setFont(f1);
@@ -14,10 +19,13 @@ public class MainMenu {
         g.setFont(f2);
         g.setColor(Color.BLACK);
 
-        for (int i = 0; i < 3; i++) {
-            g.drawRect(512, 200 + i * 80, 300, 50);
-            g.drawString("Level " + (i + 1), 620, 235 + i * 80);
-        }
+        level1Button = new CenteredButton("Level 1", 512, 200, 300, 50);
+        level2Button = new CenteredButton("Level 2", 512, 280, 300, 50);
+        level3Button = new CenteredButton("Level 3", 512, 360, 300, 50);
+
+        level1Button.display(g);
+        level2Button.display(g);
+        level3Button.display(g);
 
         int x = 780;
         int y = 295;

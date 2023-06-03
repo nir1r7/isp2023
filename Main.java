@@ -44,17 +44,28 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
     }
 
     public void mouseClicked(MouseEvent e) {
+        int x = e.getX();
+        int y = e.getY();
+
         if (state == 0 && e.getX() >= 580 && e.getX() <= 780 && e.getY() >= 500 && e.getY() <= 550) {
             state = 2;
-        } else if (state == 2 && e.getX() >= 512 && e.getX() <= 812 && e.getY() >= 200 && e.getY() <= 250) {
-            state = 3;
+        } else if (state == 2) {
+            if (m.level1Button.isClicked(x, y)){
+                state = 3;
+            }
+            else if (m.level2Button.isClicked(x, y) && m.l2){
+                state = 4;
+            }
+            else if (m.level3Button.isClicked(x, y) && m.l3){
+                state = 5;
+            }
         } else if (state == 3) {
             switch(l1.getSlideNum()){
                 case 0:
-                    if (l1.y0.isClicked(e.getX(), e.getY())){
+                    if (l1.y0.isClicked(x, y)){
                         l1.setSlide(1);
                     }
-                    if (l1.n0.isClicked(e.getX(), e.getY())){
+                    if (l1.n0.isClicked(x, y)){
                         l1.setSlide(2);
                     }
                     break;
@@ -63,10 +74,10 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                     l1.setSlide(3);
                     break;
                 case 3:
-                    if (l1.y1.isClicked(e.getX(), e.getY())){
+                    if (l1.y1.isClicked(x, y)){
                         l1.setSlide(4);
                     }
-                    if (l1.n1.isClicked(e.getX(), e.getY())){
+                    if (l1.n1.isClicked(x, y)){
                         l1.setSlide(5);
                     }
                     break;
@@ -74,10 +85,10 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                 case 5:
                     l1.setSlide(6);
                 case 6:
-                    if (l1.y1.isClicked(e.getX(), e.getY())){
+                    if (l1.y1.isClicked(x, y)){
                         l1.setSlide(7);
                     }
-                    if (l1.n1.isClicked(e.getX(), e.getY())){
+                    if (l1.n1.isClicked(x, y)){
                         l1.setSlide(8);
                     }
                     break;
@@ -88,7 +99,8 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                     l1.setSlide(0);
             }            
         } else if (state == 4){
-            state++;
+            state = 2;
+            m.l3 = true;
         } else if (state == 5){
 
         }

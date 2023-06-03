@@ -15,10 +15,10 @@ public class Slide {
     }
 
     public void display(Graphics g){
-        Font f1 = new Font("Serif", Font.PLAIN, 25);
+        Font f1 = new Font("Serif", Font.PLAIN, 22);
         g.setFont(f1);
 
-        int y = 550;
+        int y = 535;
         int x = 300;
 
         String[] words = txt.split(" ");

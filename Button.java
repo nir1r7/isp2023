@@ -53,4 +53,29 @@ public class Button{
         }
         return false;
     }
+
+    public int getX(){
+        return x;
+    }
+
+    public int getY(){
+        return y;
+    }
+
+    public int getW(){
+        return w;
+    }
+
+    public int getH(){
+        return h;
+    }
+
+    public void setX(int n){
+        x = n;
+    }
+
+    public void setY(int n){
+        y = n;
+    }
+
 }
