@@ -23,8 +23,7 @@ public class Level1 extends MouseAdapter {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
 
-        Slide s = new Slide("Hello player, my name is Pixel! I will be helping over the coming weeks to make sure " + 
-        "you succeed on your exams! First things first, have you been using your time efficiently?");
+        Slide s = new Slide(0, "Hello player, my name is Pixel! I will be helping over the coming weeks to make sure you succeed on your exams! First things first, have you been using your time efficiently?");
         s.display(g);
 
         int y = 200;
@@ -40,7 +39,7 @@ public class Level1 extends MouseAdapter {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
 
-        Slide s = new Slide("One of the most important things that people ignore when studying is the study environment. Having a clean and organised study environment can improve your focus. Minimizing any distractions can help you use your study time more efficiently. How does your study environment look like?");
+        Slide s = new Slide(0, "One of the most important things that people ignore when studying is the study environment. Having a clean and organised study environment can improve your focus. Minimizing any distractions can help you use your study time more efficiently. How does your study environment look like?");
         s.display(g);
 
         int y = 200;
@@ -56,7 +55,7 @@ public class Level1 extends MouseAdapter {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
 
-        Slide s = new Slide("Another important study tip to get ready for you exams is to study on a schedule. Studying at the same time every day helps build a habit of studying faster. By sticking to a schedule, studying will become easier, almost like second nature. Do you currently have a study schedule?");
+        Slide s = new Slide(0, "Another important study tip to get ready for you exams is to study on a schedule. Studying at the same time every day helps build a habit of studying faster. By sticking to a schedule, studying will become easier, almost like second nature. Do you currently have a study schedule?");
         s.display(g);
 
         int y = 200;
@@ -69,32 +68,32 @@ public class Level1 extends MouseAdapter {
     }
 
     public void y0Response(Graphics g){
-        Slide s = new Slide("That’s great! Keep up the good work. Make sure you always start your work early, not leaving things to the last minute. This ensures that you have time to finish all assignments and projects, as well as study for exams.");
+        Slide s = new Slide(1, "That’s great! Keep up the good work. Make sure you always start your work early, not leaving things to the last minute. This ensures that you have time to finish all assignments and projects, as well as study for exams.");
         s.display(g);
     }
 
     public void n0Response(Graphics g){
-        Slide s = new Slide("It is important to use your time wisely to make sure that everything that needs to be done is completed. Make sure to give yourself enough time to finish all assignments and projects, as well as study for exams. Trust me, I know this sucks for a lot of people. Push through! You can do it!");
+        Slide s = new Slide(-1, "It is important to use your time wisely to make sure that everything that needs to be done is completed. Make sure to give yourself enough time to finish all assignments and projects, as well as study for exams. Trust me, I know this sucks for a lot of people. Push through! You can do it!");
         s.display(g);
     }
 
     public void y1Response(Graphics g){
-        Slide s = new Slide("That’s great to hear! You’re already on track to doing spectacularly on your exams!");
+        Slide s = new Slide(1, "That’s great to hear! You’re already on track to doing spectacularly on your exams!");
         s.display(g);
     }
 
     public void n1Response(Graphics g){
-        Slide s = new Slide("That’s alright. While the task may seem daunting, organising your study environment is something that you only need to do once! Just take some time out of your day to clean up the space around you. You only need to do this once!");
+        Slide s = new Slide(-1, "That’s alright. While the task may seem daunting, organising your study environment is something that you only need to do once! Just take some time out of your day to clean up the space around you. You only need to do this once!");
         s.display(g);
     }
 
     public void y2Response(Graphics g){
-        Slide s = new Slide("That’s great! Having a consistent study schedule makes it a lot easier to study effectively. Make sure to try not to miss too many days at once, as missing many days can break the schedule.");
+        Slide s = new Slide(1, "That’s great! Having a consistent study schedule makes it a lot easier to study effectively. Make sure to try not to miss too many days at once, as missing many days can break the schedule.");
         s.display(g);
     }
 
     public void n2Response(Graphics g){
-        Slide s = new Slide("Sticking to a schedule is very important to create good study habits. Sticking to a schedule will prevent situations where you are cramming last minute. While cramming may sometimes seem to work, you can be more prone to making mistakes on the test day.");
+        Slide s = new Slide(-1, "Sticking to a schedule is very important to create good study habits. Sticking to a schedule will prevent situations where you are cramming last minute. While cramming may sometimes seem to work, you can be more prone to making mistakes on the test day.");
         s.display(g);
     }
 

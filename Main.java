@@ -47,7 +47,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         int x = e.getX();
         int y = e.getY();
 
-        if (state == 0 && e.getX() >= 580 && e.getX() <= 780 && e.getY() >= 500 && e.getY() <= 550) {
+        if (state == 0 && s.cont.isClicked(x, y)) {
             state = 2;
         } else if (state == 2) {
             if (m.level1Button.isClicked(x, y)){
@@ -84,6 +84,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                 case 4:
                 case 5:
                     l1.setSlide(6);
+                    break;
                 case 6:
                     if (l1.y1.isClicked(x, y)){
                         l1.setSlide(7);

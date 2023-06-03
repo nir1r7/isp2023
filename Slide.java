@@ -5,9 +5,16 @@ import javax.imageio.ImageIO;
 
 public class Slide {
     String txt;
+    int emote;
+
+    public Slide( int n, String text){
+        txt = text;
+        emote = n;
+    }
     
     public Slide(String text){
         txt = text;
+        emote = 0;
     }
 
     public Slide(){
@@ -47,12 +54,25 @@ public class Slide {
         g.drawString(lines[index], x, y);
 
         try {
-            BufferedImage bot = ImageIO.read(new File("./static/img/pixelbot.png"));
+            BufferedImage bot;
+
+            switch (emote){
+                case -1: 
+                    bot = ImageIO.read(new File("./static/img/sadbot.png"));
+                    break;
+                case 1:
+                    bot = ImageIO.read(new File("./static/img/happybot.png"));
+                    break;
+                default:
+                    bot = ImageIO.read(new File("./static/img/defaultbot.png"));
+            }
+
             BufferedImage logo = ImageIO.read(new File("./static/img/Elevanslogo.png"));
 
             g.drawImage(bot, 50, 380, 190, 210, null);
             g.drawImage(logo, 1270, 20, 100, 100, null);
 
         } catch (Exception e) {}
+
     }
 }
