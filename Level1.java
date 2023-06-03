@@ -1,5 +1,9 @@
 import java.awt.*;
 import java.awt.event.MouseAdapter;
+import java.awt.image.BufferedImage;
+import java.io.File;
+
+import javax.imageio.ImageIO;
 
 public class Level1 extends MouseAdapter {
     int slideNum;
@@ -73,8 +77,14 @@ public class Level1 extends MouseAdapter {
     }
 
     public void n0Response(Graphics g){
-        Slide s = new Slide(-1, "It is important to use your time wisely to make sure that everything that needs to be done is completed. Make sure to give yourself enough time to finish all assignments and projects, as well as study for exams. Trust me, I know this sucks for a lot of people. Push through! You can do it!");
-        s.display(g);
+        try{
+            BufferedImage bg = ImageIO.read(new File("./static/img/badtimemanagement.png"));
+            Slide s = new Slide(bg, -1, "It is important to use your time wisely to make sure that everything that needs to be done is completed. Make sure to give yourself enough time to finish all assignments and projects, as well as study for exams. Trust me, I know this sucks for a lot of people. Push through! You can do it!");
+            s.display(g);
+        } catch(Exception e){
+            Slide s = new Slide(-1, "It is important to use your time wisely to make sure that everything that needs to be done is completed. Make sure to give yourself enough time to finish all assignments and projects, as well as study for exams. Trust me, I know this sucks for a lot of people. Push through! You can do it!");
+            s.display(g);
+        }
     }
 
     public void y1Response(Graphics g){

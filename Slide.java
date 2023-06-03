@@ -7,6 +7,16 @@ public class Slide {
     String txt;
     int emote;
 
+    BufferedImage bg;
+    boolean hasbg = false;
+
+    public Slide (BufferedImage background, int n, String text){
+        txt = text;
+        emote = n;
+        bg = background;
+        hasbg = true;
+    }
+
     public Slide( int n, String text){
         txt = text;
         emote = n;
@@ -67,8 +77,11 @@ public class Slide {
                     bot = ImageIO.read(new File("./static/img/defaultbot.png"));
             }
 
-            BufferedImage logo = ImageIO.read(new File("./static/img/Elevanslogo.png"));
+            if (hasbg){
+                g.drawImage(bg, 0, 0, 1400, 500, null);
+            }
 
+            BufferedImage logo = ImageIO.read(new File("./static/img/Elevanslogo.png"));
             g.drawImage(bot, 50, 380, 190, 210, null);
             g.drawImage(logo, 1270, 20, 100, 100, null);
 
