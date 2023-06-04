@@ -1,7 +1,6 @@
 import java.awt.*;
-import java.awt.event.KeyAdapter;
 
-public class Level3 extends KeyAdapter {
+public class Level3 {
 
     int score = 0;
     int health = 3;
