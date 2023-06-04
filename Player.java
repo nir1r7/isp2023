@@ -4,6 +4,8 @@ public class Player {
     
     int x;
     int y;
+    int w = 20;
+    int h = 20;
 
     boolean left;
     boolean right;
@@ -20,8 +22,16 @@ public class Player {
         if (right) updateX(1);
         if (up) updateY(-1);
         if (down) updateY(1);
-        g.fillRect(x, y, 20, 20);
+        g.fillRect(x, y, w, h);
     }
+
+    public boolean collided(Obstacle o){
+        if (x + w >= o.getX() && x <= o.getX() + o.getW() && y + h >= o.getY() && y <= o.getY() + o.getH()){
+            return true;
+        }
+        return false;
+    }
+
 
     public void updateX(int x) {
         this.x += x;

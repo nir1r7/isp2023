@@ -21,13 +21,6 @@ public class Obstacle{
         g.drawRect(x, y, w, h);
     }
 
-    public boolean collided(int xCoord, int yCoord, int width, int height){
-        if (xCoord >= x && xCoord <= x + w && yCoord >= y && yCoord <= y + h){
-            return true;
-        }
-        return false;
-    }
-
     public int getX(){
         return x;
     }
