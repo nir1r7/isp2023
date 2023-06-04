@@ -68,13 +68,13 @@ public class Slide {
 
             switch (emote){
                 case -1: 
-                    bot = ImageIO.read(new File("./static/img/sadbot.png"));
+                    bot = ImageIO.read(new File("./static/img/sadBot.png"));
                     break;
                 case 1:
-                    bot = ImageIO.read(new File("./static/img/happybot.png"));
+                    bot = ImageIO.read(new File("./static/img/happyBot.png"));
                     break;
                 default:
-                    bot = ImageIO.read(new File("./static/img/defaultbot.png"));
+                    bot = ImageIO.read(new File("./static/img/defaultBot.png"));
             }
 
             if (hasbg){

@@ -43,13 +43,20 @@ public class Level1 extends MouseAdapter {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
 
-        Slide s = new Slide(0, "One of the most important things that people ignore when studying is the study environment. Having a clean and organised study environment can improve your focus. Minimizing any distractions can help you use your study time more efficiently. How does your study environment look like?");
-        s.display(g);
+        try{
+            BufferedImage bg = ImageIO.read(new File("./static/img/defaultDesk.png"));
+
+            Slide s = new Slide(bg, 0, "One of the most important things that people ignore when studying is the study environment. Having a clean and organised study environment can improve your focus. Minimizing any distractions can help you use your study time more efficiently. How does your study environment look like?");
+            s.display(g);
+        } catch (Exception e){
+            Slide s = new Slide(0, "One of the most important things that people ignore when studying is the study environment. Having a clean and organised study environment can improve your focus. Minimizing any distractions can help you use your study time more efficiently. How does your study environment look like?");
+            s.display(g);
+        }
 
         int y = 200;
 
-        y1 = new Button("Organised and free of distractions!", 950, y, 300, 50);
-        n1 = new Button("Messy and full of distractions :(", 950, y + 150, 300, 50);
+        y1 = new Button("Organised and free of distractions!", 1000, y, 300, 50);
+        n1 = new Button("Messy and full of distractions :(", 1000, y + 150, 300, 50);
 
         y1.display(g);
         n1.display(g);
@@ -72,29 +79,51 @@ public class Level1 extends MouseAdapter {
     }
 
     public void y0Response(Graphics g){
-        Slide s = new Slide(1, "That’s great! Keep up the good work. Make sure you always start your work early, not leaving things to the last minute. This ensures that you have time to finish all assignments and projects, as well as study for exams.");
-        s.display(g);
+        try{
+            BufferedImage bg = ImageIO.read(new File("./static/img/goodTimeManagement.png"));
+            
+            Slide s = new Slide(bg, 1, "That’s great! Keep up the good work. Make sure you always start your work early, not leaving things to the last minute. This ensures that you have time to finish all assignments and projects, as well as study for exams.");
+            s.display(g);
+        } catch (Exception e){
+            Slide s = new Slide(1, "That’s great! Keep up the good work. Make sure you always start your work early, not leaving things to the last minute. This ensures that you have time to finish all assignments and projects, as well as study for exams.");
+            s.display(g);
+        }
     }
 
     public void n0Response(Graphics g){
         try{
-            BufferedImage bg = ImageIO.read(new File("./static/img/badtimemanagement.png"));
+            BufferedImage bg = ImageIO.read(new File("./static/img/badTimeManagement.png"));
+
             Slide s = new Slide(bg, -1, "It is important to use your time wisely to make sure that everything that needs to be done is completed. Make sure to give yourself enough time to finish all assignments and projects, as well as study for exams. Trust me, I know this sucks for a lot of people. Push through! You can do it!");
             s.display(g);
-        } catch(Exception e){
+        } catch (Exception e){
             Slide s = new Slide(-1, "It is important to use your time wisely to make sure that everything that needs to be done is completed. Make sure to give yourself enough time to finish all assignments and projects, as well as study for exams. Trust me, I know this sucks for a lot of people. Push through! You can do it!");
             s.display(g);
         }
     }
 
     public void y1Response(Graphics g){
-        Slide s = new Slide(1, "That’s great to hear! You’re already on track to doing spectacularly on your exams!");
-        s.display(g);
+        try{
+            BufferedImage bg = ImageIO.read(new File("./static/img/organizedDesk.png"));
+
+            Slide s = new Slide(bg, 1, "That’s great to hear! You’re already on track to doing spectacularly on your exams!");
+            s.display(g);
+        } catch (Exception e){
+            Slide s = new Slide(1, "That’s great to hear! You’re already on track to doing spectacularly on your exams!");
+            s.display(g);
+        }
     }
 
     public void n1Response(Graphics g){
-        Slide s = new Slide(-1, "That’s alright. While the task may seem daunting, organising your study environment is something that you only need to do once! Just take some time out of your day to clean up the space around you. You only need to do this once!");
-        s.display(g);
+        try{
+            BufferedImage bg = ImageIO.read(new File("./static/img/unorganizedDesk.png"));
+
+            Slide s = new Slide(bg, -1, "That’s alright. While the task may seem daunting, organising your study environment is something that you only need to do once! Just take some time out of your day to clean up the space around you. You only need to do this once!");
+            s.display(g);
+        } catch (Exception e){
+            Slide s = new Slide(-1, "That’s alright. While the task may seem daunting, organising your study environment is something that you only need to do once! Just take some time out of your day to clean up the space around you. You only need to do this once!");
+            s.display(g);
+        }
     }
 
     public void y2Response(Graphics g){

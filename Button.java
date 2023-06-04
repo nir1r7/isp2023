@@ -18,6 +18,9 @@ public class Button{
     }
 
     public void display(Graphics g){
+
+        g.setColor(Color.BLACK);
+
         x += 10;
         y += 35;
 
@@ -29,6 +32,11 @@ public class Button{
 
         for (int i = 0; i < words.length; i++){
             if (charCount + words[i].length() > w/10){
+
+                g.setColor(Color.WHITE);
+                g.fillRect(x - 10, y - 35, w, h);
+                g.setColor(Color.BLACK);
+
                 g.drawString(lines[index], x, y);
 
                 y += 35;
@@ -40,10 +48,20 @@ public class Button{
             lines[index] += words[i] + " ";
             charCount += words[i].length() + 1;
         }
+
+        g.setColor(Color.WHITE);
+        if (index == 0){
+            g.fillRect(x - 10, y - 35, w, h);
+        } else{
+            g.fillRect(x - 10, y - (index)*30, w, h - (index)*40);
+        }
+        g.setColor(Color.BLACK);
+
         g.drawString(lines[index], x, y);
 
         x -= 10;
         y -= (index + 1)*35;
+
         g.drawRect(x, y, w, h);
     }
 
