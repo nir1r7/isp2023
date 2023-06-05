@@ -6,11 +6,13 @@ public class Level3 {
     int health = 3;
     Player p = new Player(750, 350);
     Obstacle o1 = new Obstacle(200, 200, 50, 50);
+    FallingObstacle o2 = new FallingObstacle(600, 200, 50, 50);
 
     public void level3(Graphics g) {
         p.display(g);
         o1.display(g);
-        if (p.collided(o1)) {
+        o2.display(g);
+        if (p.collided(o1) || p.collided(o2)) {
             g.drawString("Collision", 400, 350);
         }
     }
