@@ -1,12 +1,12 @@
 import java.awt.*;
 
 public class Obstacle{
-    int x;
-    int y;
+    double x;
+    double y;
     int w;
     int h;
     
-    public Obstacle(int x, int y, int w, int h) {
+    public Obstacle(double x, double y, int w, int h) {
         this.x = x;
         this.y = y;
 
@@ -18,14 +18,14 @@ public class Obstacle{
 
         g.setColor(Color.BLACK);
 
-        g.drawRect(x, y, w, h);
+        g.drawRect((int)x, (int)y, w, h);
     }
 
-    public int getX(){
+    public double getX(){
         return x;
     }
 
-    public int getY(){
+    public double getY(){
         return y;
     }
 
@@ -40,9 +40,4 @@ public class Obstacle{
     public void setX(int n){
         x = n;
     }
-
-    public void setY(int n){
-        y = n;
-    }
-
 }
