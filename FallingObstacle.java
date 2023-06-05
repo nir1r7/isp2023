@@ -15,8 +15,8 @@ public class FallingObstacle extends Obstacle {
     public void display(Graphics g) {
         g.setColor(Color.BLACK);
 
-        g.drawRect(()x, y, w, h);
+        g.drawRect((int)x, (int)y, w, h);
 
-        fall(1);
+        fall(0.25);
     }
 }
