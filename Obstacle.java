@@ -5,6 +5,7 @@ public class Obstacle{
     double y;
     int w;
     int h;
+    boolean good;
     
     public Obstacle(double x, double y, int w, int h) {
         this.x = x;

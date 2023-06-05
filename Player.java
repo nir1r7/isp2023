@@ -25,11 +25,15 @@ public class Player {
         g.fillRect((int)x, (int)y, w, h);
     }
 
-    public boolean collided(Obstacle o){
+    public int collided(Obstacle o){
         if (x + w >= o.getX() && x <= o.getX() + o.getW() && y + h >= o.getY() && y <= o.getY() + o.getH()){
-            return true;
+            if (o.good) {
+                return 1;
+            } else {
+                return -1;
+            }
         }
-        return false;
+        return 0;
     }
 
 
