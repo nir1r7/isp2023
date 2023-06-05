@@ -28,7 +28,7 @@ public class Player {
     public int collided(Obstacle o){
         if (x + w >= o.getX() && x <= o.getX() + o.getW() && y + h >= o.getY() && y <= o.getY() + o.getH()){
             if (o.good) {
-                return 1;
+                return 1; 
             } else {
                 return -1;
             }
