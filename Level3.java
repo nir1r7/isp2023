@@ -14,14 +14,14 @@ public class Level3 {
         p.display(g);
         o1.display(g);
         o2.display(g);
-        int collidedo1 = p.collided(o1);
-        int collidedo2 = p.collided(o2);
-        if (collidedo1 != 0) {
-            if (collidedo1 > 0) score++;
+        int collider1 = p.collided(o1);
+        int collider2 = p.collided(o2);
+        if (collider1 != 0) {
+            if (collider1 > 0) score++;
             else health--;
         }
-        if (collidedo2 != 0) {
-            if (collidedo2 > 0) score++;
+        if (collider2 != 0) {
+            if (collider2 > 0) score++;
             else health--;
         }
     }
