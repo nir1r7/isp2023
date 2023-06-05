@@ -7,12 +7,13 @@ public class Obstacle{
     int h;
     boolean good;
     
-    public Obstacle(double x, double y, int w, int h) {
+    public Obstacle(double x, double y, int w, int h, boolean good) {
         this.x = x;
         this.y = y;
 
         this.w = w;
         this.h = h;
+        this.good = good;
     }
 
     public void display(Graphics g){

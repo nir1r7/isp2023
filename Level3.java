@@ -5,8 +5,8 @@ public class Level3 {
     int score = 0;
     int health = 3;
     Player p = new Player(750, 350);
-    Obstacle o1 = new Obstacle(200, 200, 50, 50);
-    FallingObstacle o2 = new FallingObstacle(600, 200, 50, 50);
+    Obstacle o1 = new Obstacle(200, 200, 50, 50, true);
+    FallingObstacle o2 = new FallingObstacle(600, 200, 50, 50, false);
 
     public void level3(Graphics g) {
         g.drawString("Score: " + score, 1000, 200);
@@ -14,8 +14,14 @@ public class Level3 {
         p.display(g);
         o1.display(g);
         o2.display(g);
-        if (p.collided(o1) != 0) {
-            if (p.collided(o1) > 0) score++;
+        int collidedo1 = p.collided(o1);
+        int collidedo2 = p.collided(o2);
+        if (collidedo1 != 0) {
+            if (collidedo1 > 0) score++;
+            else health--;
+        }
+        if (collidedo2 != 0) {
+            if (collidedo2 > 0) score++;
             else health--;
         }
     }

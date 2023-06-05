@@ -1,8 +1,8 @@
 import java.awt.*;
 
 public class FallingObstacle extends Obstacle {
-    public FallingObstacle(double x, double y, int w, int h) {
-        super(x, y, w, h);
+    public FallingObstacle(double x, double y, int w, int h, boolean good) {
+        super(x, y, w, h, good);
     }
 
     public void fall(double dy) {
