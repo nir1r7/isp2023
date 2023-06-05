@@ -66,8 +66,15 @@ public class Level1 extends MouseAdapter {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
 
-        Slide s = new Slide(0, "Another important study tip to get ready for you exams is to study on a schedule. Studying at the same time every day helps build a habit of studying faster. By sticking to a schedule, studying will become easier, almost like second nature. Do you currently have a study schedule?");
-        s.display(g);
+        try{
+            BufferedImage bg = ImageIO.read(new File("./static/img/defaultSchedule.png"));
+
+            Slide s = new Slide(bg, 0, "Another important study tip to get ready for you exams is to study on a schedule. Studying at the same time every day helps build a habit of studying faster. By sticking to a schedule, studying will become easier, almost like second nature. Do you currently have a study schedule?");
+            s.display(g);
+        } catch (Exception e){
+            Slide s = new Slide(0, "Another important study tip to get ready for you exams is to study on a schedule. Studying at the same time every day helps build a habit of studying faster. By sticking to a schedule, studying will become easier, almost like second nature. Do you currently have a study schedule?");
+            s.display(g);
+        }
 
         int y = 200;
 
@@ -127,13 +134,27 @@ public class Level1 extends MouseAdapter {
     }
 
     public void y2Response(Graphics g){
-        Slide s = new Slide(1, "That’s great! Having a consistent study schedule makes it a lot easier to study effectively. Make sure to try not to miss too many days at once, as missing many days can break the schedule.");
-        s.display(g);
+        try{
+            BufferedImage bg = ImageIO.read(new File("./static/img/successfulSchedule.png"));
+
+            Slide s = new Slide(bg, 1, "That’s great! Having a consistent study schedule makes it a lot easier to study effectively. Make sure to try not to miss too many days at once, as missing many days can break the schedule.");
+            s.display(g);
+        } catch (Exception e){
+            Slide s = new Slide(1, "That’s great! Having a consistent study schedule makes it a lot easier to study effectively. Make sure to try not to miss too many days at once, as missing many days can break the schedule.");
+            s.display(g);
+        }
     }
 
     public void n2Response(Graphics g){
-        Slide s = new Slide(-1, "Sticking to a schedule is very important to create good study habits. Sticking to a schedule will prevent situations where you are cramming last minute. While cramming may sometimes seem to work, you can be more prone to making mistakes on the test day.");
-        s.display(g);
+        try{
+            BufferedImage bg = ImageIO.read(new File("./static/img/unsuccessfulSchedule.png"));
+
+            Slide s = new Slide(bg, -1, "Sticking to a schedule is very important to create good study habits. Sticking to a schedule will prevent situations where you are cramming last minute. While cramming may sometimes seem to work, you can be more prone to making mistakes on the test day.");
+            s.display(g);
+        } catch (Exception e){
+            Slide s = new Slide(-1, "Sticking to a schedule is very important to create good study habits. Sticking to a schedule will prevent situations where you are cramming last minute. While cramming may sometimes seem to work, you can be more prone to making mistakes on the test day.");
+            s.display(g);
+        }
     }
 
     public void level1(Graphics g) {
