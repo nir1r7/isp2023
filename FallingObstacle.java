@@ -1,14 +1,20 @@
 import java.awt.*;
 
 public class FallingObstacle extends Obstacle {
-    public FallingObstacle(double x, double y, int w, int h, boolean good) {
+    double respawn;
+    double dy;
+    double rand = 50;
+
+    public FallingObstacle(double x, double y, int w, int h, boolean good, double dy, double respawn) {
         super(x, y, w, h, good);
+        this.respawn = respawn;
     }
 
     public void fall(double dy) {
         this.y += dy;
         if (this.y >= 700) {
-            this.y = -100;
+            this.y = respawn + (rand - (Math.random() * 2 * rand));
+            System.out.println(respawn + (rand - (Math.random() * 2 * rand)));
         }
     }
 
