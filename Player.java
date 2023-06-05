@@ -33,11 +33,15 @@ public class Player {
     }
 
 
-    public void updateX(int x) {
-        this.x += x;
+    public void updateX(int dx) {
+        if (this.x + w + dx <= 1400 && this.x + dx >= 0) {
+            this.x += dx;
+        }
     }
 
-    public void updateY(int y) {
-        this.y += y;
+    public void updateY(int dy) {
+        if (this.y + h + dy <= 700 && this.y + dy >= 0) {
+            this.y += dy;
+        }
     }
 }

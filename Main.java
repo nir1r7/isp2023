@@ -32,6 +32,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         frame.add(draw);
 
         frame.setSize(width, height);
+        frame.setResizable(false);
         frame.setVisible(true);
     }
 
