@@ -36,9 +36,15 @@ public class Level2 extends KeyAdapter {
     }
 
     public void map(Graphics g){
-        Wall w1 = new Wall(500, 200, 50, 200);
+        Wall w1 = new Wall(50, 0, 25, 200);
+        Wall w2 = new Wall(50, 200, 1000, 25);
+
         walls.add(w1);
-        w1.display(g);
+        walls.add(w2);
+
+        for (int i = 0; i < walls.size(); i++){
+            walls.get(i).display(g);
+        }
         
     }
 
