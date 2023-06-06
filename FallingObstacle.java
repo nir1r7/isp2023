@@ -7,6 +7,7 @@ public class FallingObstacle extends Obstacle {
 
     public FallingObstacle(double x, double y, int w, int h, boolean good, double dy, double respawn) {
         super(x, y, w, h, good);
+        this.dy = dy;
         this.respawn = respawn;
     }
 
@@ -23,6 +24,6 @@ public class FallingObstacle extends Obstacle {
 
         g.drawRect((int)x, (int)y, w, h);
 
-        fall(0.25);
+        fall(dy);
     }
 }
