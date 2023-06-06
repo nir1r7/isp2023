@@ -18,10 +18,12 @@ public class Player {
     }
 
     public void display(Graphics g) {
-        if (left) updateX(-0.5);
-        if (right) updateX(0.5);
-        if (up) updateY(-0.5);
-        if (down) updateY(0.5);
+        g.setColor(Color.BLACK);
+
+        if (left) updateX(-1);
+        if (right) updateX(1);
+        if (up) updateY(-1);
+        if (down) updateY(1);
         g.fillRect((int)x, (int)y, w, h);
     }
 

@@ -12,7 +12,7 @@ public class Level2 extends KeyAdapter {
     int score = 0;
 
     public void level2(Graphics g) {
-        g.drawString("This is level 2, click again to go to level 3", 200, 200);
+        g.drawString("This is level 2, click again to go to level 3", 200, 250);
 
         map(g);
         p.display(g);
@@ -36,11 +36,17 @@ public class Level2 extends KeyAdapter {
     }
 
     public void map(Graphics g){
-        Wall w1 = new Wall(50, 0, 25, 200);
-        Wall w2 = new Wall(50, 200, 1000, 25);
 
-        walls.add(w1);
-        walls.add(w2);
+        walls.add(new Wall(75, 0, 25, 275));
+        walls.add(new Wall(175, 175, 1000, 25));
+        walls.add(new Wall(75, 75, 1000, 25));
+        walls.add(new Wall(1150, 0, 25, 200));
+        walls.add(new Wall(75, 275, 600, 25));
+        walls.add(new Wall(750, 275, 25, 100));
+        walls.add(new Wall(450, 375, 325, 25));
+        walls.add(new Wall(1262, 75, 25,225)); // INBETWEEN 25, @ 12
+        walls.add(new Wall(850, 275, 412, 25)); // INBETWEEN 25, @ 12
+
 
         for (int i = 0; i < walls.size(); i++){
             walls.get(i).display(g);

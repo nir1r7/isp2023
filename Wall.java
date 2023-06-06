@@ -7,7 +7,7 @@ public class Wall extends Obstacle{
     }
 
     public void display(Graphics g){
-        g.setColor(Color.BLACK);
+        g.setColor(Color.GRAY);
 
         g.fillRect((int) getX(), (int) getY(), getW(), getH());
     }
