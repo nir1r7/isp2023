@@ -59,6 +59,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
             }
             else if (m.level3Button.isClicked(x, y) && m.l3){
                 state = 5;
+                l3.load();
             }
         } else if (state == 3) {
             switch(l1.getSlideNum()){
@@ -173,6 +174,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                     repaint();
                     break;
                 case 6:
+                    
                 case 7:
             }
         }
