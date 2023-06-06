@@ -131,17 +131,31 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
     }
 
     public void keyReleased(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_LEFT) l3.setLeft(false);
-        if (e.getKeyCode() == KeyEvent.VK_RIGHT) l3.setRight(false);
-        if (e.getKeyCode() == KeyEvent.VK_UP) l3.setUp(false);
-        if (e.getKeyCode() == KeyEvent.VK_DOWN) l3.setDown(false);
+        if (state == 4){
+            if (e.getKeyCode() == KeyEvent.VK_LEFT) l2.setLeft(false);
+            if (e.getKeyCode() == KeyEvent.VK_RIGHT) l2.setRight(false);
+            if (e.getKeyCode() == KeyEvent.VK_UP) l2.setUp(false);
+            if (e.getKeyCode() == KeyEvent.VK_DOWN) l2.setDown(false);
+        } else if (state == 5){
+            if (e.getKeyCode() == KeyEvent.VK_LEFT) l3.setLeft(false);
+            if (e.getKeyCode() == KeyEvent.VK_RIGHT) l3.setRight(false);
+            if (e.getKeyCode() == KeyEvent.VK_UP) l3.setUp(false);
+            if (e.getKeyCode() == KeyEvent.VK_DOWN) l3.setDown(false);
+        }
     }
 
     public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_LEFT) l3.setLeft(true);
-        if (e.getKeyCode() == KeyEvent.VK_RIGHT) l3.setRight(true);
-        if (e.getKeyCode() == KeyEvent.VK_UP) l3.setUp(true);
-        if (e.getKeyCode() == KeyEvent.VK_DOWN) l3.setDown(true);
+        if (state == 4){
+            if (e.getKeyCode() == KeyEvent.VK_LEFT) l2.setLeft(true);
+            if (e.getKeyCode() == KeyEvent.VK_RIGHT) l2.setRight(true);
+            if (e.getKeyCode() == KeyEvent.VK_UP) l2.setUp(true);
+            if (e.getKeyCode() == KeyEvent.VK_DOWN) l2.setDown(true);
+        } else if (state == 5){
+            if (e.getKeyCode() == KeyEvent.VK_LEFT) l3.setLeft(true);
+            if (e.getKeyCode() == KeyEvent.VK_RIGHT) l3.setRight(true);
+            if (e.getKeyCode() == KeyEvent.VK_UP) l3.setUp(true);
+            if (e.getKeyCode() == KeyEvent.VK_DOWN) l3.setDown(true);
+        }
     }
 
     class Drawing extends JComponent {

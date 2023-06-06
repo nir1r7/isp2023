@@ -16,6 +16,14 @@ public class Obstacle{
         this.good = good;
     }
 
+    public Obstacle(double x, double y, int w, int h) {
+        this.x = x;
+        this.y = y;
+
+        this.w = w;
+        this.h = h;
+    }
+
     public void display(Graphics g){
 
         g.setColor(Color.BLACK);
