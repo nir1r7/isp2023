@@ -1,7 +1,7 @@
 import java.awt.*;
 
 public class MainMenu {
-    boolean l2 = false;
+    boolean l2 = true;
     boolean l3 = false;
 
     CenteredButton level1Button;

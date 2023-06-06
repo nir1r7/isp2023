@@ -36,6 +36,21 @@ public class Player {
         return 0;
     }
 
+    public int collided(Wall wall){
+        if (x + w == wall.getX() && y + h >= wall.getY() && y <= wall.getY() + wall.getH()){
+            return 1;
+        }
+        if (x == wall.getX() + wall.getW() && y + h >= wall.getY() && y <= wall.getY() + wall.getH()){
+            return 3;
+        }
+        if (y + h == wall.getY() && x + w  >= wall.getX() && x <= wall.getX() + wall.getW()){
+            return 2;
+        }
+        if (y == wall.getY() + wall.getH() && x + w  >= wall.getX() && x <= wall.getX() + wall.getW()){
+            return 4;
+        }
+        return 0;
+    }
 
     public void updateX(double dx) {
         if (this.x + w + dx <= 1400 && this.x + dx >= 0) {
