@@ -14,6 +14,7 @@ public class FallingObstacle extends Obstacle {
     public void fall(double dy) {
         this.y += dy;
         if (this.y >= 700) {
+            this.x = Math.random() * 1400;
             this.y = respawn + (rand - (Math.random() * 2 * rand));
             System.out.println(respawn + (rand - (Math.random() * 2 * rand)));
         }

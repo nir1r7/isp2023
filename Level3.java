@@ -7,11 +7,27 @@ public class Level3 {
     Player p = new Player(750, 350);
     Obstacle[] obstacles = {
         new Obstacle(200, 200, 50, 50, true),
-        new FallingObstacle(400, 0, 50, 50, false, 0.25, -200),
-        new FallingObstacle(600, 0, 50, 50, false, 0.3, -200),
-        new FallingObstacle(800, 0, 50, 50, false, 0.45, -200),
-        new FallingObstacle(1000, 0, 50, 50, false, 0.25, -200),
-        new FallingObstacle(1200, 0, 50, 50, false, 0.5, -200)
+        new FallingObstacle(Math.random() * 1400, 0, 50, 50, false, Math.random() / 2, -200),
+        new FallingObstacle(Math.random() * 1400, 0, 50, 50, false, Math.random() / 2, -200),
+        new FallingObstacle(Math.random() * 1400, 0, 50, 50, false, Math.random() / 2, -200),
+        new FallingObstacle(Math.random() * 1400, 0, 50, 50, false, Math.random() / 2, -200),
+        new FallingObstacle(Math.random() * 1400, 0, 50, 50, false, Math.random() / 2, -200),
+        new FallingObstacle(Math.random() * 1400, 0, 50, 50, false, Math.random() / 2, -200),
+        new FallingObstacle(Math.random() * 1400, 0, 50, 50, false, Math.random() / 2, -200),
+        new FallingObstacle(Math.random() * 1400, 0, 50, 50, false, Math.random() / 2, -200),
+        new FallingObstacle(Math.random() * 1400, 0, 50, 50, false, Math.random() / 2, -200),
+        new FallingObstacle(Math.random() * 1400, 0, 50, 50, false, Math.random() / 2, -200),
+        
+        new FallingObstacle(Math.random() * 1400, -400, 50, 50, false, Math.random() / 2, -200),
+        new FallingObstacle(Math.random() * 1400, -400, 50, 50, false, Math.random() / 2, -200),
+        new FallingObstacle(Math.random() * 1400, -400, 50, 50, false, Math.random() / 2, -200),
+        new FallingObstacle(Math.random() * 1400, -400, 50, 50, false, Math.random() / 2, -200),
+        new FallingObstacle(Math.random() * 1400, -400, 50, 50, false, Math.random() / 2, -200),
+        new FallingObstacle(Math.random() * 1400, -400, 50, 50, false, Math.random() / 2, -200),
+        new FallingObstacle(Math.random() * 1400, -400, 50, 50, false, Math.random() / 2, -200),
+        new FallingObstacle(Math.random() * 1400, -400, 50, 50, false, Math.random() / 2, -200),
+        new FallingObstacle(Math.random() * 1400, -400, 50, 50, false, Math.random() / 2, -200),
+        new FallingObstacle(Math.random() * 1400, -400, 50, 50, false, Math.random() / 2, -200)
     };
 
     public void level3(Graphics g) {
