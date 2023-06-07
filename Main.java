@@ -11,6 +11,8 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
     SplashScreen s = new SplashScreen();
     MainMenu m = new MainMenu();
 
+    public Font font;
+
 
     int width = 1400;
     int height = 700;
@@ -34,6 +36,8 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         frame.setSize(width, height);
         frame.setResizable(false);
         frame.setVisible(true);
+
+        
     }
 
     public void mouseDragged(MouseEvent e) {
