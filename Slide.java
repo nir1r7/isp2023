@@ -32,8 +32,7 @@ public class Slide {
     }
 
     public void display(Graphics g){
-        Font f1 = new Font("Serif", Font.PLAIN, 22);
-        g.setFont(f1);
+        g.setFont(Main.font);
 
         int y = 535;
         int x = 300;
@@ -45,7 +44,7 @@ public class Slide {
         int index = 0;
 
         g.setColor(Color.WHITE);
-        g.fillRect(0, 500, 1400, 250);
+        g.fillRoundRect(0, 500, 1400, 250, 10, 10);
 
         g.setColor(Color.BLACK);
 

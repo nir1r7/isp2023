@@ -18,8 +18,8 @@ public class Button{
     }
 
     public void display(Graphics g){
-
-        g.setColor(Color.BLACK);
+        g.setColor(Color.WHITE);
+        g.fillRoundRect(x, y, w, h, 10, 10);
 
         x += 10;
         y += 35;
@@ -30,6 +30,8 @@ public class Button{
         int charCount = 0;
         int index = 0;
 
+        g.setColor(Color.BLACK);
+        g.setFont(Main.font);
         for (int i = 0; i < words.length; i++){
             if (charCount + words[i].length() > w/10){
 
@@ -61,8 +63,6 @@ public class Button{
 
         x -= 10;
         y -= (index + 1)*35;
-
-        g.drawRect(x, y, w, h);
     }
 
     public boolean isClicked(int xCoord, int yCoord){
