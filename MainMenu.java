@@ -1,4 +1,7 @@
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import javax.imageio.ImageIO;
 
 public class MainMenu {
     boolean l2 = true;
@@ -9,15 +12,17 @@ public class MainMenu {
     CenteredButton level3Button;
 
     public void mainMenu(Graphics g) {
-        Font f1 = new Font("Serif", Font.BOLD, 45);
-        g.setFont(f1);
-        g.setColor(Color.BLACK);
+        try {
+            BufferedImage bg = ImageIO.read(new File("./static/img/mainbackground.png"));
+            g.drawImage(bg, 0, 0, 1400, 700, null);
+            Font larger = Font.createFont(Font.TRUETYPE_FONT, new File("./static/fonts/font.otf")).deriveFont(50f);
+            g.setFont(larger);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+        g.setColor(Color.WHITE);
 
         g.drawString("Main Menu", 555, 120);
-
-        Font f2 = new Font("Serif", Font.PLAIN, 30);
-        g.setFont(f2);
-        g.setColor(Color.BLACK);
 
         level1Button = new CenteredButton("Level 1", 512, 200, 300, 50);
         level2Button = new CenteredButton("Level 2", 512, 280, 300, 50);

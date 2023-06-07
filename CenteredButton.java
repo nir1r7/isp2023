@@ -10,7 +10,7 @@ public class CenteredButton extends Button {
         g.setColor(Color.WHITE);
         g.fillRoundRect(x, y, w, h, 10, 10);
 
-        x += 10;
+        //x += 10;
         y += 35;
 
         String[] words = txt.split(" ");
