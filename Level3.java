@@ -5,7 +5,9 @@ import javax.imageio.ImageIO;
 import java.util.*;
 
 public class Level3 {
+    private int slideNum = 0;
     BufferedImage bg;
+    int goal = 20;
     int good = 8;
     int bad = 60;
 
@@ -16,17 +18,16 @@ public class Level3 {
     ArrayList<Obstacle> obstacles = new ArrayList<>();
 
     public void level3(Graphics g) {
-        g.drawImage(bg, 0, 0, 1400, 700, null);
-        g.drawString("Score: " + score, 1000, 200);
-        g.drawString("Health: " + health, 1000, 300);
-        p.display(g);
-        for (Obstacle o : obstacles) {
-            o.display(g);
-            if (p.collided(o) != 0) {
-                if (p.collided(o) > 0) score++;
-                else health--;
-                o.setY((Math.random() * 200 + 200) * -1);
-            }
+        switch(slideNum) {
+            case 0:
+                game(g);
+                break;
+            case 1:
+                victory(g);
+                break;
+            case 2:
+                defeat(g);
+                break;
         }
     }
 
@@ -84,11 +85,28 @@ public class Level3 {
         }
     }
 
+    public void game(Graphics g) {
+        g.drawImage(bg, 0, 0, 1400, 700, null);
+        g.drawString("Score: " + score, 1000, 200);
+        g.drawString("Health: " + health, 1000, 300);
+        p.display(g);
+        for (Obstacle o : obstacles) {
+            o.display(g);
+            if (p.collided(o) != 0) {
+                if (p.collided(o) > 0) score++;
+                else health--;
+                o.setY((Math.random() * 200 + 200) * -1);
+            }
+        }
+        if (score == goal) slideNum = 1;
+        if (health == 0) slideNum = 2;
+    }
+
     public void victory(Graphics g) {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
 
-        Slide s = new Slide(1, "Defeat...");
+        Slide s = new Slide(1, "Victory!");
         s.display(g);
     } 
 

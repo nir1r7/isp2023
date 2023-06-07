@@ -6,7 +6,7 @@ import java.io.File;
 import javax.imageio.ImageIO;
 
 public class Level1 extends MouseAdapter {
-    int slideNum;
+    private int slideNum;
     int width = 1400;
     int height = 700;
 
