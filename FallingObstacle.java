@@ -17,7 +17,6 @@ public class FallingObstacle extends Obstacle {
         if (this.y >= 700) {
             this.x = Math.random() * 1400;
             this.y = -200 + (rand - (Math.random() * 2 * rand));
-            System.out.println(-200 + (rand - (Math.random() * 2 * rand)));
         }
     }
 
