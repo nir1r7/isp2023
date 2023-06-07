@@ -18,12 +18,12 @@ public class Level3 {
         g.drawString("Score: " + score, 1000, 200);
         g.drawString("Health: " + health, 1000, 300);
         p.display(g);
-        for (int i = obstacles.size() - 1; i >= 0; i--) {
-            obstacles.get(i).display(g);
-            if (p.collided(obstacles.get(i)) != 0) {
-                if (p.collided(obstacles.get(i)) > 0) score++;
+        for (Obstacle o : obstacles) {
+            o.display(g);
+            if (p.collided(o) != 0) {
+                if (p.collided(o) > 0) score++;
                 else health--;
-                obstacles.remove(i);
+                o.setY((Math.random() * 200 + 200) * -1);
             }
         }
     }

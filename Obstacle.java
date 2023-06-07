@@ -47,7 +47,11 @@ public class Obstacle{
         return h;
     }
 
-    public void setX(int n){
+    public void setX(double n){
         x = n;
+    }
+
+    public void setY(double n) {
+        y = n;
     }
 }
