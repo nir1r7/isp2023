@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Level3 {
     int good = 8;
-    int bad = 40;
+    int bad = 60;
 
     int score = 0;
     int health = 3;
@@ -79,6 +79,22 @@ public class Level3 {
         } catch (Exception e) {
             // TODO: handle exception
         }
+    }
+
+    public void victory(Graphics g) {
+        Font f1 = new Font("Serif", Font.PLAIN, 25);
+        g.setFont(f1);
+
+        Slide s = new Slide(1, "Defeat...");
+        s.display(g);
+    } 
+
+    public void defeat(Graphics g) {
+        Font f1 = new Font("Serif", Font.PLAIN, 25);
+        g.setFont(f1);
+
+        Slide s = new Slide(-1, "Defeat...");
+        s.display(g);
     }
 
     public int getScore() {
