@@ -43,9 +43,22 @@ public class Level2 extends KeyAdapter {
         walls.add(new Wall(1150, 0, 25, 200));
         walls.add(new Wall(75, 275, 600, 25));
         walls.add(new Wall(750, 275, 25, 100));
-        walls.add(new Wall(450, 375, 325, 25));
+        walls.add(new Wall(500, 375, 275, 25));
         walls.add(new Wall(1262, 75, 25,225)); // INBETWEEN 25, @ 12
         walls.add(new Wall(850, 275, 412, 25)); // INBETWEEN 25, @ 12
+        walls.add(new Wall(850, 275, 25, 300));
+        walls.add(new Wall(950, 375, 450, 25));
+        walls.add(new Wall(1262, 375, 25, 200)); // INBETWEEN 25, @ 12
+        walls.add(new Wall(950, 500, 25, 175));
+        walls.add(new Wall(950, 475, 225, 25));
+        walls.add(new Wall(750, 475, 25, 200));
+        walls.add(new Wall(375, 450, 100, 25));
+        walls.add(new Wall(750, 275, 25, 100));
+        walls.add(new Wall(225, 375, 175, 25));
+        walls.add(new Wall(475, 375, 25, 200));
+        walls.add(new Wall(375, 400, 25, 75));
+        walls.add(new Wall(475, 550, 175, 25));
+        walls.add(new Wall(75, 550, 325, 25));
 
 
         for (int i = 0; i < walls.size(); i++){
