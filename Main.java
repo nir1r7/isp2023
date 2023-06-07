@@ -12,7 +12,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
     SplashScreen s = new SplashScreen();
     MainMenu m = new MainMenu();
 
-    public Font font;
+    static Font font;
 
 
     int width = 1400;
@@ -23,6 +23,11 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
     String name;
 
     public Main() {
+        try {
+            font = Font.createFont(Font.TRUETYPE_FONT, new File("./static/img/font.otf")).deriveFont(24f);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
         frame = new JFrame("Finals Frenzy");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -37,12 +42,6 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         frame.setSize(width, height);
         frame.setResizable(false);
         frame.setVisible(true);
-
-        try {
-            font = Font.createFont(Font.TRUETYPE_FONT, new File("./static/img/font.otf")).deriveFont(90f);
-        } catch (Exception e){
-
-        }
     }
 
     public void mouseDragged(MouseEvent e) {

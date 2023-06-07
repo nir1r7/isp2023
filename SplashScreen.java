@@ -1,26 +1,33 @@
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import javax.imageio.ImageIO;
 
 public class SplashScreen {
     CenteredButton cont;
 
     public void splashScreen(Graphics g) {
-        Font f1 = new Font("Serif", Font.PLAIN, 18);
-        g.setFont(f1);
-        g.setColor(Color.BLACK);
+        BufferedImage bg;
+        BufferedImage logo;
+        try {
+            bg = ImageIO.read(new File("./static/img/mainbackground.png"));
+            logo = ImageIO.read(new File("./static/img/logo.png"));
 
-        g.drawString("Elevens Labs presents:", 600, 180);
+            g.drawImage(bg, 0, 0, 1400, 700, null);
+            g.setFont(Main.font);
+            g.setColor(Color.WHITE);
+            g.drawString("Elevens Labs presents:", 540, 180);
 
-        Font f2 = new Font("Serif", Font.BOLD, 100);
-        g.setFont(f2);
-        g.setColor(Color.RED);
+            g.drawImage(logo, 75, 100, 1250, 500, null);
 
-        g.drawString("Finals Frenzy", 380, 300);
+            Font f3 = new Font("Serif", Font.PLAIN, 27);
+            g.setFont(f3);
+            g.setColor(Color.BLACK);
 
-        Font f3 = new Font("Serif", Font.PLAIN, 27);
-        g.setFont(f3);
-        g.setColor(Color.BLACK);
+            cont = new CenteredButton("Continue", 580, 500, 200, 50);
+            cont.display(g);
+        } catch (Exception e){
 
-        cont = new CenteredButton("Continue", 580, 500, 200, 50);
-        cont.display(g);
+        }
     }
 }

@@ -7,6 +7,9 @@ public class CenteredButton extends Button {
     }
 
     public void display(Graphics g) {
+        g.setColor(Color.WHITE);
+        g.fillRoundRect(x, y, w, h, 10, 10);
+
         x += 10;
         y += 35;
 
@@ -16,6 +19,8 @@ public class CenteredButton extends Button {
         int charCount = 0;
         int index = 0;
 
+        g.setColor(Color.BLACK);
+        g.setFont(Main.font);
         for (int i = 0; i < words.length; i++) {
             if (charCount + words[i].length() > w / 10) {
 
@@ -43,8 +48,7 @@ public class CenteredButton extends Button {
         g.drawString(whiteSpace + lines[index], x, y);
 
         x -= 10;
-        y -= (index + 1) * 35;
-        g.drawRect(x, y, w, h);
+        y -= (index + 1) * 35;   
     }
 
     public boolean isClicked(int xCoord, int yCoord) {
