@@ -5,8 +5,8 @@ import javax.imageio.ImageIO;
 import java.util.*;
 
 public class Level3 {
-    int good = 10;
-    int bad = 30;
+    int good = 8;
+    int bad = 40;
 
     int score = 0;
     int health = 3;
@@ -44,35 +44,35 @@ public class Level3 {
             for (int i = 0; i < bad; i++) {
                 switch(i % 5) {
                     case 0:
-                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 200) * -1, 25, 25, false, (Math.random() * 0.25 + 0.25), brawlstars));
+                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 600) * -1, 25, 25, false, (Math.random() * 0.25 + 0.5), brawlstars));
                         break;
                     case 1:
-                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 200) * -1, 25, 25, false, (Math.random() * 0.25 + 0.25), instagram));
+                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 600) * -1, 25, 25, false, (Math.random() * 0.25 + 0.5), instagram));
                         break;
                     case 2:
-                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 200) * -1, 25, 25, false, (Math.random() * 0.25 + 0.25), snapchat));
+                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 600) * -1, 25, 25, false, (Math.random() * 0.25 + 0.5), snapchat));
                         break;
                     case 3:
-                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 200) * -1, 25, 25, false, (Math.random() * 0.25 + 0.25), twitter));
+                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 600) * -1, 25, 25, false, (Math.random() * 0.25 + 0.5), twitter));
                         break;
                     case 4:
-                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 200) * -1, 25, 25, false, (Math.random() * 0.25 + 0.25), youtube));
+                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 600) * -1, 25, 25, false, (Math.random() * 0.25 + 0.5), youtube));
                         break;
                 }
             }
             for (int i = 0; i < good; i++) {
                 switch(i % 4) {
                     case 0:
-                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 200) * -1, 25, 25, true, (Math.random() * 0.25 + 0.25), github));
+                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 600) * -1, 25, 25, true, (Math.random() * 0.25 + 0.5), github));
                         break;
                     case 1:
-                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 200) * -1, 25, 25, true, (Math.random() * 0.25 + 0.25), googledocs));
+                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 600) * -1, 25, 25, true, (Math.random() * 0.25 + 0.5), googledocs));
                         break;
                     case 2:
-                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 200) * -1, 25, 25, true, (Math.random() * 0.25 + 0.25), googlesheets));
+                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 600) * -1, 25, 25, true, (Math.random() * 0.25 + 0.5), googlesheets));
                         break;
                     case 3:
-                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 200) * -1, 25, 25, true, (Math.random() * 0.25 + 0.25), googleslides));
+                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 600) * -1, 25, 25, true, (Math.random() * 0.25 + 0.5), googleslides));
                         break;
                 }
             }
