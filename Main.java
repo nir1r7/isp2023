@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.io.File;
 
 public class Main implements MouseListener, MouseMotionListener, KeyListener {
     JFrame frame;
@@ -37,7 +38,11 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         frame.setResizable(false);
         frame.setVisible(true);
 
-        
+        try {
+            font = Font.createFont(Font.TRUETYPE_FONT, new File("./static/img/font.otf")).deriveFont(90f);
+        } catch (Exception e){
+
+        }
     }
 
     public void mouseDragged(MouseEvent e) {
