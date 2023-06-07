@@ -5,6 +5,7 @@ import javax.imageio.ImageIO;
 import java.util.*;
 
 public class Level3 {
+    BufferedImage bg;
     int good = 8;
     int bad = 60;
 
@@ -15,6 +16,7 @@ public class Level3 {
     ArrayList<Obstacle> obstacles = new ArrayList<>();
 
     public void level3(Graphics g) {
+        g.drawImage(bg, 0, 0, 1400, 700, null);
         g.drawString("Score: " + score, 1000, 200);
         g.drawString("Health: " + health, 1000, 300);
         p.display(g);
@@ -30,6 +32,7 @@ public class Level3 {
 
     public void load() {
         try {
+            bg = ImageIO.read(new File("./static/img/phonebackground.png"));
             BufferedImage brawlstars = ImageIO.read(new File("./static/img/brawlstars.png"));
             BufferedImage instagram = ImageIO.read(new File("./static/img/instagram.png"));
             BufferedImage snapchat = ImageIO.read(new File("./static/img/snapchat.png"));
