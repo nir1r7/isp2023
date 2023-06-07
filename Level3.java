@@ -5,6 +5,8 @@ import javax.imageio.ImageIO;
 import java.util.*;
 
 public class Level3 {
+    int good = 10;
+    int bad = 30;
 
     int score = 0;
     int health = 3;
@@ -28,8 +30,52 @@ public class Level3 {
 
     public void load() {
         try {
-            BufferedImage brawlStars = ImageIO.read(new File("./static/img/brawlstars.png"));
-            obstacles.add(new FallingObstacle(Math.random() * 1400, -200, 25, 25, false, Math.random()/4 + 0.25, brawlStars));
+            BufferedImage brawlstars = ImageIO.read(new File("./static/img/brawlstars.png"));
+            BufferedImage instagram = ImageIO.read(new File("./static/img/instagram.png"));
+            BufferedImage snapchat = ImageIO.read(new File("./static/img/snapchat.png"));
+            BufferedImage twitter = ImageIO.read(new File("./static/img/twitter.png"));
+            BufferedImage youtube = ImageIO.read(new File("./static/img/youtube.png"));
+
+            BufferedImage github = ImageIO.read(new File("./static/img/github.png"));
+            BufferedImage googledocs = ImageIO.read(new File("./static/img/googledocs.png"));
+            BufferedImage googlesheets = ImageIO.read(new File("./static/img/googlesheets.png"));
+            BufferedImage googleslides = ImageIO.read(new File("./static/img/googleslides.png"));
+
+            for (int i = 0; i < bad; i++) {
+                switch(i % 5) {
+                    case 0:
+                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 200) * -1, 25, 25, false, (Math.random() * 0.25 + 0.25), brawlstars));
+                        break;
+                    case 1:
+                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 200) * -1, 25, 25, false, (Math.random() * 0.25 + 0.25), instagram));
+                        break;
+                    case 2:
+                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 200) * -1, 25, 25, false, (Math.random() * 0.25 + 0.25), snapchat));
+                        break;
+                    case 3:
+                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 200) * -1, 25, 25, false, (Math.random() * 0.25 + 0.25), twitter));
+                        break;
+                    case 4:
+                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 200) * -1, 25, 25, false, (Math.random() * 0.25 + 0.25), youtube));
+                        break;
+                }
+            }
+            for (int i = 0; i < good; i++) {
+                switch(i % 4) {
+                    case 0:
+                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 200) * -1, 25, 25, true, (Math.random() * 0.25 + 0.25), github));
+                        break;
+                    case 1:
+                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 200) * -1, 25, 25, true, (Math.random() * 0.25 + 0.25), googledocs));
+                        break;
+                    case 2:
+                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 200) * -1, 25, 25, true, (Math.random() * 0.25 + 0.25), googlesheets));
+                        break;
+                    case 3:
+                        obstacles.add(new FallingObstacle(Math.random() * 1400, (Math.random() * 200 + 200) * -1, 25, 25, true, (Math.random() * 0.25 + 0.25), googleslides));
+                        break;
+                }
+            }
         } catch (Exception e) {
             // TODO: handle exception
         }
