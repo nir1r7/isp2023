@@ -13,39 +13,20 @@ public class Level2 extends KeyAdapter {
 
     int x = 700;
     int y = 350;
-    int score = 0;
+    private int slideNum = 0;
 
     public void level2(Graphics g) {
-        for (Wall w : walls){
-            w.display(g);
-            if (p.collided(w) != 0) {
-                switch (p.collided(w)){
-                    case 1:
-                        p.updateX(-1);
-                        break;
-                    case 2:
-                        p.updateY(-1);
-                        break;
-                    case 3:
-                        p.updateX(1);
-                        break;
-                    case 4:
-                        p.updateY(1);
-                        break;
-                }
-            }
+        switch(slideNum) {
+            case 0:
+                slide0(g);
+                break;
+            case 1:
+                slide1(g);
+                break;
+            case 2:
+                maze(g);
+                break;
         }
-        int temp = -1;
-        for (int i = 0; i < obstacles.size(); i++){
-            obstacles.get(i).display(g);
-            if (p.collided(obstacles.get(i)) != 0){
-                temp = i;
-            }
-        }
-        if (temp != -1 ) obstacles.get(temp).message(g, temp);
-
-        g.setColor(Color.BLACK);
-        p.display(g);
     }
 
     public void load(){
@@ -123,7 +104,36 @@ public class Level2 extends KeyAdapter {
     }
 
     public void maze(Graphics g) {
-        
+        for (Wall w : walls){
+            w.display(g);
+            if (p.collided(w) != 0) {
+                switch (p.collided(w)){
+                    case 1:
+                        p.updateX(-1);
+                        break;
+                    case 2:
+                        p.updateY(-1);
+                        break;
+                    case 3:
+                        p.updateX(1);
+                        break;
+                    case 4:
+                        p.updateY(1);
+                        break;
+                }
+            }
+        }
+        int temp = -1;
+        for (int i = 0; i < obstacles.size(); i++){
+            obstacles.get(i).display(g);
+            if (p.collided(obstacles.get(i)) != 0){
+                temp = i;
+            }
+        }
+        if (temp != -1 ) obstacles.get(temp).message(g, temp);
+
+        g.setColor(Color.BLACK);
+        p.display(g);
     }
 
     public void setLeft(boolean left) {
@@ -141,5 +151,12 @@ public class Level2 extends KeyAdapter {
     public void setDown(boolean down) {
         p.down = down;
     }
+    
+    public void setSlide(int n) {
+        slideNum = n;
+    }
 
+    public int getSlideNum() {
+        return slideNum;
+    }
 }

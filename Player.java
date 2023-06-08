@@ -65,13 +65,6 @@ public class Player {
         return 0;
     }
 
-    public boolean isTouching(Obstacle o){
-        if (x + w >= o.getX() && x <= o.getX() + o.getW() && y + h >= o.getY() && y <= o.getY() + o.getH()){
-            return true;
-        }
-        return false;
-    }
-
     public void updateX(double dx) {
         if (this.x + w + dx <= 1400 && this.x + dx >= 0) {
             this.x += dx;

@@ -115,8 +115,18 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                     l1.setSlide(0);
             }            
         } else if (state == 4){
-            state = 2;
-            m.l3 = true;
+            System.out.println(l2.getSlideNum());
+            switch(l2.getSlideNum()) {
+                case 0:
+                    l2.setSlide(1);
+                    break;
+                case 1:
+                    l2.setSlide(2);
+                    break;
+                case 2:
+                    state = 2;
+                    m.l3 = true;
+            }
         } else if (state == 5){
             switch(l3.getSlideNum()) {
                 case 0:
