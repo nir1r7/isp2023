@@ -57,7 +57,7 @@ public class Level2 extends KeyAdapter {
         walls.add(new Wall(225, 375, 175, 25));
         walls.add(new Wall(475, 375, 25, 200));
         walls.add(new Wall(375, 400, 25, 75));
-        walls.add(new Wall(475, 550, 175, 25));
+        walls.add(new Wall(500, 550, 150, 25));
         walls.add(new Wall(75, 550, 325, 25));
     }
 

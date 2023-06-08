@@ -124,6 +124,8 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
             }
         }
         draw.repaint();
+
+        // System.out.println(e.getX() + " " + e.getY());
     }
 
     public void mousePressed(MouseEvent e) {
