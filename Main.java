@@ -124,10 +124,17 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                 case 3:
                     state = 2;
                     l3.setSlide(0);
-                    l3.setHealth(3);
-                    l3.setScore(0);
                     break;
                 case 4:
+                    if (l3.y.isClicked(x, y)) {
+                        l3.load();
+                        l3.setSlide(2);
+                    }
+                    if (l3.n.isClicked(x, y)) {
+                        state = 2;
+                        l3.setSlide(0);
+                    }
+                    break;
 
             }
         }

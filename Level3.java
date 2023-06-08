@@ -43,6 +43,8 @@ public class Level3 {
     }
 
     public void load() {
+        health = 3;
+        score = 0;
         obstacles.clear();
         try {
             bg = ImageIO.read(new File("./static/img/phonebackground.png"));
@@ -143,8 +145,8 @@ public class Level3 {
 
         Slide s = new Slide(bg, -1, "Unfortunately, you fell down a rabbit hole of distractions and forgot to study. Do you want to try again?");
         s.display(g);
-        y = new Button("Yes!", 950, 200, 300, 50);
-        n = new Button("Not really...", 950, 350, 300, 50);
+        y = new Button("Yes", 950, 200, 300, 50);
+        n = new Button("No", 950, 350, 300, 50);
         y.display(g);
         n.display(g);
     }
