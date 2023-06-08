@@ -59,6 +59,9 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         if (state == 0 && s.cont.isClicked(x, y)) {
             state = 2;
         } else if (state == 2) {
+            if (x >= 25 && x <= 129 && y >= 25 && y <= 89) {
+                state = 0;
+            }
             if (m.level1Button.isClicked(x, y)){
                 state = 3;
             }
@@ -140,7 +143,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         }
         draw.repaint();
 
-        // System.out.println(e.getX() + " " + e.getY());
+        System.out.println(e.getX() + " " + e.getY());
     }
 
     public void mousePressed(MouseEvent e) {

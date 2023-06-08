@@ -17,7 +17,7 @@ public class SplashScreen {
             g.drawImage(bg, 0, 0, 1400, 700, null);
             g.setFont(font);
             g.setColor(Color.WHITE);
-            g.drawString("Elevens Labs presents:", 540, 180);
+            g.drawString("Elevens Labs presents:", 580, 180);
 
             g.drawImage(logo, 75, 100, 1250, 500, null);
 
@@ -25,7 +25,7 @@ public class SplashScreen {
             g.setFont(f3);
             g.setColor(Color.BLACK);
 
-            cont = new CenteredButton("Continue", 580, 500, 200, 50);
+            cont = new CenteredButton("Continue", 600, 500, 200, 50);
             cont.display(g);
         } catch (Exception e){
 

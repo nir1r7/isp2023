@@ -24,7 +24,7 @@ public class MainMenu {
         }
         g.setColor(Color.WHITE);
 
-        g.drawString("Main Menu", 555, 120);
+        g.drawString("Main Menu", 590, 120);
 
         level1Button = new CenteredButton("Level 1", 550, 200, 300, 50);
         level2Button = new CenteredButton("Level 2", 550, 280, 300, 50);
