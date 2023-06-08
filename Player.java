@@ -32,10 +32,10 @@ public class Player {
             g.fillRect((int)x, (int)y, w, h);
         }
 
-        if (left) updateX(-4);
-        if (right) updateX(4);
-        if (up) updateY(-4);
-        if (down) updateY(4);
+        if (left) updateX(-1);
+        if (right) updateX(1);
+        if (up) updateY(-1);
+        if (down) updateY(1);
     }
 
     public int collided(Obstacle o){
