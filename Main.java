@@ -20,7 +20,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
 
     int state = 0;
 
-    String name;
+    static String name = null;
 
     public Main() {
         try {
@@ -57,7 +57,8 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         int y = e.getY();
 
         if (state == 0 && s.cont.isClicked(x, y)) {
-            state = 2;
+            if (name != null) state = 2;
+            else state = 1;
         } else if (state == 2) {
             if (x >= 25 && x <= 129 && y >= 25 && y <= 89) {
                 state = 0;

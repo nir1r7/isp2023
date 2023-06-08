@@ -15,7 +15,6 @@ public class Level2 extends KeyAdapter {
     int y = 350;
     int score = 0;
 
-    //test
     public void level2(Graphics g) {
         for (Wall w : walls){
             w.display(g);
@@ -39,7 +38,7 @@ public class Level2 extends KeyAdapter {
         int temp = -1;
         for (int i = 0; i < obstacles.size(); i++){
             obstacles.get(i).display(g);
-            if (p.isTouching(obstacles.get(i))){
+            if (p.collided(obstacles.get(i)) != 0){
                 temp = i;
             }
         }
