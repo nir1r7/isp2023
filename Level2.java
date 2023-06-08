@@ -11,10 +11,12 @@ public class Level2 extends KeyAdapter {
     int y = 350;
     int score = 0;
 
+    //test
     public void level2(Graphics g) {
         g.drawString("This is level 2, click again to go to level 3", 200, 250);
         p.display(g);
         for (Wall w : walls){
+            w.display(g);
             if (p.collided(w) != 0) {
                 switch (p.collided(w)){
                     case 1:
@@ -31,7 +33,6 @@ public class Level2 extends KeyAdapter {
                         break;
                 }
             }
-            w.display(g);
         }
     }
 
