@@ -18,6 +18,9 @@ public class Level3 {
     
     
     ArrayList<Obstacle> obstacles = new ArrayList<>();
+    
+    Button y;
+    Button n;
 
     public void level3(Graphics g) {
         switch(slideNum) {
@@ -40,6 +43,7 @@ public class Level3 {
     }
 
     public void load() {
+        obstacles.clear();
         try {
             bg = ImageIO.read(new File("./static/img/phonebackground.png"));
             BufferedImage brawlstars = ImageIO.read(new File("./static/img/brawlstars.png"));
@@ -129,7 +133,7 @@ public class Level3 {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
 
-        Slide s = new Slide(1, "Great job! You managed to stay focued and had a lot of success in this stressful time. Congratulations on the great work!");
+        Slide s = new Slide(bg, 1, "Great job! You managed to stay focued and had a lot of success in this stressful time. Congratulations on the great work!");
         s.display(g);
     } 
 
@@ -137,16 +141,20 @@ public class Level3 {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
 
-        Slide s = new Slide(bg, -1, "Unfortunately, you fell down a rabbit hole of distractions and forgot to study. Do you want to try that again?");
+        Slide s = new Slide(bg, -1, "Unfortunately, you fell down a rabbit hole of distractions and forgot to study. Do you want to try again?");
         s.display(g);
+        y = new Button("Yes!", 950, 200, 300, 50);
+        n = new Button("Not really...", 950, 350, 300, 50);
+        y.display(g);
+        n.display(g);
     }
 
-    public int getScore() {
-        return score;
+    public void setScore(int n) {
+        score = n;
     }
 
-    public int getHealth() {
-        return health;
+    public void setHealth(int n) {
+        health = n;
     }
 
     public void setLeft(boolean left) {
