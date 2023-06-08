@@ -29,7 +29,7 @@ public class Level1 extends MouseAdapter {
 
         try {
             BufferedImage bg = ImageIO.read(new File("./static/img/mainbackground.png"));
-            Slide s = new Slide(bg, 0, "Hello " + Main.name + ", my name is Pixel! I will be helping over the coming weeks to make sure you succeed on your exams! First things first, have you been using your time efficiently?", true);
+            Slide s = new Slide(bg, 0, "Hello " + Main.name + ", my name is Pixel! I will be helping over the coming weeks to make sure you succeed on your exams! First things first, have you been using your time efficiently? Click the answer on the right side of the screen.", true);
             s.display(g);
         } catch (Exception e) {
             // TODO: handle exception
