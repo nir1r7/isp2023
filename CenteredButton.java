@@ -41,7 +41,7 @@ public class CenteredButton extends Button {
             charCount += words[i].length() + 1;
         }
         String whiteSpace = "";
-        for (int j = 0; j < (w / 10 - charCount) / 2 + 1; j++) {
+        for (int j = 0; j < (w / 10 - charCount) / 2; j++) {
             whiteSpace += ' ';
         }
 
