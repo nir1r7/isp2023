@@ -1,13 +1,12 @@
 import java.awt.*;
 import java.awt.event.KeyAdapter;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
 public class Level2 extends KeyAdapter {
-    Player p = new Player(600, 300);
+    Player p;
 
     ArrayList<Wall> walls = new ArrayList<Wall>();
     ArrayList<Obstacle> obstacles = new ArrayList<Obstacle>();
@@ -51,6 +50,7 @@ public class Level2 extends KeyAdapter {
     }
 
     public void load(){
+        p = new Player(600, 300);
         obstacles.clear();
         walls.clear();
 

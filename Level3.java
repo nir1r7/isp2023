@@ -45,6 +45,8 @@ public class Level3 {
     public void load() {
         health = 3;
         score = 0;
+        score = 0;
+        health = 3;
         obstacles.clear();
         try {
             bg = ImageIO.read(new File("./static/img/phonebackground.png"));
@@ -124,6 +126,7 @@ public class Level3 {
             if (p.collided(o) != 0) {
                 if (p.collided(o) > 0) score++;
                 else health--;
+                o.setX(Math.random() * 1400);
                 o.setY((Math.random() * 200 + 200) * -1);
             }
         }
