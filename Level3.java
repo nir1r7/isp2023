@@ -103,12 +103,12 @@ public class Level3 {
     }
 
     public void slide0(Graphics g) {
-        Slide s = new Slide(bg, 0, "Exam season is coming up and you are on your computer, trying to focus. Can you stay focused and avoid all of the distractions focus on your assignments?");
+        Slide s = new Slide(bg, 0, "Exam season is coming up and you are on your computer, trying to focus. Can you stay focused and avoid all of the distractions focus on your assignments?", false);
         s.display(g);
     }
 
     public void slide1(Graphics g) {
-        Slide s = new Slide(bg, 0, "Control your mouse pointer by using your arrow keys to move around the screen. Collect study and assignment related apps to earn points, while avoiding distractions. Score 20 points to win without losing all of your health!");
+        Slide s = new Slide(bg, 0, "Control your mouse pointer by using your arrow keys to move around the screen. Collect study and assignment related apps to earn points, while avoiding distractions. Score 20 points to win without losing all of your health!", false);
         s.display(g);
     }
 
@@ -135,7 +135,7 @@ public class Level3 {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
 
-        Slide s = new Slide(bg, 1, "Great job! You managed to stay focued and had a lot of success in this stressful time. Congratulations on the great work!");
+        Slide s = new Slide(bg, 1, "Great job! You managed to stay focued and had a lot of success in this stressful time. Congratulations on the great work!", false);
         s.display(g);
     } 
 
@@ -143,7 +143,7 @@ public class Level3 {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
 
-        Slide s = new Slide(bg, -1, "Unfortunately, you fell down a rabbit hole of distractions and forgot to study. Do you want to try again?");
+        Slide s = new Slide(bg, -1, "Unfortunately, you fell down a rabbit hole of distractions and forgot to study. Do you want to try again?", true);
         s.display(g);
         y = new Button("Yes", 950, 200, 300, 50);
         n = new Button("No", 950, 350, 300, 50);

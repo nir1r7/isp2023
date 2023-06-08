@@ -29,7 +29,7 @@ public class Level1 extends MouseAdapter {
 
         try {
             BufferedImage bg = ImageIO.read(new File("./static/img/mainbackground.png"));
-            Slide s = new Slide(bg, 0, "Hello player, my name is Pixel! I will be helping over the coming weeks to make sure you succeed on your exams! First things first, have you been using your time efficiently?");
+            Slide s = new Slide(bg, 0, "Hello player, my name is Pixel! I will be helping over the coming weeks to make sure you succeed on your exams! First things first, have you been using your time efficiently?", true);
             s.display(g);
         } catch (Exception e) {
             // TODO: handle exception
@@ -51,7 +51,7 @@ public class Level1 extends MouseAdapter {
         try{
             BufferedImage bg = ImageIO.read(new File("./static/img/defaultDesk.png"));
 
-            Slide s = new Slide(bg, 0, "One of the most important things that people ignore when studying is the study environment. Having a clean and organised study environment can improve your focus. Minimizing any distractions can help you use your study time more efficiently. How does your study environment look like?");
+            Slide s = new Slide(bg, 0, "One of the most important things that people ignore when studying is the study environment. Having a clean and organised study environment can improve your focus. Minimizing any distractions can help you use your study time more efficiently. How does your study environment look like?", true);
             s.display(g);
         } catch (Exception e){
             Slide s = new Slide(0, "One of the most important things that people ignore when studying is the study environment. Having a clean and organised study environment can improve your focus. Minimizing any distractions can help you use your study time more efficiently. How does your study environment look like?");
@@ -74,7 +74,7 @@ public class Level1 extends MouseAdapter {
         try{
             BufferedImage bg = ImageIO.read(new File("./static/img/defaultSchedule.png"));
 
-            Slide s = new Slide(bg, 0, "Another important study tip to get ready for you exams is to study on a schedule. Studying at the same time every day helps build a habit of studying faster. By sticking to a schedule, studying will become easier, almost like second nature. Do you currently have a study schedule?");
+            Slide s = new Slide(bg, 0, "Another important study tip to get ready for you exams is to study on a schedule. Studying at the same time every day helps build a habit of studying faster. By sticking to a schedule, studying will become easier, almost like second nature. Do you currently have a study schedule?", true);
             s.display(g);
         } catch (Exception e){
             Slide s = new Slide(0, "Another important study tip to get ready for you exams is to study on a schedule. Studying at the same time every day helps build a habit of studying faster. By sticking to a schedule, studying will become easier, almost like second nature. Do you currently have a study schedule?");
@@ -94,7 +94,7 @@ public class Level1 extends MouseAdapter {
         try{
             BufferedImage bg = ImageIO.read(new File("./static/img/goodTimeManagement.png"));
             
-            Slide s = new Slide(bg, 1, "That’s great! Keep up the good work. Make sure you always start your work early, not leaving things to the last minute. This ensures that you have time to finish all assignments and projects, as well as study for exams.");
+            Slide s = new Slide(bg, 1, "That’s great! Keep up the good work. Make sure you always start your work early, not leaving things to the last minute. This ensures that you have time to finish all assignments and projects, as well as study for exams.", false);
             s.display(g);
         } catch (Exception e){
             Slide s = new Slide(1, "That’s great! Keep up the good work. Make sure you always start your work early, not leaving things to the last minute. This ensures that you have time to finish all assignments and projects, as well as study for exams.");
@@ -106,7 +106,7 @@ public class Level1 extends MouseAdapter {
         try{
             BufferedImage bg = ImageIO.read(new File("./static/img/badTimeManagement.png"));
 
-            Slide s = new Slide(bg, -1, "It is important to use your time wisely to make sure that everything that needs to be done is completed. Make sure to give yourself enough time to finish all assignments and projects, as well as study for exams. Trust me, I know this sucks for a lot of people. Push through! You can do it!");
+            Slide s = new Slide(bg, -1, "It is important to use your time wisely to make sure that everything that needs to be done is completed. Make sure to give yourself enough time to finish all assignments and projects, as well as study for exams. Trust me, I know this sucks for a lot of people. Push through! You can do it!", false);
             s.display(g);
         } catch (Exception e){
             Slide s = new Slide(-1, "It is important to use your time wisely to make sure that everything that needs to be done is completed. Make sure to give yourself enough time to finish all assignments and projects, as well as study for exams. Trust me, I know this sucks for a lot of people. Push through! You can do it!");
@@ -118,7 +118,7 @@ public class Level1 extends MouseAdapter {
         try{
             BufferedImage bg = ImageIO.read(new File("./static/img/organizedDesk.png"));
 
-            Slide s = new Slide(bg, 1, "That’s great to hear! You’re already on track to doing spectacularly on your exams!");
+            Slide s = new Slide(bg, 1, "That’s great to hear! You’re already on track to doing spectacularly on your exams!", false);
             s.display(g);
         } catch (Exception e){
             Slide s = new Slide(1, "That’s great to hear! You’re already on track to doing spectacularly on your exams!");
@@ -130,7 +130,7 @@ public class Level1 extends MouseAdapter {
         try{
             BufferedImage bg = ImageIO.read(new File("./static/img/unorganizedDesk.png"));
 
-            Slide s = new Slide(bg, -1, "That’s alright. While the task may seem daunting, organising your study environment is something that you only need to do once! Just take some time out of your day to clean up the space around you. You only need to do this once!");
+            Slide s = new Slide(bg, -1, "That’s alright. While the task may seem daunting, organising your study environment is something that you only need to do once! Just take some time out of your day to clean up the space around you. You only need to do this once!", false);
             s.display(g);
         } catch (Exception e){
             Slide s = new Slide(-1, "That’s alright. While the task may seem daunting, organising your study environment is something that you only need to do once! Just take some time out of your day to clean up the space around you. You only need to do this once!");
@@ -142,7 +142,7 @@ public class Level1 extends MouseAdapter {
         try{
             BufferedImage bg = ImageIO.read(new File("./static/img/successfulSchedule.png"));
 
-            Slide s = new Slide(bg, 1, "That’s great! Having a consistent study schedule makes it a lot easier to study effectively. Make sure to try not to miss too many days at once, as missing many days can break the schedule.");
+            Slide s = new Slide(bg, 1, "That’s great! Having a consistent study schedule makes it a lot easier to study effectively. Make sure to try not to miss too many days at once, as missing many days can break the schedule.", false);
             s.display(g);
         } catch (Exception e){
             Slide s = new Slide(1, "That’s great! Having a consistent study schedule makes it a lot easier to study effectively. Make sure to try not to miss too many days at once, as missing many days can break the schedule.");
@@ -154,7 +154,7 @@ public class Level1 extends MouseAdapter {
         try{
             BufferedImage bg = ImageIO.read(new File("./static/img/unsuccessfulSchedule.png"));
 
-            Slide s = new Slide(bg, -1, "Sticking to a schedule is very important to create good study habits. Sticking to a schedule will prevent situations where you are cramming last minute. While cramming may sometimes seem to work, you can be more prone to making mistakes on the test day.");
+            Slide s = new Slide(bg, -1, "Sticking to a schedule is very important to create good study habits. Sticking to a schedule will prevent situations where you are cramming last minute. While cramming may sometimes seem to work, you can be more prone to making mistakes on the test day.", false);
             s.display(g);
         } catch (Exception e){
             Slide s = new Slide(-1, "Sticking to a schedule is very important to create good study habits. Sticking to a schedule will prevent situations where you are cramming last minute. While cramming may sometimes seem to work, you can be more prone to making mistakes on the test day.");

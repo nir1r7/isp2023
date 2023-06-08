@@ -10,14 +10,17 @@ public class Slide {
     BufferedImage bg;
     boolean hasbg = false;
 
-    public Slide (BufferedImage background, int n, String text){
+    boolean button;
+
+    public Slide (BufferedImage background, int n, String text, boolean b){
         txt = text;
         emote = n;
         bg = background;
         hasbg = true;
+        button = b;
     }
 
-    public Slide( int n, String text){
+    public Slide(int n, String text){
         txt = text;
         emote = n;
     }
@@ -84,7 +87,12 @@ public class Slide {
             g.drawImage(bot, 50, 380, 190, 210, null);
             g.drawImage(logo, 1270, 20, 100, 100, null);
 
+            if (!button) {
+                g.setFont(Font.createFont(Font.TRUETYPE_FONT, new File("./static/fonts/font.otf")).deriveFont(14f));
+                g.drawString("Click to continue...", 625, 650);
+            }
         } catch (Exception e) {}
+    
 
     }
 }
