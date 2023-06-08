@@ -72,7 +72,7 @@ public class Player {
     }
 
     public void updateY(double dy) {
-        if (this.y + h + dy <= 700 && this.y + dy >= 0) {
+        if (this.y + h + dy <= 665 && this.y + dy >= 0) {
             this.y += dy;
         }
     }
