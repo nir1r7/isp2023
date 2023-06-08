@@ -1,11 +1,16 @@
 import java.awt.*;
 import java.awt.event.KeyAdapter;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.ArrayList;
+
+import javax.imageio.ImageIO;
 
 public class Level2 extends KeyAdapter {
     Player p = new Player(600, 300);
 
     ArrayList<Wall> walls = new ArrayList<Wall>();
+    ArrayList<Obstacle> obstacles = new ArrayList<Obstacle>();
 
     int x = 700;
     int y = 350;
@@ -13,8 +18,6 @@ public class Level2 extends KeyAdapter {
 
     //test
     public void level2(Graphics g) {
-        g.drawString("This is level 2, click again to go to level 3", 200, 250);
-        p.display(g);
         for (Wall w : walls){
             w.display(g);
             if (p.collided(w) != 0) {
@@ -34,9 +37,57 @@ public class Level2 extends KeyAdapter {
                 }
             }
         }
+        int temp = -1;
+        for (int i = 0; i < obstacles.size(); i++){
+            obstacles.get(i).display(g);
+            if (p.isTouching(obstacles.get(i))){
+                temp = i;
+            }
+        }
+        if (temp != -1 ) obstacles.get(temp).message(g, temp);
+
+        g.setColor(Color.BLACK);
+        p.display(g);
     }
 
     public void load(){
+        obstacles.clear();
+        walls.clear();
+
+        Obstacle g1;
+        Obstacle g2;
+        Obstacle g3;
+
+        Obstacle b1;
+        Obstacle b2;
+        Obstacle b3;
+
+        try{
+            g1 = new Obstacle(117, 17, 40, 40, true, ImageIO.read(new File("./static/img/twitter.png")));
+            g2 = new Obstacle(517, 417, 40, 40, true, ImageIO.read(new File("./static/img/twitter.png")));
+            g3 = new Obstacle(993, 517, 40, 40, true, ImageIO.read(new File("./static/img/twitter.png")));
+
+            b1 = new Obstacle(117, 493, 40, 40, true, ImageIO.read(new File("./static/img/twitter.png")));
+            b2 = new Obstacle(1193, 17, 40, 40, true, ImageIO.read(new File("./static/img/twitter.png")));
+            b3 = new Obstacle(1303, 417, 40, 40, true, ImageIO.read(new File("./static/img/twitter.png")));
+        } catch (Exception e){
+            g1 = new Obstacle(117, 17, 40, 40, true);
+            g2 = new Obstacle(517, 417, 40, 40, true);
+            g3 = new Obstacle(1000, 517, 40, 40, true);
+
+            b1 = new Obstacle(117, 493, 40, 40, true);
+            b2 = new Obstacle(1193, 17, 40, 40, true);
+            b3 = new Obstacle(1303, 417, 40, 40, true);
+        }
+
+        obstacles.add(g1);
+        obstacles.add(g2);
+        obstacles.add(g3);
+
+        obstacles.add(b1);
+        obstacles.add(b2);
+        obstacles.add(b3);
+
         walls.add(new Wall(75, 0, 25, 275));
         walls.add(new Wall(175, 175, 1000, 25));
         walls.add(new Wall(75, 75, 1000, 25));
@@ -59,6 +110,7 @@ public class Level2 extends KeyAdapter {
         walls.add(new Wall(375, 400, 25, 75));
         walls.add(new Wall(500, 550, 150, 25));
         walls.add(new Wall(75, 550, 325, 25));
+        walls.add(new Wall(75, 375, 25, 175));
     }
 
     public void slide0(Graphics g) {
