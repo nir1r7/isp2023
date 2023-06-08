@@ -17,20 +17,22 @@ public class Level2 extends KeyAdapter {
         map(g);
         p.display(g);
 
-        for (int i = 0; i < walls.size(); i++){
-            switch (p.collided(walls.get(i))){
-                case 1:
-                    p.updateX(-1);
-                    break;
-                case 2:
-                    p.updateY(-1);
-                    break;
-                case 3:
-                    p.updateX(1);
-                    break;
-                case 4:
-                    p.updateY(1);
-                    break;
+        for (Wall w : walls){
+            if (p.collided(w) != 0) {
+                switch (p.collided(w)){
+                    case 1:
+                        p.updateX(-1);
+                        break;
+                    case 2:
+                        p.updateY(-1);
+                        break;
+                    case 3:
+                        p.updateX(1);
+                        break;
+                    case 4:
+                        p.updateY(1);
+                        break;
+                }
             }
         }
     }

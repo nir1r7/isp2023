@@ -2,6 +2,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.imageio.ImageIO;
+
 import java.util.*;
 
 public class Level3 {
@@ -21,12 +22,18 @@ public class Level3 {
     public void level3(Graphics g) {
         switch(slideNum) {
             case 0:
-                game(g);
+                slide0(g);
                 break;
             case 1:
-                victory(g);
+                slide1(g);
                 break;
             case 2:
+                game(g);
+                break;
+            case 3:
+                victory(g);
+                break;
+            case 4:
                 defeat(g);
                 break;
         }
@@ -89,6 +96,16 @@ public class Level3 {
         }
     }
 
+    public void slide0(Graphics g) {
+        Slide s = new Slide(bg, 0, "Exam season is coming up and you are on your computer, trying to focus. Can you stay focused and avoid all of the distractions focus on your assignments?");
+        s.display(g);
+    }
+
+    public void slide1(Graphics g) {
+        Slide s = new Slide(bg, 0, "Control your mouse pointer by using your arrow keys to move around the screen. Collect study and assignment related apps to earn points, while avoiding distractions. Score 20 points to win without losing all of your health!");
+        s.display(g);
+    }
+
     public void game(Graphics g) {
         g.drawImage(bg, 0, 0, 1400, 700, null);
         g.setFont(Main.font);
@@ -104,15 +121,15 @@ public class Level3 {
                 o.setY((Math.random() * 200 + 200) * -1);
             }
         }
-        if (score == goal) slideNum = 1;
-        if (health == 0) slideNum = 2;
+        if (score >= goal) slideNum = 3;
+        if (health <= 0) slideNum = 4;
     }
 
     public void victory(Graphics g) {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
 
-        Slide s = new Slide(1, "Victory!");
+        Slide s = new Slide(1, "Great job! You managed to stay focued and had a lot of success in this stressful time. Congratulations on the great work!");
         s.display(g);
     } 
 
@@ -120,7 +137,7 @@ public class Level3 {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
 
-        Slide s = new Slide(-1, "Defeat...");
+        Slide s = new Slide(bg, -1, "Unfortunately, you fell down a rabbit hole of distractions and forgot to study. Do you want to try that again?");
         s.display(g);
     }
 
@@ -146,5 +163,13 @@ public class Level3 {
 
     public void setDown(boolean down) {
         p.down = down;
+    }
+
+    public void setSlide(int n) {
+        slideNum = n;
+    }
+
+    public int getSlideNum() {
+        return slideNum;
     }
 }
