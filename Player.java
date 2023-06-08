@@ -32,10 +32,10 @@ public class Player {
             g.fillRect((int)x, (int)y, w, h);
         }
 
-        if (left) updateX(-4);
-        if (right) updateX(4);
-        if (up) updateY(-4);
-        if (down) updateY(4);
+        if (left) updateX(-0.5);
+        if (right) updateX(0.5);
+        if (up) updateY(-0.5);
+        if (down) updateY(0.5);
     }
 
     public int collided(Obstacle o){
@@ -59,7 +59,7 @@ public class Player {
         else if (y + h >= wall.getY() && y + h <= wall.getY() + 25 && x + w  >= wall.getX() && x <= wall.getX() + wall.getW()){
             return 2;
         }
-        else if (y <= wall.getY() + wall.getH() && y >= wall.getY() + wall.getH() - 25  && x + w  >= wall.getX() && x <= wall.getX() + wall.getW()){
+        else if (y <= wall.getY() + wall.getH() && y >= wall.getY() + wall.getH() - 25 && x + w  >= wall.getX() && x <= wall.getX() + wall.getW()){
             return 4;
         }
         return 0;
