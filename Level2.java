@@ -61,6 +61,20 @@ public class Level2 extends KeyAdapter {
         walls.add(new Wall(75, 550, 325, 25));
     }
 
+    public void slide0(Graphics g) {
+        Slide s = new Slide(0, "Exam season is coming up and you are on your computer, trying to focus. Can you stay focused and avoid all of the distractions focus on your assignments?");
+        s.display(g);
+    }
+
+    public void slide1(Graphics g) {
+        Slide s = new Slide(0, "Control your mouse pointer by using your arrow keys to move around the screen. Collect study and assignment related apps to earn points, while avoiding distractions. Score 20 points to win without losing all of your health!");
+        s.display(g);
+    }
+
+    public void maze(Graphics g) {
+        
+    }
+
     public void setLeft(boolean left) {
         p.left = left;
     }
