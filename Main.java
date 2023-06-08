@@ -64,6 +64,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
             }
             else if (m.level2Button.isClicked(x, y) && m.l2){
                 state = 4;
+                l2.load();
             }
             else if (m.level3Button.isClicked(x, y) && m.l3){
                 state = 5;
