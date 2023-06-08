@@ -93,8 +93,8 @@ public class Level3 {
         g.drawImage(bg, 0, 0, 1400, 700, null);
         g.setFont(Main.font);
         g.setColor(Color.WHITE);
-        g.drawString("Score: " + score, 1300, 50);
-        g.drawString("Health: " + health, 1300, 100);
+        g.drawString("Score: " + score, 1290, 50);
+        g.drawString("Health: " + health, 1290, 100);
         p.display(g);
         for (Obstacle o : obstacles) {
             o.display(g);
