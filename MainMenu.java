@@ -15,6 +15,8 @@ public class MainMenu {
         try {
             BufferedImage bg = ImageIO.read(new File("./static/img/mainbackground.png"));
             g.drawImage(bg, 0, 0, 1400, 700, null);
+            BufferedImage back = ImageIO.read(new File("./static/img/back.png"));
+            g.drawImage(back, 25, 25, 104, 64, null);
             Font larger = Font.createFont(Font.TRUETYPE_FONT, new File("./static/fonts/stress.ttf")).deriveFont(50f);
             g.setFont(larger);
         } catch (Exception e) {
@@ -24,9 +26,9 @@ public class MainMenu {
 
         g.drawString("Main Menu", 555, 120);
 
-        level1Button = new CenteredButton("Level 1", 512, 200, 300, 50);
-        level2Button = new CenteredButton("Level 2", 512, 280, 300, 50);
-        level3Button = new CenteredButton("Level 3", 512, 360, 300, 50);
+        level1Button = new CenteredButton("Level 1", 550, 200, 300, 50);
+        level2Button = new CenteredButton("Level 2", 550, 280, 300, 50);
+        level3Button = new CenteredButton("Level 3", 550, 360, 300, 50);
 
         level1Button.display(g);
         level2Button.display(g);
