@@ -231,7 +231,9 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         }
 
         public void enterName() {
-            name = (JOptionPane.showInputDialog(this, "Enter your name: ")); //TODO errortrap input
+            while ((name = (JOptionPane.showInputDialog(this, "Enter your name: "))).length() > 80 || name.length() < 1) {
+                JOptionPane.showMessageDialog(this, "Sorry, please enter a valid name.");
+            }
 
             frame.setSize(width, height + 1);
 
