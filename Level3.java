@@ -13,7 +13,8 @@ public class Level3 {
 
     int score = 0;
     int health = 3;
-    Player p = new Player(750, 350);
+    Player p;
+    
     
     ArrayList<Obstacle> obstacles = new ArrayList<>();
 
@@ -44,6 +45,9 @@ public class Level3 {
             BufferedImage googledocs = ImageIO.read(new File("./static/img/googledocs.png"));
             BufferedImage googlesheets = ImageIO.read(new File("./static/img/googlesheets.png"));
             BufferedImage googleslides = ImageIO.read(new File("./static/img/googleslides.png"));
+
+            BufferedImage pointer = ImageIO.read(new File("./static/img/pointer.png"));
+            p = new Player(750, 350, pointer);
 
             for (int i = 0; i < bad; i++) {
                 switch(i % 5) {
@@ -81,14 +85,16 @@ public class Level3 {
                 }
             }
         } catch (Exception e) {
-            // TODO: handle exception
+            p = new Player(750, 350);
         }
     }
 
     public void game(Graphics g) {
         g.drawImage(bg, 0, 0, 1400, 700, null);
-        g.drawString("Score: " + score, 1000, 200);
-        g.drawString("Health: " + health, 1000, 300);
+        g.setFont(Main.font);
+        g.setColor(Color.WHITE);
+        g.drawString("Score: " + score, 1300, 50);
+        g.drawString("Health: " + health, 1300, 100);
         p.display(g);
         for (Obstacle o : obstacles) {
             o.display(g);

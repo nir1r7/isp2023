@@ -12,9 +12,10 @@ public class SplashScreen {
         try {
             bg = ImageIO.read(new File("./static/img/mainbackground.png"));
             logo = ImageIO.read(new File("./static/img/logo.png"));
+            Font font = Font.createFont(Font.TRUETYPE_FONT, new File("./static/fonts/font.otf")).deriveFont(20f);
 
             g.drawImage(bg, 0, 0, 1400, 700, null);
-            g.setFont(Main.font);
+            g.setFont(font);
             g.setColor(Color.WHITE);
             g.drawString("Elevens Labs presents:", 540, 180);
 

@@ -24,7 +24,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
 
     public Main() {
         try {
-            font = Font.createFont(Font.TRUETYPE_FONT, new File("./static/fonts/font.otf")).deriveFont(24f);
+            font = Font.createFont(Font.TRUETYPE_FONT, new File("./static/fonts/font.otf")).deriveFont(18f);
         } catch (Exception e) {
             // TODO: handle exception
         }

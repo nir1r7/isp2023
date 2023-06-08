@@ -27,8 +27,13 @@ public class Level1 extends MouseAdapter {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
 
-        Slide s = new Slide(0, "Hello player, my name is Pixel! I will be helping over the coming weeks to make sure you succeed on your exams! First things first, have you been using your time efficiently?");
-        s.display(g);
+        try {
+            BufferedImage bg = ImageIO.read(new File("./static/img/mainbackground.png"));
+            Slide s = new Slide(bg, 0, "Hello player, my name is Pixel! I will be helping over the coming weeks to make sure you succeed on your exams! First things first, have you been using your time efficiently?");
+            s.display(g);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
 
         int y = 200;
 

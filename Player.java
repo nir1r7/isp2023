@@ -1,4 +1,9 @@
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import javax.imageio.ImageIO;
+import java.util.*;
+
 
 public class Player {
     
@@ -6,6 +11,7 @@ public class Player {
     double y;
     int w = 20;
     int h = 20;
+    BufferedImage background = null;
 
     boolean left;
     boolean right;
@@ -16,15 +22,23 @@ public class Player {
         this.x = x;
         this.y = y;
     }
+    
+    public Player(double x, double y, BufferedImage background) {
+        this.x = x;
+        this.y = y;
+        this.background = background;
+    }
 
     public void display(Graphics g) {
-        g.setColor(Color.BLACK);
-
+        if (background != null) {
+            g.drawImage(background, (int)x, (int)y, w, h, null);
+        } else {
+            g.fillRect((int)x, (int)y, w, h);
+        }
         if (left) updateX(-0.5);
         if (right) updateX(0.5);
         if (up) updateY(-0.5);
         if (down) updateY(0.5);
-        g.fillRect((int)x, (int)y, w, h);
     }
 
     public int collided(Obstacle o){
