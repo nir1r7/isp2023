@@ -57,6 +57,9 @@ public class Level2 extends KeyAdapter {
                         break;
                     case -1:
                         paused = true;
+                        load();
+                        n0Response(g);
+                        break;
                     case 2:
                         paused = true;
                         load();
@@ -64,19 +67,54 @@ public class Level2 extends KeyAdapter {
                         break;
                     case -2:
                         paused = true;
+                        load();
+                        n1Response(g);
+                        break;
                     case 3:
                         paused = true;
+                        load();
+                        y2Response(g);
+                        break;
                     case -3:
                         paused = true;
+                        load();
+                        n2Response(g);
+                        break;
                     case 4:
                         paused = true;
+                        load();
+                        y3Response(g);
+                        break;
                     case -4:
                         paused = true;
+                        load();
+                        n3Response(g);
+                        break;
                     case 5:
                         paused = true;
+                        load();
+                        y4Response(g);
+                        break;
                     case -5:
+                    paused = true;
+                        load();
+                        n4Response(g);
+                        break;
+                    case 6:
+                        paused = true;
+                        load();
+                        y5Response(g);
+                        break;
+                    case -6:
+                        paused = true;
+                        load();
+                        n5Response(g);
+                        break;
                 }
+                break;
 
+            case 3:
+                slide3(g);
                 break;
         }
     }
@@ -97,13 +135,13 @@ public class Level2 extends KeyAdapter {
         Obstacle b3;
 
         try{
-            g1 = new Obstacle(117, 17, 40, 40, true, ImageIO.read(new File("./static/img/twitter.png")));
-            g2 = new Obstacle(517, 417, 40, 40, true, ImageIO.read(new File("./static/img/twitter.png")));
-            g3 = new Obstacle(993, 517, 40, 40, true, ImageIO.read(new File("./static/img/twitter.png")));
+            g1 = new Obstacle(117, 17, 40, 40, true, ImageIO.read(new File("./static/img/github.png")));
+            g2 = new Obstacle(517, 417, 40, 40, true, ImageIO.read(new File("./static/img/brawlstars.png")));
+            g3 = new Obstacle(993, 517, 40, 40, true, ImageIO.read(new File("./static/img/instagram.png")));
 
-            b1 = new Obstacle(117, 493, 40, 40, true, ImageIO.read(new File("./static/img/twitter.png")));
+            b1 = new Obstacle(117, 493, 40, 40, true, ImageIO.read(new File("./static/img/googlesheets.png")));
             b2 = new Obstacle(1193, 17, 40, 40, true, ImageIO.read(new File("./static/img/twitter.png")));
-            b3 = new Obstacle(1303, 417, 40, 40, true, ImageIO.read(new File("./static/img/twitter.png")));
+            b3 = new Obstacle(1303, 417, 40, 40, true, ImageIO.read(new File("./static/img/googledocs.png")));
         } catch (Exception e){
             g1 = new Obstacle(117, 17, 40, 40, true);
             g2 = new Obstacle(517, 417, 40, 40, true);
@@ -129,11 +167,11 @@ public class Level2 extends KeyAdapter {
         walls.add(new Wall(75, 275, 600, 25));
         walls.add(new Wall(750, 275, 25, 100));
         walls.add(new Wall(500, 375, 275, 25));
-        walls.add(new Wall(1262, 75, 25,225)); // INBETWEEN 25, @ 12
-        walls.add(new Wall(850, 275, 412, 25)); // INBETWEEN 25, @ 12
+        walls.add(new Wall(1262, 75, 25,225));
+        walls.add(new Wall(850, 275, 412, 25));
         walls.add(new Wall(850, 275, 25, 300));
         walls.add(new Wall(950, 375, 450, 25));
-        walls.add(new Wall(1262, 375, 25, 200)); // INBETWEEN 25, @ 12
+        walls.add(new Wall(1262, 375, 25, 200));
         walls.add(new Wall(950, 500, 25, 175));
         walls.add(new Wall(950, 475, 225, 25));
         walls.add(new Wall(750, 475, 25, 200));
@@ -155,6 +193,15 @@ public class Level2 extends KeyAdapter {
     public void slide1(Graphics g) {
         Slide s = new Slide(0,"Control the player by using your arrow keys to move around the screen. Your goal is to go to all the stations in the maze and answer a series of questions.");
         s.display(g);
+    }
+
+    public void slide3(Graphics g){
+        Slide s = new Slide(0, "Congradulations! You have completed the final learning level of this game. Now it is time for you to play the real game");
+        s.display(g);
+
+        for (int i = 0; i < scores.length; i++){
+            scores[i] = 0;
+        }
     }
 
     public void maze(Graphics g) {
@@ -209,7 +256,7 @@ public class Level2 extends KeyAdapter {
 
                     break;
                 case 1:
-                    Slide s1 = new Slide(1, true,  "Testing 1");
+                    Slide s1 = new Slide(1, true,  "Is brawl stars good?");
                     s1.display(g);
 
                     y1 = new Button("Yes 1", 950, 200, 300, 50);
@@ -223,7 +270,7 @@ public class Level2 extends KeyAdapter {
 
                     break;
                 case 2:
-                    Slide s2 = new Slide(1, true,  "Testing 2");
+                    Slide s2 = new Slide(1, true,  "It Instagram good?");
                     s2.display(g);
 
                     y2 = new Button("Yes 2", 950, 200, 300, 50);
@@ -237,7 +284,7 @@ public class Level2 extends KeyAdapter {
                     
                     break;
                 case 3:
-                    Slide s3 = new Slide(-1, true,  "Testing 3");
+                    Slide s3 = new Slide(-1, true,  "Is google sheets good?");
                     s3.display(g);
 
                     y3 = new Button("Yes 3", 950, 200, 300, 50);
@@ -251,7 +298,7 @@ public class Level2 extends KeyAdapter {
                     
                     break;
                 case 4:
-                    Slide s4 = new Slide(-1, true,  "Testing 4");
+                    Slide s4 = new Slide(-1, true,  "Is twitter good?");
                     s4.display(g);
 
                     y4 = new Button("Yes 4", 950, 200, 300, 50);
@@ -265,7 +312,7 @@ public class Level2 extends KeyAdapter {
                     
                     break;
                 case 5:
-                    Slide s5 = new Slide(-1, true,  "Testing 5");
+                    Slide s5 = new Slide(-1, true,  "Is google docs good?");
                     s5.display(g);
 
                     y5 = new Button("Yes 5", 950, 200, 300, 50);
@@ -290,52 +337,69 @@ public class Level2 extends KeyAdapter {
     }
 
     public void n0Response(Graphics g){
-        
+        Slide s = new Slide(-1, "Incorrect. Github is an open  easy to use software that is very helpful for programmers. It allows programmers to easily organize their projects, keep track of code version, and collaborate with otjer developers. Revisite this checkpoint to answer correctly.");
+        s.display(g);
     }
 
     public void y1Response(Graphics g){
-        Slide s = new Slide(1,  "I want to cry");
+        Slide s = new Slide(1,  "Correct, brawl stars is bad");
         s.display(g);
 
         scores[1] = 1;
     }
 
     public void n1Response(Graphics g){
-        
+        Slide s = new Slide(-1, "Incorrect, brawl stars is bad, revisite");
+        s.display(g);
     }
 
     public void y2Response(Graphics g){
+        Slide s = new Slide(1, "Correct! Instagram is a distraction");
+        s.display(g);
         
         scores[2] = 1;
     }
 
     public void n2Response(Graphics g){
-        
+        Slide s = new Slide(-1, "Incorrect! Instagram is a distraction, revisite");
+        s.display(g);
     }
 
     public void y3Response(Graphics g){
+        Slide s = new Slide(1, "Correct! Using google sheets for schedules can help you manage your time properly and finish your assignements on time...");
+        s.display(g);
         
         scores[3] = 1;
     }
 
     public void n3Response(Graphics g){
+        Slide s = new Slide(-1, "Incorrect! Using google sheets... revisite");
+        s.display(g);
         
     }
 
     public void y4Response(Graphics g){
+        Slide s = new Slide(1, "twitter is bad");
+        s.display(g);
+
         scores[4] = 1;
     }
 
     public void n4Response(Graphics g){
-        
+        Slide s = new Slide(-1, "twitter is correct");
+        s.display(g);
     }
 
     public void y5Response(Graphics g){
+        Slide s = new Slide(1, "correct, google docs is good");
+        s.display(g);
+
         scores[5] = 1;
     }
 
     public void n5Response(Graphics g){
-        
+        Slide s = new Slide(-1, "incorrect, google docs is good, reviste");
+        s.display(g);
     }
 
     public void setLeft(boolean left) {

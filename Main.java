@@ -139,6 +139,11 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                     l2.setSlide(2);
                     break;
                 case 2:
+                    int sum = 0;
+                    for (int n : l2.scores){ sum += n; System.out.println(sum);}
+                    if (sum == 6){ 
+                        l2.setSlide(3);
+                    }
 
                     if (l2.getPause()){
                         l2.p.setMoving(true);
@@ -148,39 +153,28 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                         l2.setCollidedObstacleIndex(-1);
                     } else{
 
-                        if (l2.y0 != null && l2.y0.isClicked(x, y) && l2.getCollidedObstacleIndex() == 0){
-                            l2.setResponseCounter(1);
+                        if (l2.y0 != null && l2.y0.isClicked(x, y) && l2.getCollidedObstacleIndex() == 0) l2.setResponseCounter(1);
+                        else if (l2.n0 != null && l2.n0.isClicked(x, y) && l2.getCollidedObstacleIndex() == 0) l2.setResponseCounter(-1);
+                        else if (l2.y1 != null && l2.y1.isClicked(x, y) && l2.getCollidedObstacleIndex() == 1) l2.setResponseCounter(2);
+                        else if (l2.n1 != null && l2.n1.isClicked(x, y) && l2.getCollidedObstacleIndex() == 1) l2.setResponseCounter(-2);
+                        else if (l2.y2 != null && l2.y2.isClicked(x, y) && l2.getCollidedObstacleIndex() == 2) l2.setResponseCounter(3);
+                        else if (l2.n2 != null && l2.n2.isClicked(x, y) && l2.getCollidedObstacleIndex() == 2) l2.setResponseCounter(-3);
+                        else if (l2.y3 != null && l2.y3.isClicked(x, y) && l2.getCollidedObstacleIndex() == 3) l2.setResponseCounter(4);
+                        else if (l2.n3 != null && l2.n3.isClicked(x, y) && l2.getCollidedObstacleIndex() == 3) l2.setResponseCounter(-4);
+                        else if (l2.y4 != null && l2.y4.isClicked(x, y) && l2.getCollidedObstacleIndex() == 4) l2.setResponseCounter(5);
+                        else if (l2.n4 != null && l2.n4.isClicked(x, y) && l2.getCollidedObstacleIndex() == 4) l2.setResponseCounter(-5);
+                        else if (l2.y5 != null && l2.y5.isClicked(x, y) && l2.getCollidedObstacleIndex() == 5) l2.setResponseCounter(6);
+                        else if (l2.n5 != null && l2.n5.isClicked(x, y) && l2.getCollidedObstacleIndex() == 5) l2.setResponseCounter(-6);
 
-                        } else if (l2.n0 != null && l2.n0.isClicked(x, y) && l2.getCollidedObstacleIndex() == 0){
-
-                        } else if (l2.y1 != null && l2.y1.isClicked(x, y) && l2.getCollidedObstacleIndex() == 1){
-                            l2.setResponseCounter(2);
-
-                        } else if (l2.n1 != null && l2.n1.isClicked(x, y) && l2.getCollidedObstacleIndex() == 1){
-
-                        } else if (l2.y2 != null && l2.y2.isClicked(x, y) && l2.getCollidedObstacleIndex() == 2){
-
-                        } else if (l2.n2 != null && l2.n2.isClicked(x, y) && l2.getCollidedObstacleIndex() == 2){
-
-                        } else if (l2.y3 != null && l2.y3.isClicked(x, y) && l2.getCollidedObstacleIndex() == 3){
-
-                        } else if (l2.n3 != null && l2.n3.isClicked(x, y) && l2.getCollidedObstacleIndex() == 3){
-
-                        } else if (l2.y4 != null && l2.y4.isClicked(x, y) && l2.getCollidedObstacleIndex() == 4){
-
-                        } else if (l2.n4 != null && l2.n4.isClicked(x, y) && l2.getCollidedObstacleIndex() == 4){
-
-                        } else if (l2.y5 != null && l2.y5.isClicked(x, y) && l2.getCollidedObstacleIndex() == 5){
-
-                        } else if (l2.n5 != null && l2.n5.isClicked(x, y) && l2.getCollidedObstacleIndex() == 5){
-
-                        }
                     }
-
-                    // state = 2;
-                    m.l3 = true;
                     break;
-            }
+                
+                case 3:
+                    state = 2;
+                    m.l3 = true;
+                    l2.setSlide(0);
+                    break;
+                }
         } else if (state == 5){
             switch(l3.getSlideNum()) {
                 case 0:

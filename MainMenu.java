@@ -10,7 +10,7 @@ import javax.imageio.ImageIO;
  */
 public class MainMenu {
     /** booleans for locking level 2 and level 3 */
-    boolean l2 = true;
+    boolean l2 = false;
     boolean l3 = false;
 
     /** Buttons */

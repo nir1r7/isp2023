@@ -147,9 +147,6 @@ public class Level3 {
         /** Draws background */
         g.drawImage(bg, 0, 0, 1400, 700, null);
         g.setFont(Main.font);
-        g.setColor(Color.WHITE);
-        g.drawString("Score: " + score, 1290, 50);
-        g.drawString("Health: " + health, 1290, 100);
         p.display(g);
         /** Loops through each obstacle, displaying it and checking for collisions */
         for (Obstacle o : obstacles) {
@@ -161,6 +158,10 @@ public class Level3 {
                 o.setY((Math.random() * 200 + 200) * -1);
             }
         }
+
+        g.setColor(Color.WHITE);
+        g.drawString("Score: " + score, 1290, 50);
+        g.drawString("Health: " + health, 1290, 100);
 
         /** End game conditions */
         if (score >= goal) slideNum = 3;
