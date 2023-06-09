@@ -1,6 +1,11 @@
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
+/**
+ * Obstacle class for Finals Frenzy, creates obstacles used throughout the game
+ * Course: ICS4U0-1
+ * @author Nirvan Rabbani, Sean Zhao
+ */
 public class Obstacle{
     double x;
     double y;

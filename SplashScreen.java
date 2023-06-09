@@ -3,6 +3,11 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.imageio.ImageIO;
 
+/**
+ * Splash screen class for Finals Frenzy, displays the splash screen
+ * Course: ICS4U0-1
+ * @author Nirvan Rabbani, Sean Zhao
+ */
 public class SplashScreen {
     CenteredButton cont;
 

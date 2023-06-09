@@ -3,6 +3,11 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.imageio.ImageIO;
 
+/**
+ * Slide class for Finals Frenzy, creates a slide used in the game
+ * Course: ICS4U0-1
+ * @author Nirvan Rabbani, Sean Zhao
+ */
 public class Slide {
     String txt;
     int emote;

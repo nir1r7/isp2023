@@ -3,6 +3,11 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.imageio.ImageIO;
 
+/**
+ * Main menu class for Finals Frenzy, displays the main menu
+ * Course: ICS4U0-1
+ * @author Nirvan Rabbani, Sean Zhao
+ */
 public class MainMenu {
     boolean l2 = true;
     boolean l3 = false;

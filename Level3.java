@@ -2,9 +2,13 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.imageio.ImageIO;
-
 import java.util.*;
 
+/**
+ * Level 3 class for Finals Frenzy, creates the third level
+ * Course: ICS4U0-1
+ * @author Nirvan Rabbani, Sean Zhao
+ */
 public class Level3 {
     private int slideNum = 0;
     BufferedImage bg;

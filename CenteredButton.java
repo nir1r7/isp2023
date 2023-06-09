@@ -1,5 +1,10 @@
 import java.awt.*;
 
+/**
+ * Centered BUtton class for Finals Frenzy, creates buttons with centered text
+ * Course: ICS4U0-1
+ * @author Nirvan Rabbani, Sean Zhao
+ */
 public class CenteredButton extends Button {
 
     public CenteredButton(String text, int x, int y, int w, int h) {

@@ -1,6 +1,11 @@
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
+/**
+ * Falling obstacle class for Finals Frenzy, creates falling obstacles used in level 3
+ * Course: ICS4U0-1
+ * @author Nirvan Rabbani, Sean Zhao
+ */
 public class FallingObstacle extends Obstacle {
     double dy;
     double rand = 50;

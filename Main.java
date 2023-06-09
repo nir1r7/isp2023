@@ -3,30 +3,44 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.io.File;
 
+/**
+ * Main class for Finals Frenzy
+ * Course: ICS4U0-1
+ * @author Nirvan Rabbani, Sean Zhao
+ */
 public class Main implements MouseListener, MouseMotionListener, KeyListener {
+    /** Frame */
     JFrame frame;
+    /** Drawing */
     Drawing draw;
+    /** Instance variables for levels and screens */
     Level1 l1 = new Level1();
     Level2 l2 = new Level2();
     Level3 l3 = new Level3();
     SplashScreen s = new SplashScreen();
     MainMenu m = new MainMenu();
 
+    /** Font used in game */
     static Font font;
 
 
     int width = 1400;
     int height = 700;
 
+    /** Variable for game state */
     int state = 0;
 
+    /** Name of player */
     static String name = null;
 
+    /**
+     * Constructor for main, initializes the frame
+     */
     public Main() {
         try {
             font = Font.createFont(Font.TRUETYPE_FONT, new File("./static/fonts/font.otf")).deriveFont(18f);
         } catch (Exception e) {
-            // TODO: handle exception
+            e.printStackTrace();
         }
         frame = new JFrame("Finals Frenzy");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -44,18 +58,20 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         frame.setVisible(true);
     }
 
-    public void mouseDragged(MouseEvent e) {
+    public void mouseDragged(MouseEvent e) {}
 
-    }
+    public void mouseMoved(MouseEvent e) {}
 
-    public void mouseMoved(MouseEvent e) {
-
-    }
-
+    /**
+     * Mouse clicked, handles mouse click events for entire game
+     * @param e mouse event
+     */
     public void mouseClicked(MouseEvent e) {
+        /** x and y values of mouse click */
         int x = e.getX();
         int y = e.getY();
 
+        /** handles mouse clicks for each game state */
         if (state == 0 && s.cont.isClicked(x, y)) {
             if (name != null) state = 2;
             else state = 1;
@@ -153,30 +169,22 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
             }
         }
         draw.repaint();
-
-        System.out.println(e.getX() + " " + e.getY());
     }
 
-    public void mousePressed(MouseEvent e) {
+    public void mousePressed(MouseEvent e) {}
 
-    }
+    public void mouseReleased(MouseEvent e) {}
 
-    public void mouseReleased(MouseEvent e) {
+    public void mouseEntered(MouseEvent e) {}
 
-    }
+    public void mouseExited(MouseEvent e) {}
 
-    public void mouseEntered(MouseEvent e) {
+    public void keyTyped(KeyEvent e) {}
 
-    }
-
-    public void mouseExited(MouseEvent e) {
-
-    }
-
-    public void keyTyped(KeyEvent e) {
-
-    }
-
+    /** 
+     * Handles key release
+     * @param e key event
+     */
     public void keyReleased(KeyEvent e) {
         if (state == 4){
             if (e.getKeyCode() == KeyEvent.VK_LEFT) l2.setLeft(false);
@@ -191,6 +199,10 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         }
     }
 
+    /**
+     * Handles key press
+     * @param e key event
+     */
     public void keyPressed(KeyEvent e) {
         if (state == 4){
             if (e.getKeyCode() == KeyEvent.VK_LEFT) l2.setLeft(true);
@@ -206,11 +218,10 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
     }
 
     class Drawing extends JComponent {
-
-        public Drawing() {
-
-        }
-
+        /**
+         * Paints each portion of the game depending on the state
+         * @param g graphics
+         */
         public void paint(Graphics g) {
             switch(state){
                 case 0:
@@ -234,12 +245,12 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                     l3.level3(g);
                     repaint();
                     break;
-                case 6:
-                    
-                case 7:
             }
         }
 
+        /**
+         * Input dialog for entering player name
+         */
         public void enterName() {
             while ((name = (JOptionPane.showInputDialog(this, "Enter your name: "))).length() > 80 || name.length() < 1) {
                 JOptionPane.showMessageDialog(this, "Sorry, please enter a valid name.");

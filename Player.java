@@ -1,6 +1,11 @@
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
+/**
+ * Player class for Finals Frenzy, creates a user-controlled player for the game
+ * Course: ICS4U0-1
+ * @author Nirvan Rabbani, Sean Zhao
+ */
 public class Player {
     
     double x;

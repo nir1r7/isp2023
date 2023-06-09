@@ -2,9 +2,13 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.image.BufferedImage;
 import java.io.File;
-
 import javax.imageio.ImageIO;
 
+/**
+ * Level 1 class for Finals Frenzy, creates the first level
+ * Course: ICS4U0-1
+ * @author Nirvan Rabbani, Sean Zhao
+ */
 public class Level1 extends MouseAdapter {
     private int slideNum;
     int width = 1400;
