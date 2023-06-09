@@ -11,20 +11,39 @@ public class FallingObstacle extends Obstacle {
     double rand = 50;
     BufferedImage icon;
 
+    /**
+     * Falling obstacle constructor
+     * @param x x value
+     * @param y y value
+     * @param w width
+     * @param h height
+     * @param good good or bad (points or deduction)
+     * @param dy distance of y change
+     * @param icon icon displayed
+     */
     public FallingObstacle(double x, double y, int w, int h, boolean good, double dy, BufferedImage icon) {
         super(x, y, w, h, good);
         this.dy = dy;
         this.icon = icon;
     }
 
+    /**
+     * Gets the object to fall
+     * @param dy distance of y changed
+     */
     public void fall(double dy) {
         this.y += dy;
+        /** If the object goes below the screen it respawns at a random position in a range */
         if (this.y >= 700) {
             this.x = Math.random() * 1400;
             this.y = -200 + (rand - (Math.random() * 2 * rand));
         }
     }
 
+    /**
+     * Displays the falling obstacle
+     * @param g graphics
+     */
     public void display(Graphics g) {
         g.setColor(Color.BLACK);
         g.drawImage(icon, (int)x, (int)y, w, h, null);

@@ -15,11 +15,11 @@ public class Button{
     
     /**
      * Button contructor
-     * @param text
-     * @param x
-     * @param y
-     * @param w
-     * @param h
+     * @param text text of button
+     * @param x x value of button
+     * @param y y value of button
+     * @param w width of button
+     * @param h height of button
      */
     public Button(String text, int x, int y, int w, int h){
         txt = text;
@@ -31,10 +31,13 @@ public class Button{
         this.h = h;
     }
 
+    /**
+     * Displays the button
+     * @param g graphics
+     */
     public void display(Graphics g){
         g.setColor(Color.WHITE);
         g.fillRoundRect(x, y, w, h, 10, 10);
-        g.setColor(Color.BLACK);
 
         x += 10;
         y += 35;
@@ -45,8 +48,9 @@ public class Button{
         int charCount = 0;
         int index = 0;
 
-       
+        g.setColor(Color.BLACK);
         g.setFont(Main.font);
+        /** Displays text in lines */
         for (int i = 0; i < words.length; i++){
             if (charCount + words[i].length() > w/10){
 
@@ -80,6 +84,12 @@ public class Button{
         y -= (index + 1)*35;
     }
 
+    /**
+     * Checks if button is clicked
+     * @param xCoord x coordinate of mouse
+     * @param yCoord y coordinate of mouse
+     * @return boolean whether the button was clicked or not
+     */
     public boolean isClicked(int xCoord, int yCoord){
         if (xCoord >= x && xCoord <= x + w && yCoord >= y && yCoord <= y + h){
             return true;
@@ -87,26 +97,50 @@ public class Button{
         return false;
     }
 
+    /**
+     * Gets the x value
+     * @return x value
+     */
     public int getX(){
         return x;
     }
 
+    /**
+     * Gets the y value
+     * @return y value
+     */
     public int getY(){
         return y;
     }
 
+    /**
+     * Gets the width
+     * @return width
+     */
     public int getW(){
         return w;
     }
 
+    /**
+     * Gets the height
+     * @return height
+     */
     public int getH(){
         return h;
     }
-
+    
+    /**
+     * Sets the x value
+     * @param n the value to set it to
+     */
     public void setX(int n){
         x = n;
     }
 
+    /**
+     * Sets the y value
+     * @param n the value to set it to
+     */
     public void setY(int n){
         y = n;
     }

@@ -4,6 +4,10 @@
  * @author Nirvan Rabbani, Sean Zhao
  */
 public class Runner {
+    /**
+     * Run the program
+     * @param args
+     */
     public static void main(String[] args) {
         new Main();
     }

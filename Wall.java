@@ -7,10 +7,21 @@ import java.awt.*;
  */
 public class Wall extends Obstacle{
     
+    /**
+     * Wall constructor
+     * @param x x value
+     * @param y y value
+     * @param w width
+     * @param h height
+     */
     public Wall(int x, int y, int w, int h){
         super(x, y, w, h);
     }
 
+    /**
+     * Displays the wall
+     * @param g graphics
+     */
     public void display(Graphics g){
         g.setColor(Color.GRAY);
 

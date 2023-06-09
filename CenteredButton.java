@@ -7,10 +7,22 @@ import java.awt.*;
  */
 public class CenteredButton extends Button {
 
+    /**
+     * Centered button constructor
+     * @param text text of button
+     * @param x x value of button
+     * @param y y value of button
+     * @param w width of button
+     * @param h height of button
+     */
     public CenteredButton(String text, int x, int y, int w, int h) {
         super(text, x, y, w, h);
     }
 
+    /**
+     * Displays the centered button
+     * @param g graphics
+     */
     public void display(Graphics g) {
         g.setColor(Color.WHITE);
         g.fillRoundRect(x, y, w, h, 10, 10);
@@ -26,6 +38,7 @@ public class CenteredButton extends Button {
 
         g.setColor(Color.BLACK);
         g.setFont(Main.font);
+        /** Displays text in lines, centered */
         for (int i = 0; i < words.length; i++) {
             if (charCount + words[i].length() > w / 10) {
 
@@ -54,12 +67,5 @@ public class CenteredButton extends Button {
 
         x -= 10;
         y -= (index + 1) * 35;   
-    }
-
-    public boolean isClicked(int xCoord, int yCoord) {
-        if (xCoord >= x && xCoord <= x + w && yCoord >= y && yCoord <= y + h) {
-            return true;
-        }
-        return false;
     }
 }

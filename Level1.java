@@ -10,10 +10,12 @@ import javax.imageio.ImageIO;
  * @author Nirvan Rabbani, Sean Zhao
  */
 public class Level1 extends MouseAdapter {
+    /** Slide number */
     private int slideNum;
     int width = 1400;
     int height = 700;
 
+    /** Buttons */
     Button y0;
     Button n0;
     Button y1;
@@ -23,10 +25,17 @@ public class Level1 extends MouseAdapter {
     Button y3;
     Button n3;
 
+    /**
+     * Level 1 constructor
+     */
     public Level1(){
         slideNum = 0;
     }
 
+    /**
+     * Displays slide 0
+     * @param g graphics
+     */
     public void slide0(Graphics g) {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
@@ -48,6 +57,10 @@ public class Level1 extends MouseAdapter {
         n0.display(g);
     }
 
+    /**
+     * Displays slide 1
+     * @param g graphics
+     */
     public void slide1(Graphics g) {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
@@ -71,6 +84,10 @@ public class Level1 extends MouseAdapter {
         n1.display(g);
     }
 
+    /**
+     * Displays slide 2
+     * @param g graphics
+     */
     public void slide2(Graphics g) {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
@@ -94,6 +111,10 @@ public class Level1 extends MouseAdapter {
         n2.display(g);
     }
 
+    /**
+     * Displays response for yes
+     * @param g graphics
+     */
     public void y0Response(Graphics g){
         try{
             BufferedImage bg = ImageIO.read(new File("./static/img/goodTimeManagement.png"));
@@ -106,6 +127,10 @@ public class Level1 extends MouseAdapter {
         }
     }
 
+    /**
+     * Displays response for no
+     * @param g graphics
+     */
     public void n0Response(Graphics g){
         try{
             BufferedImage bg = ImageIO.read(new File("./static/img/badTimeManagement.png"));
@@ -118,6 +143,10 @@ public class Level1 extends MouseAdapter {
         }
     }
 
+    /**
+     * Displays response for yes1
+     * @param g graphics
+     */
     public void y1Response(Graphics g){
         try{
             BufferedImage bg = ImageIO.read(new File("./static/img/organizedDesk.png"));
@@ -130,6 +159,10 @@ public class Level1 extends MouseAdapter {
         }
     }
 
+    /**
+     * Displays response for no1
+     * @param g graphics
+     */
     public void n1Response(Graphics g){
         try{
             BufferedImage bg = ImageIO.read(new File("./static/img/unorganizedDesk.png"));
@@ -142,6 +175,10 @@ public class Level1 extends MouseAdapter {
         }
     }
 
+    /**
+     * Displays response for yes2
+     * @param g graphics
+     */
     public void y2Response(Graphics g){
         try{
             BufferedImage bg = ImageIO.read(new File("./static/img/successfulSchedule.png"));
@@ -154,6 +191,10 @@ public class Level1 extends MouseAdapter {
         }
     }
 
+    /**
+     * Displays response for no2
+     * @param g graphics
+     */
     public void n2Response(Graphics g){
         try{
             BufferedImage bg = ImageIO.read(new File("./static/img/unsuccessfulSchedule.png"));
@@ -166,6 +207,10 @@ public class Level1 extends MouseAdapter {
         }
     }
 
+    /**
+     * Displays level 1 based off of slide number
+     * @param g graphics
+     */
     public void level1(Graphics g) {
         switch (slideNum) {
             case 0:
@@ -198,10 +243,18 @@ public class Level1 extends MouseAdapter {
         }
     }
 
+    /**
+     * Sets the slide number
+     * @param n the slide number
+     */
     public void setSlide(int n) {
         slideNum = n;
     }
 
+    /**
+     * Gets the slide number
+     * @return the slide number
+     */
     public int getSlideNum(){
         return slideNum;
     }

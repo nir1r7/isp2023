@@ -9,15 +9,22 @@ import javax.imageio.ImageIO;
  * @author Nirvan Rabbani, Sean Zhao
  */
 public class MainMenu {
+    /** booleans for locking level 2 and level 3 */
     boolean l2 = true;
     boolean l3 = false;
 
+    /** Buttons */
     CenteredButton level1Button;
     CenteredButton level2Button;
     CenteredButton level3Button;
 
+    /**
+     * Displays the main menu
+     * @param g
+     */
     public void mainMenu(Graphics g) {
         try {
+            /** Draws background */
             BufferedImage bg = ImageIO.read(new File("./static/img/mainbackground.png"));
             g.drawImage(bg, 0, 0, 1400, 700, null);
             BufferedImage back = ImageIO.read(new File("./static/img/back.png"));
@@ -31,6 +38,7 @@ public class MainMenu {
 
         g.drawString("Main Menu", 590, 120);
 
+        /** Creates buttons */
         level1Button = new CenteredButton("Level 1", 550, 200, 300, 50);
         level2Button = new CenteredButton("Level 2", 550, 280, 300, 50);
         level3Button = new CenteredButton("Level 3", 550, 360, 300, 50);
@@ -39,6 +47,7 @@ public class MainMenu {
         level2Button.display(g);
         level3Button.display(g);
 
+        /** Draws 'x's indicating locked */
         int x = 780;
         int y = 295;
         if (!l2) {

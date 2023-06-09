@@ -9,8 +9,13 @@ import javax.imageio.ImageIO;
  * @author Nirvan Rabbani, Sean Zhao
  */
 public class SplashScreen {
+    /** Continue button */
     CenteredButton cont;
 
+    /**
+     * Displays the splash screen
+     * @param g graphics
+     */
     public void splashScreen(Graphics g) {
         BufferedImage bg;
         BufferedImage logo;
@@ -32,8 +37,6 @@ public class SplashScreen {
 
             cont = new CenteredButton("Continue", 600, 500, 200, 50);
             cont.display(g);
-        } catch (Exception e){
-
-        }
+        } catch (Exception e){}
     }
 }

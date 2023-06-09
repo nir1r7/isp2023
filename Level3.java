@@ -10,22 +10,33 @@ import java.util.*;
  * @author Nirvan Rabbani, Sean Zhao
  */
 public class Level3 {
+    /** Slide number */
     private int slideNum = 0;
+
+    /** Background image */
     BufferedImage bg;
+
+    /** Level parameters */
     int goal = 20;
     int good = 8;
     int bad = 60;
 
+    /** Starting score and health */
     int score = 0;
     int health = 3;
     Player p;
     
-    
+    /** ArrayList of obstacles */
     ArrayList<Obstacle> obstacles = new ArrayList<>();
     
+    /** Buttons */
     Button y;
     Button n;
 
+    /**
+     * Displays level 3 from slide number
+     * @param g graphics
+     */
     public void level3(Graphics g) {
         switch(slideNum) {
             case 0:
@@ -46,11 +57,13 @@ public class Level3 {
         }
     }
 
+    /**
+     * Preloads all info into the level
+     * Resets all player stats and adds all obstacles into ArrayList
+     */
     public void load() {
         health = 3;
         score = 0;
-        score = 0;
-        health = 3;
         obstacles.clear();
         try {
             bg = ImageIO.read(new File("./static/img/phonebackground.png"));
@@ -108,23 +121,37 @@ public class Level3 {
         }
     }
 
+    /**
+     * Displays slide 0
+     * @param g graphics
+     */
     public void slide0(Graphics g) {
         Slide s = new Slide(bg, 0, "Exam season is coming up and you are on your computer, trying to focus. Can you stay focused and avoid all of the distractions focus on your assignments?", false);
         s.display(g);
     }
 
+    /**
+     * Displays slide 1
+     * @param g graphics
+     */
     public void slide1(Graphics g) {
         Slide s = new Slide(bg, 0, "Control your mouse pointer by using your arrow keys to move around the screen. Collect study and assignment related apps to earn points, while avoiding distractions. Score 20 points to win without losing all of your health!", false);
         s.display(g);
     }
 
+    /**
+     * Displays the game
+     * @param g graphics
+     */
     public void game(Graphics g) {
+        /** Draws background */
         g.drawImage(bg, 0, 0, 1400, 700, null);
         g.setFont(Main.font);
         g.setColor(Color.WHITE);
         g.drawString("Score: " + score, 1290, 50);
         g.drawString("Health: " + health, 1290, 100);
         p.display(g);
+        /** Loops through each obstacle, displaying it and checking for collisions */
         for (Obstacle o : obstacles) {
             o.display(g);
             if (p.collided(o) != 0) {
@@ -134,10 +161,16 @@ public class Level3 {
                 o.setY((Math.random() * 200 + 200) * -1);
             }
         }
+
+        /** End game conditions */
         if (score >= goal) slideNum = 3;
         if (health <= 0) slideNum = 4;
     }
 
+    /**
+     * Displays victory screen
+     * @param g graphics
+     */
     public void victory(Graphics g) {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
@@ -146,6 +179,10 @@ public class Level3 {
         s.display(g);
     } 
 
+    /**
+     * Displays defeat screen
+     * @param g graphics
+     */
     public void defeat(Graphics g) {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
@@ -158,34 +195,66 @@ public class Level3 {
         n.display(g);
     }
 
+    /**
+     * Sets the score
+     * @param n the score
+     */
     public void setScore(int n) {
         score = n;
     }
 
+    /**
+     * Sets the health
+     * @param n the health
+     */
     public void setHealth(int n) {
         health = n;
     }
 
+    /**
+     * Sets the player to moving left
+     * @param left left
+     */
     public void setLeft(boolean left) {
         p.left = left;
     }
 
+    /**
+     * Sets the player to moving right
+     * @param right right
+     */
     public void setRight(boolean right) {
         p.right = right;
     }
 
+    /**
+     * Sets the player to moving up
+     * @param up up
+     */
     public void setUp(boolean up) {
         p.up = up;
     }
 
+    /**
+     * Sets the player to moving down
+     * @param down down
+     */
     public void setDown(boolean down) {
         p.down = down;
     }
 
+    /**
+     * Sets the slide number
+     * @param n the slide number
+     */
     public void setSlide(int n) {
         slideNum = n;
     }
 
+    /**
+     * Gets the slide number
+     * @return the slide number
+     */
     public int getSlideNum() {
         return slideNum;
     }
