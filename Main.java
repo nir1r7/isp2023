@@ -131,7 +131,6 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                     l1.setSlide(0);
             }            
         } else if (state == 4){
-            System.out.println(l2.getSlideNum());
             switch(l2.getSlideNum()) {
                 case 0:
                     l2.setSlide(1);
@@ -140,8 +139,46 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                     l2.setSlide(2);
                     break;
                 case 2:
+
+                    Obstacle o = l2.obstacles.get(0);
+
+                    if (o.y0.isClicked(x, y)){
+
+                    }else if (o.n0.isClicked(x, y)){
+
+                    } else if (o.y1.isClicked(x, y)){
+
+                    } else if (o.n1.isClicked(x, y)){
+
+                    } else if (o.y2.isClicked(x, y)){
+
+                    } else if (o.n2.isClicked(x, y)){
+
+                    } else if (o.y3.isClicked(x, y)){
+
+                    } else if (o.n3.isClicked(x, y)){
+
+                    } else if (o.y4.isClicked(x, y)){
+
+                    } else if (o.n4.isClicked(x, y)){
+
+                    } else if (o.y5.isClicked(x, y)){
+
+                    } else if (o.n5.isClicked(x, y)){
+
+                    } else if (o.y6.isClicked(x, y)){
+
+                    } else if (o.n6.isClicked(x, y)){
+
+                    } else if (o.y7.isClicked(x, y)){
+
+                    } else if (o.n7.isClicked(x, y)){
+
+                    }
+
                     state = 2;
                     m.l3 = true;
+                    break;
             }
         } else if (state == 5){
             switch(l3.getSlideNum()) {

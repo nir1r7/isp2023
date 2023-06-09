@@ -25,6 +25,12 @@ public class Slide {
         button = b;
     }
 
+    public Slide (int n, boolean b, String text){
+        txt = text;
+        emote = n;
+        button = b;
+    }
+
     public Slide(int n, String text){
         txt = text;
         emote = n;

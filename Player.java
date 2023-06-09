@@ -19,6 +19,8 @@ public class Player {
     boolean up;
     boolean down;
 
+    boolean moving = true;
+
     public Player(double x, double y) {
         this.x = x;
         this.y = y;
@@ -71,14 +73,22 @@ public class Player {
     }
 
     public void updateX(double dx) {
-        if (this.x + w + dx <= 1400 && this.x + dx >= 0) {
+        if (this.x + w + dx <= 1400 && this.x + dx >= 0 && moving) {
             this.x += dx;
         }
     }
 
     public void updateY(double dy) {
-        if (this.y + h + dy <= 665 && this.y + dy >= 0) {
+        if (this.y + h + dy <= 665 && this.y + dy >= 0 && moving) {
             this.y += dy;
         }
+    }
+
+    public void setMoving(boolean m){
+        moving = m;
+    }
+
+    public boolean isMoving(){
+        return moving;
     }
 }

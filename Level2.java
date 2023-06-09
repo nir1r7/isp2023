@@ -99,7 +99,7 @@ public class Level2 extends KeyAdapter {
     }
 
     public void slide1(Graphics g) {
-        Slide s = new Slide(0, "Control your mouse pointer by using your arrow keys to move around the screen. Collect study and assignment related apps to earn points, while avoiding distractions. Score 20 points to win without losing all of your health!");
+        Slide s = new Slide(0,"Control your mouse pointer by using your arrow keys to move around the screen. Collect study and assignment related apps to earn points, while avoiding distractions. Score 20 points to win without losing all of your health!");
         s.display(g);
     }
 
@@ -130,10 +130,14 @@ public class Level2 extends KeyAdapter {
                 temp = i;
             }
         }
-        if (temp != -1 ) obstacles.get(temp).message(g, temp);
 
         g.setColor(Color.BLACK);
         p.display(g);
+
+        if (temp != -1 ){
+            obstacles.get(temp).message(g, temp);
+            p.setMoving(false);
+        }
     }
 
     public void setLeft(boolean left) {
@@ -158,5 +162,28 @@ public class Level2 extends KeyAdapter {
 
     public int getSlideNum() {
         return slideNum;
+    }
+
+    public Button getButton(int i){
+        switch(i){
+            case 0:
+                return obstacles.get(0).y1;
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+
+            case 7:
+            case 8:
+            case 9:
+            case 10:
+            case 11:
+            case 12:
+        }
+        
+        return new Button("null", i, i, i, i);
+
     }
 }
