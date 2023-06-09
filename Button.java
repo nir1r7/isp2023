@@ -1,12 +1,26 @@
 import java.awt.*;
 
+/**
+ * Button class for Finals Frenzy, creates buttons that are used in the game
+ * Course: ICS4U0-1
+ * @author Nirvan Rabbani, Sean Zhao
+ */
 public class Button{
+    /** Parameters for button */
     String txt;
     int x;
     int y;
     int w;
     int h;
     
+    /**
+     * Button contructor
+     * @param text
+     * @param x
+     * @param y
+     * @param w
+     * @param h
+     */
     public Button(String text, int x, int y, int w, int h){
         txt = text;
 
