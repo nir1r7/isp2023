@@ -140,43 +140,38 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                     break;
                 case 2:
 
-                    Obstacle o = l2.obstacles.get(0);
+                    if (l2.y0 != null && l2.y0.isClicked(x, y)){
+                        System.out.println("y");
+                    } else if (l2.n0 != null && l2.n0.isClicked(x, y)){
+                        System.out.println("n");
 
-                    if (o.y0.isClicked(x, y)){
+                    } else if (l2.y1 != null && l2.y1.isClicked(x, y)){
+                        System.out.println("y *");
 
-                    }else if (o.n0.isClicked(x, y)){
+                    } else if (l2.n1 != null && l2.n1.isClicked(x, y)){
+                        System.out.println("n *");
 
-                    } else if (o.y1.isClicked(x, y)){
+                    } else if (l2.y2 != null && l2.y2.isClicked(x, y)){
 
-                    } else if (o.n1.isClicked(x, y)){
+                    } else if (l2.n2 != null && l2.n2.isClicked(x, y)){
 
-                    } else if (o.y2.isClicked(x, y)){
+                    } else if (l2.y3 != null && l2.y3.isClicked(x, y)){
+                        System.out.println("y ***");
 
-                    } else if (o.n2.isClicked(x, y)){
+                    } else if (l2.n3 != null && l2.n3.isClicked(x, y)){
+                        System.out.println("n ***");
 
-                    } else if (o.y3.isClicked(x, y)){
+                    } else if (l2.y4 != null && l2.y4.isClicked(x, y)){
 
-                    } else if (o.n3.isClicked(x, y)){
+                    } else if (l2.n4 != null && l2.n4.isClicked(x, y)){
 
-                    } else if (o.y4.isClicked(x, y)){
+                    } else if (l2.y5 != null && l2.y5.isClicked(x, y)){
 
-                    } else if (o.n4.isClicked(x, y)){
-
-                    } else if (o.y5.isClicked(x, y)){
-
-                    } else if (o.n5.isClicked(x, y)){
-
-                    } else if (o.y6.isClicked(x, y)){
-
-                    } else if (o.n6.isClicked(x, y)){
-
-                    } else if (o.y7.isClicked(x, y)){
-
-                    } else if (o.n7.isClicked(x, y)){
+                    } else if (l2.n5 != null && l2.n5.isClicked(x, y)){
 
                     }
 
-                    state = 2;
+                    // state = 2;
                     m.l3 = true;
                     break;
             }
