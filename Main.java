@@ -140,35 +140,41 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                     break;
                 case 2:
 
-                    if (l2.y0 != null && l2.y0.isClicked(x, y)){
-                        System.out.println("y");
-                    } else if (l2.n0 != null && l2.n0.isClicked(x, y)){
-                        System.out.println("n");
+                    if (l2.getPause()){
+                        l2.p.setMoving(true);
+                        l2.load();
+                        l2.setResponseCounter(0);
+                        l2.setPause(false);
+                        l2.setCollidedObstacleIndex(-1);
+                    } else{
 
-                    } else if (l2.y1 != null && l2.y1.isClicked(x, y)){
-                        System.out.println("y *");
+                        if (l2.y0 != null && l2.y0.isClicked(x, y) && l2.getCollidedObstacleIndex() == 0){
+                            l2.setResponseCounter(1);
 
-                    } else if (l2.n1 != null && l2.n1.isClicked(x, y)){
-                        System.out.println("n *");
+                        } else if (l2.n0 != null && l2.n0.isClicked(x, y) && l2.getCollidedObstacleIndex() == 0){
 
-                    } else if (l2.y2 != null && l2.y2.isClicked(x, y)){
+                        } else if (l2.y1 != null && l2.y1.isClicked(x, y) && l2.getCollidedObstacleIndex() == 1){
+                            l2.setResponseCounter(2);
 
-                    } else if (l2.n2 != null && l2.n2.isClicked(x, y)){
+                        } else if (l2.n1 != null && l2.n1.isClicked(x, y) && l2.getCollidedObstacleIndex() == 1){
 
-                    } else if (l2.y3 != null && l2.y3.isClicked(x, y)){
-                        System.out.println("y ***");
+                        } else if (l2.y2 != null && l2.y2.isClicked(x, y) && l2.getCollidedObstacleIndex() == 2){
 
-                    } else if (l2.n3 != null && l2.n3.isClicked(x, y)){
-                        System.out.println("n ***");
+                        } else if (l2.n2 != null && l2.n2.isClicked(x, y) && l2.getCollidedObstacleIndex() == 2){
 
-                    } else if (l2.y4 != null && l2.y4.isClicked(x, y)){
+                        } else if (l2.y3 != null && l2.y3.isClicked(x, y) && l2.getCollidedObstacleIndex() == 3){
 
-                    } else if (l2.n4 != null && l2.n4.isClicked(x, y)){
+                        } else if (l2.n3 != null && l2.n3.isClicked(x, y) && l2.getCollidedObstacleIndex() == 3){
 
-                    } else if (l2.y5 != null && l2.y5.isClicked(x, y)){
+                        } else if (l2.y4 != null && l2.y4.isClicked(x, y) && l2.getCollidedObstacleIndex() == 4){
 
-                    } else if (l2.n5 != null && l2.n5.isClicked(x, y)){
+                        } else if (l2.n4 != null && l2.n4.isClicked(x, y) && l2.getCollidedObstacleIndex() == 4){
 
+                        } else if (l2.y5 != null && l2.y5.isClicked(x, y) && l2.getCollidedObstacleIndex() == 5){
+
+                        } else if (l2.n5 != null && l2.n5.isClicked(x, y) && l2.getCollidedObstacleIndex() == 5){
+
+                        }
                     }
 
                     // state = 2;

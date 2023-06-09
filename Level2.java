@@ -10,10 +10,19 @@ public class Level2 extends KeyAdapter {
 
     ArrayList<Wall> walls = new ArrayList<Wall>();
     ArrayList<Obstacle> obstacles = new ArrayList<Obstacle>();
+    ArrayList<Button> buttons = new ArrayList<Button>();
 
     int x = 700;
     int y = 350;
+
     private int slideNum = 0;
+    private int responseCounter = 0;
+
+    boolean paused = false;
+
+    int collidedObstacleIndex = -1;
+
+    int scores[] = {0, 0, 0, 0, 0, 0};
     
     Button y0;
     Button n0;
@@ -39,6 +48,35 @@ public class Level2 extends KeyAdapter {
                 break;
             case 2:
                 maze(g);
+
+                switch(responseCounter){
+                    case 1:
+                        paused = true;
+                        load();
+                        y0Response(g);
+                        break;
+                    case -1:
+                        paused = true;
+                    case 2:
+                        paused = true;
+                        load();
+                        y1Response(g);
+                        break;
+                    case -2:
+                        paused = true;
+                    case 3:
+                        paused = true;
+                    case -3:
+                        paused = true;
+                    case 4:
+                        paused = true;
+                    case -4:
+                        paused = true;
+                    case 5:
+                        paused = true;
+                    case -5:
+                }
+
                 break;
         }
     }
@@ -47,6 +85,8 @@ public class Level2 extends KeyAdapter {
         p = new Player(600, 300);
         obstacles.clear();
         walls.clear();
+
+        p.setMoving(true);
 
         Obstacle g1;
         Obstacle g2;
@@ -105,29 +145,15 @@ public class Level2 extends KeyAdapter {
         walls.add(new Wall(500, 550, 150, 25));
         walls.add(new Wall(75, 550, 325, 25));
         walls.add(new Wall(75, 375, 25, 175));
-
-        // y0 = new Button("Yes 0", 950, 200, 300, 50);
-        // n0 = new Button("No 0", 950, 350, 300, 50);
-        // y1 = new Button("Yes 1", 950, 200, 300, 50);
-        // n1 = new Button("No 1", 950, 350, 300, 50);
-        // y2 = new Button("Yes 2", 950, 200, 300, 50);
-        // n2 = new Button("No 2", 950, 350, 300, 50);
-
-        // y3 = new Button("Yes 3", 950, 200, 300, 50);
-        // n3 = new Button("No 3", 950, 350, 300, 50);
-        // y4 = new Button("Yes 4", 950, 200, 300, 50);
-        // n4 = new Button("No 4", 950, 350, 300, 50);
-        // y5 = new Button("Yes 5", 950, 200, 300, 50);
-        // n5 = new Button("No 5", 950, 350, 300, 50);
     }
 
     public void slide0(Graphics g) {
-        Slide s = new Slide(0, "Exam season is coming up and you are on your computer, trying to focus. Can you stay focused and avoid all of the distractions focus on your assignments?");
+        Slide s = new Slide(0, "need to write this txt");
         s.display(g);
     }
 
     public void slide1(Graphics g) {
-        Slide s = new Slide(0,"Control your mouse pointer by using your arrow keys to move around the screen. Collect study and assignment related apps to earn points, while avoiding distractions. Score 20 points to win without losing all of your health!");
+        Slide s = new Slide(0,"Control the player by using your arrow keys to move around the screen. Your goal is to go to all the stations in the maze and answer a series of questions.");
         s.display(g);
     }
 
@@ -163,12 +189,13 @@ public class Level2 extends KeyAdapter {
         p.display(g);
 
         int i = temp;
+        collidedObstacleIndex = i;
         if (temp != -1 ){
             p.setMoving(false);
 
             switch(i){
                 case 0:
-                    Slide s0 = new Slide(1, true,  "Testing 0");
+                    Slide s0 = new Slide(1, true,  "Is Github a helpful resource in keeping an organized work enviornement?");
                     s0.display(g);
 
                     y0 = new Button("Yes 0", 950, 200, 300, 50);
@@ -176,6 +203,9 @@ public class Level2 extends KeyAdapter {
 
                     y0.display(g);
                     n0.display(g);
+
+                    buttons.add(y0);
+                    buttons.add(n0);
 
                     break;
                 case 1:
@@ -188,6 +218,9 @@ public class Level2 extends KeyAdapter {
                     y1.display(g);
                     n1.display(g);
 
+                    buttons.add(y1);
+                    buttons.add(n1);
+
                     break;
                 case 2:
                     Slide s2 = new Slide(1, true,  "Testing 2");
@@ -198,6 +231,9 @@ public class Level2 extends KeyAdapter {
 
                     y2.display(g);
                     n2.display(g);
+
+                    buttons.add(y2);
+                    buttons.add(n2);
                     
                     break;
                 case 3:
@@ -209,6 +245,9 @@ public class Level2 extends KeyAdapter {
 
                     y3.display(g);
                     n3.display(g);
+
+                    buttons.add(y3);
+                    buttons.add(n3);
                     
                     break;
                 case 4:
@@ -220,6 +259,9 @@ public class Level2 extends KeyAdapter {
 
                     y4.display(g);
                     n4.display(g);
+
+                    buttons.add(y4);
+                    buttons.add(n4);
                     
                     break;
                 case 5:
@@ -231,10 +273,69 @@ public class Level2 extends KeyAdapter {
 
                     y5.display(g);
                     n5.display(g);
+
+                    buttons.add(y5);
+                    buttons.add(n5);
                     
                     break;
             }
         }
+    }
+
+    public void y0Response(Graphics g){
+        Slide s = new Slide(1,  "Correct! Github is an open source easy to use software that is very helpful. It allows programmers to easily organize their projects, keep track of code versions, and collaborate with other developers. I am glad to see that you're on the right track!");
+        s.display(g);
+
+        scores[0] = 1;
+    }
+
+    public void n0Response(Graphics g){
+        
+    }
+
+    public void y1Response(Graphics g){
+        Slide s = new Slide(1,  "I want to cry");
+        s.display(g);
+
+        scores[1] = 1;
+    }
+
+    public void n1Response(Graphics g){
+        
+    }
+
+    public void y2Response(Graphics g){
+        
+        scores[2] = 1;
+    }
+
+    public void n2Response(Graphics g){
+        
+    }
+
+    public void y3Response(Graphics g){
+        
+        scores[3] = 1;
+    }
+
+    public void n3Response(Graphics g){
+        
+    }
+
+    public void y4Response(Graphics g){
+        scores[4] = 1;
+    }
+
+    public void n4Response(Graphics g){
+        
+    }
+
+    public void y5Response(Graphics g){
+        scores[5] = 1;
+    }
+
+    public void n5Response(Graphics g){
+        
     }
 
     public void setLeft(boolean left) {
@@ -259,6 +360,30 @@ public class Level2 extends KeyAdapter {
 
     public int getSlideNum() {
         return slideNum;
+    }
+
+    public void setResponseCounter(int n){
+        responseCounter = n;
+    }
+
+    public int getResponseCounter(){
+        return responseCounter;
+    }
+
+    public boolean getPause(){
+        return paused;
+    }
+
+    public void setPause(boolean b){
+        paused = b;
+    }
+
+    public void setCollidedObstacleIndex(int n){
+        collidedObstacleIndex = n;
+    }
+
+    public int getCollidedObstacleIndex(){
+        return collidedObstacleIndex;
     }
 
 }
