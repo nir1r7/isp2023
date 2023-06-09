@@ -31,9 +31,7 @@ public class MainMenu {
             g.drawImage(back, 25, 25, 104, 64, null);
             Font larger = Font.createFont(Font.TRUETYPE_FONT, new File("./static/fonts/stress.ttf")).deriveFont(50f);
             g.setFont(larger);
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
+        } catch (Exception e) {}
         g.setColor(Color.WHITE);
 
         g.drawString("Main Menu", 590, 120);

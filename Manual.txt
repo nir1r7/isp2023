@@ -30,3 +30,5 @@ Level Guides:
     keys are used to control the character to dodge and collect. Level 3 has the same problem as
     level 2 where the player and obstacles' speed might be faster or slower depending on the
     performance of the computer.
+
+The main method is located in Runner.java
