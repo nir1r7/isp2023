@@ -19,9 +19,14 @@ Level Guides:
     Level 2 - Maze level:
     In this level, the player will move through a maze, answering questions to earn points. Arrow 
     keys are used to navigate through the maze, and the mouse is used to answer the questtions.
+    There is a bug with collision in certain spots in level 2. Furthermore, the player movement
+    speed is based on the computer's performance, meaning that for some computers the player might
+    be faster or slower depending on the performance.
 
     Level 3 - Action level:
     In this level, the player will dodge a series of objects, while collecting others. Once the
     player collects 20 study or work related objects, the player will successfully beat the level.
     If the player loses all three lives, by touching distractions, the the player will lose. Arrow
-    keys are used to control the character to dodge and collect.
+    keys are used to control the character to dodge and collect. Level 3 has the same problem as
+    level 2 where the player and obstacles' speed might be faster or slower depending on the
+    performance of the computer.
