@@ -14,7 +14,7 @@ public class Level2 extends KeyAdapter {
     int x = 700;
     int y = 350;
     private int slideNum = 0;
-
+    //test
     public void level2(Graphics g) {
         switch(slideNum) {
             case 0:
@@ -151,7 +151,7 @@ public class Level2 extends KeyAdapter {
     public void setDown(boolean down) {
         p.down = down;
     }
-    
+
     public void setSlide(int n) {
         slideNum = n;
     }
