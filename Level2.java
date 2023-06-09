@@ -6,8 +6,10 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 
 public class Level2 extends KeyAdapter {
+    /** Player variable */
     Player p;
 
+    /** ArrayLists for walls, obstacles and buttons */
     ArrayList<Wall> walls = new ArrayList<Wall>();
     ArrayList<Obstacle> obstacles = new ArrayList<Obstacle>();
     ArrayList<Button> buttons = new ArrayList<Button>();
@@ -15,15 +17,18 @@ public class Level2 extends KeyAdapter {
     int x = 700;
     int y = 350;
 
+    /** Slide number and responses */
     private int slideNum = 0;
     private int responseCounter = 0;
 
     boolean paused = false;
 
+    /** Index of obstacle on collision */
     int collidedObstacleIndex = -1;
 
     int scores[] = {0, 0, 0, 0, 0, 0};
     
+    /** Buttons for slide */
     Button y0;
     Button n0;
     Button y1;
@@ -31,6 +36,7 @@ public class Level2 extends KeyAdapter {
     Button y2;
     Button n2;
 
+    /** Buttons for slide */
     Button y3;
     Button n3;
     Button y4;
@@ -38,7 +44,12 @@ public class Level2 extends KeyAdapter {
     Button y5;
     Button n5;
 
+    /**
+     * Displays level 2 based off of slide number
+     * @param g graphics
+     */
     public void level2(Graphics g) {
+        /** Loads level based off of the slide number */
         switch(slideNum) {
             case 0:
                 slide0(g);
@@ -48,7 +59,6 @@ public class Level2 extends KeyAdapter {
                 break;
             case 2:
                 maze(g);
-
                 switch(responseCounter){
                     case 1:
                         paused = true;
@@ -119,7 +129,11 @@ public class Level2 extends KeyAdapter {
         }
     }
 
+    /**
+     * Loads the level
+     */
     public void load(){
+        /** Resets the player and clears obstacles */
         p = new Player(600, 300);
         obstacles.clear();
         walls.clear();
@@ -185,16 +199,28 @@ public class Level2 extends KeyAdapter {
         walls.add(new Wall(75, 375, 25, 175));
     }
 
+    /**
+     * Displays slide 0
+     * @param g graphics
+     */
     public void slide0(Graphics g) {
         Slide s = new Slide(0, "need to write this txt");
         s.display(g);
     }
 
+    /**
+     * Displays slide 1
+     * @param g graphics
+     */
     public void slide1(Graphics g) {
         Slide s = new Slide(0,"Control the player by using your arrow keys to move around the screen. Your goal is to go to all the stations in the maze and answer a series of questions.");
         s.display(g);
     }
 
+    /** 
+     * Displays slide 3
+     * @param g graphics
+     */
     public void slide3(Graphics g){
         Slide s = new Slide(0, "Congradulations! You have completed the final learning level of this game. Now it is time for you to play the real game");
         s.display(g);
@@ -204,7 +230,12 @@ public class Level2 extends KeyAdapter {
         }
     }
 
+    /**
+     * Displays the maze level
+     * @param g graphics
+     */
     public void maze(Graphics g) {
+        // checks if the player is colliding with any walls
         for (Wall w : walls){
             w.display(g);
             if (p.collided(w) != 0) {
@@ -224,6 +255,8 @@ public class Level2 extends KeyAdapter {
                 }
             }
         }
+
+        // finds the position of the obstacle that the player collided with in the arraylist
         int temp = -1;
         for (int i = 0; i < obstacles.size(); i++){
             obstacles.get(i).display(g);
@@ -235,6 +268,7 @@ public class Level2 extends KeyAdapter {
         g.setColor(Color.BLACK);
         p.display(g);
 
+        // displays the respective question according the obstacle that the player collided with
         int i = temp;
         collidedObstacleIndex = i;
         if (temp != -1 ){
@@ -329,6 +363,10 @@ public class Level2 extends KeyAdapter {
         }
     }
 
+    /**
+     * Displays the response for answer yes of slide 0
+     * @param g graphics
+     */
     public void y0Response(Graphics g){
         Slide s = new Slide(1,  "Correct! Github is an open source easy to use software that is very helpful. It allows programmers to easily organize their projects, keep track of code versions, and collaborate with other developers. I am glad to see that you're on the right track!");
         s.display(g);
@@ -336,11 +374,19 @@ public class Level2 extends KeyAdapter {
         scores[0] = 1;
     }
 
+    /**
+     * Displays the response for answer no of slide 0
+     * @param g graphics
+     */
     public void n0Response(Graphics g){
         Slide s = new Slide(-1, "Incorrect. Github is an open  easy to use software that is very helpful for programmers. It allows programmers to easily organize their projects, keep track of code version, and collaborate with otjer developers. Revisite this checkpoint to answer correctly.");
         s.display(g);
     }
 
+    /**
+     * Displays the response for answer yes of slide 1
+     * @param g graphics
+     */
     public void y1Response(Graphics g){
         Slide s = new Slide(1,  "Correct, brawl stars is bad");
         s.display(g);
@@ -348,11 +394,20 @@ public class Level2 extends KeyAdapter {
         scores[1] = 1;
     }
 
+    /**
+     * Displays the response for answer no of slide 1
+     * @param g graphics
+     */
     public void n1Response(Graphics g){
         Slide s = new Slide(-1, "Incorrect, brawl stars is bad, revisite");
         s.display(g);
     }
 
+
+    /**
+     * Displays the response for answer yes of slide 2
+     * @param g graphics
+     */
     public void y2Response(Graphics g){
         Slide s = new Slide(1, "Correct! Instagram is a distraction");
         s.display(g);
@@ -360,11 +415,19 @@ public class Level2 extends KeyAdapter {
         scores[2] = 1;
     }
 
+    /**
+     * Displays the response for answer no of slide 2
+     * @param g graphics
+     */
     public void n2Response(Graphics g){
         Slide s = new Slide(-1, "Incorrect! Instagram is a distraction, revisite");
         s.display(g);
     }
 
+    /**
+     * Displays the response for answer yes of slide 3
+     * @param g graphics
+     */
     public void y3Response(Graphics g){
         Slide s = new Slide(1, "Correct! Using google sheets for schedules can help you manage your time properly and finish your assignements on time...");
         s.display(g);
@@ -372,12 +435,20 @@ public class Level2 extends KeyAdapter {
         scores[3] = 1;
     }
 
+    /**
+     * Displays the response for answer no of slide 3
+     * @param g graphics
+     */
     public void n3Response(Graphics g){
         Slide s = new Slide(-1, "Incorrect! Using google sheets... revisite");
         s.display(g);
         
     }
 
+    /**
+     * Displays the response for answer yes of slide 4
+     * @param g graphics
+     */
     public void y4Response(Graphics g){
         Slide s = new Slide(1, "twitter is bad");
         s.display(g);
@@ -385,11 +456,19 @@ public class Level2 extends KeyAdapter {
         scores[4] = 1;
     }
 
+    /**
+     * Displays the response for answer no of slide 4
+     * @param g graphics
+     */
     public void n4Response(Graphics g){
         Slide s = new Slide(-1, "twitter is correct");
         s.display(g);
     }
 
+    /**
+     * Displays the response for answer yes of slide 5
+     * @param g graphics
+     */
     public void y5Response(Graphics g){
         Slide s = new Slide(1, "correct, google docs is good");
         s.display(g);
@@ -397,57 +476,108 @@ public class Level2 extends KeyAdapter {
         scores[5] = 1;
     }
 
+    /**
+     * displays the response for answer no of slide 5
+     * @param g graphics
+     */
     public void n5Response(Graphics g){
         Slide s = new Slide(-1, "incorrect, google docs is good, reviste");
         s.display(g);
     }
 
+    /**
+     * sets the player movement to left
+     * @param left boolean left
+     */
     public void setLeft(boolean left) {
         p.left = left;
     }
 
+    /** 
+     * sets the player movement to right 
+     * @param right boolean right
+     */
     public void setRight(boolean right) {
         p.right = right;
     }
 
+    /**
+     * sets the player movement to up
+     * @param up boolean up
+     */
     public void setUp(boolean up) {
         p.up = up;
     }
 
+    /**
+     * sets the player movement to down
+     * @param down boolean down
+     */
     public void setDown(boolean down) {
         p.down = down;
     }
 
+    /**
+     * sets the slideNum
+     * @param n slide number
+     */
     public void setSlide(int n) {
         slideNum = n;
     }
 
+    /**
+     * gets the slideNum variable
+     * @return slideNum
+     */
     public int getSlideNum() {
         return slideNum;
     }
 
+    /**
+     * sets the responseCounter
+     * @param n number of responses
+     */
     public void setResponseCounter(int n){
         responseCounter = n;
     }
 
+    /**
+     * gets the responseCoutner
+     * @return responseCoutner
+     */
     public int getResponseCounter(){
         return responseCounter;
     }
 
+    /**
+     * gets the paused variable
+     * @return paused
+     */
     public boolean getPause(){
         return paused;
     }
 
+    /**
+     * sets the paused variable
+     * @param b boolean paused
+     */
     public void setPause(boolean b){
         paused = b;
     }
 
+    /**
+     * sets the collidedObstacleIndex
+     * @param n index
+     */
     public void setCollidedObstacleIndex(int n){
         collidedObstacleIndex = n;
     }
 
+    /**
+     * Gets the index of the collided obstacle in the arraylist
+     * @return collidedObstacleIndex
+     */
     public int getCollidedObstacleIndex(){
         return collidedObstacleIndex;
     }
-
 }

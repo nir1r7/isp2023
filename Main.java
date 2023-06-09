@@ -197,7 +197,6 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                         l3.setSlide(0);
                     }
                     break;
-
             }
         }
         draw.repaint();
