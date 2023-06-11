@@ -245,7 +245,7 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void slide3(Graphics g){
-        Slide s = new Slide(1, "Congradulations! You have completed the final learning level of this game. FINISH THIS");
+        Slide s = new Slide(1, "Congradulations! You have completed the final learning level of this game. You have proven your knowledge very well. It is time for you to tackle level 3!");
         s.display(g);
 
         for (int i = 0; i < scores.length; i++){
@@ -402,7 +402,7 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void n0Response(Graphics g){
-        Slide s = new Slide(-1, "Incorrect, Github is an open  easy to use software that is very helpful for programmers. It allows programmers to easily organize their projects, keep track of code version, and collaborate with otjer developers. Revisite this checkpoint to answer correctly.");
+        Slide s = new Slide(-1, "Incorrect, Github is an open  easy to use software that is very helpful for programmers. It allows programmers to easily organize their projects, keep track of code version, and collaborate with other developers. Revisite this checkpoint to answer correctly.");
         s.display(g);
     }
 
@@ -411,7 +411,7 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void y1Response(Graphics g){
-        Slide s = new Slide(-1,  "Incorrect, brawl stars is a third person shooter animated video game. There is zero scientific research that suggests that Brawl Stars will help students pass their exams. I hope this is not your main strategy in passing. Please revisite this checkpoint to answer correctly.");
+        Slide s = new Slide(-1,  "Incorrect, Brawl Stars is a third person shooter animated video game. There is no scientific research that suggests that Brawl Stars will help students pass their exams. I hope this is not your main strategy in passing. Please revisite this checkpoint to answer correctly.");
         s.display(g);
     }
 
@@ -420,7 +420,7 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void n1Response(Graphics g){
-        Slide s = new Slide(1, "Correct, brawl stars is an educational video game.");
+        Slide s = new Slide(1, "Correct! Brawl Stars is not an educational video game. Brawl Stars is a distraction and can prevent you from being on schedule for studying for your final exams. It is good to see that you are making the right choices for your education.");
         s.display(g);
 
         scores[1] = 1;
@@ -432,7 +432,7 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void y2Response(Graphics g){
-        Slide s = new Slide(-1, "incorrect! Instagram is a distraction, reviste");
+        Slide s = new Slide(-1, "Incorrect, Instagram is a social media platform whose main purpose is entertainement. Although it can be used in an educational way, studies show that excessive usage of Instagram leads to procrastination. It is recommended you limit your usage of Instagram. Please revisite this checkpoint.");
         s.display(g);
     }
 
@@ -441,7 +441,7 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void n2Response(Graphics g){
-        Slide s = new Slide(1, "correct! Instagram is a distraction");
+        Slide s = new Slide(1, "Correct! Instagram is a not an app that will help you focus. In fact, it is the opposite, Instagram's goal is to keep you on the app as long as possible. Its excessive usage leads to procrastination. Way to stay to focused on studies!");
         s.display(g);
 
         scores[2] = 1;
@@ -452,7 +452,7 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void y3Response(Graphics g){
-        Slide s = new Slide(1, "Correct! Using google sheets for schedules can help you manage your time properly and finish your assignements on time...");
+        Slide s = new Slide(1, "Correct! Google sheets is a very useful software. The spreadsheet application allows students to create schedules and plans for studying for their final exams. This allows them to manage their time properly and put their plans into action. I hope you start using google sheets! ");
         s.display(g);
         
         scores[3] = 1;
@@ -463,7 +463,7 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void n3Response(Graphics g){
-        Slide s = new Slide(-1, "Incorrect! Using google sheets... revisite");
+        Slide s = new Slide(-1, "Incorrect, google sheets is in fact a useful software. The google application is a spreadsheat that allows students to do many things. They can make schedules/plans and track the amount of time they spend on certain tasks. Make sure to reviste this checkpoint to answer correctly.");
         s.display(g);
     }
 
@@ -472,7 +472,7 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void y4Response(Graphics g){
-        Slide s = new Slide(-1, "incorrect, twitter is bad");
+        Slide s = new Slide(-1, "Incorrect, twitter does aid students in search of academic success. Although there are many educational aspects to twitter, then end product of its usage is not intended to help students. Come back to this checkpoint to answer the question correctly");
         s.display(g);
     }
 
@@ -481,7 +481,7 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void n4Response(Graphics g){
-        Slide s = new Slide(1, "correct, twitter is bad");
+        Slide s = new Slide(1, "Correct! Twitter has no direct benefits to students. There are potentially some educational aspects to twitter, notwithstanding, it is more of a distraction than anything else. Make sure to continue avoiding distractions just like twitter!");
         s.display(g);
 
         scores[4] = 1;
@@ -492,7 +492,7 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void y5Response(Graphics g){
-        Slide s = new Slide(1, "correct, google docs is good");
+        Slide s = new Slide(1, "Correct! Google docs is a very useful google application. It may be used to organize/take notes from students' classes. Moreover, the application allows students to access their documents directly from the browser from any computer.");
         s.display(g);
 
         scores[5] = 1;
@@ -503,7 +503,7 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void n5Response(Graphics g){
-        Slide s = new Slide(-1, "incorrect, google docs is good, reviste");
+        Slide s = new Slide(-1, "Incorrect, google docs is in fact a helpful application for students. Its ease of access to documents and offline edit access allows students to take notes from anywhere. Consider using google docs as a way to study and take notes for your courses. Revisite this checkpoint.");
         s.display(g);
     }
 
@@ -601,9 +601,5 @@ public class Level2 extends KeyAdapter {
      */
     public int getCollidedObstacleIndex(){
         return collidedObstacleIndex;
-    }
-
-    public BufferedImage getBg(){
-        return bg;
     }
 }
