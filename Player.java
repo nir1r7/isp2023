@@ -45,6 +45,8 @@ public class Player {
         if (down) updateY(1);
     }
 
+    //public void display(Graphics g, )
+
     public int collided(Obstacle o){
         if (x + w >= o.getX() && x <= o.getX() + o.getW() && y + h >= o.getY() && y <= o.getY() + o.getH()){
             if (o.good) {
@@ -82,6 +84,14 @@ public class Player {
         if (this.y + h + dy <= 665 && this.y + dy >= 0 && moving) {
             this.y += dy;
         }
+    }
+
+    public void setX(int n){
+        x = n;
+    }
+
+    public void setY(int n){
+        y = n;
     }
 
     public void setMoving(boolean m){

@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.event.KeyAdapter;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -7,7 +8,8 @@ import javax.imageio.ImageIO;
 
 public class Level2 extends KeyAdapter {
     /** Player variable */
-    Player p;
+    Player p = new Player(600, 300);
+
 
     /** ArrayLists for walls, obstacles and buttons */
     ArrayList<Wall> walls = new ArrayList<Wall>();
@@ -44,11 +46,16 @@ public class Level2 extends KeyAdapter {
     Button y5;
     Button n5;
 
+    /** Background image */
+    BufferedImage bg;
+
     /**
      * Displays level 2 based off of slide number
      * @param g graphics
      */
     public void level2(Graphics g) {
+
+        //g.drawImage(bg, 0, 0, 1400, 700, null);
         /** Loads level based off of the slide number */
         switch(slideNum) {
             case 0:
@@ -64,61 +71,73 @@ public class Level2 extends KeyAdapter {
                         paused = true;
                         load();
                         y0Response(g);
+                        p.setX(165);
                         break;
                     case -1:
                         paused = true;
                         load();
                         n0Response(g);
+                        p.setX(165);
                         break;
                     case 2:
                         paused = true;
                         load();
                         y1Response(g);
+                        p.setX(565);
                         break;
                     case -2:
                         paused = true;
                         load();
                         n1Response(g);
+                        p.setX(565);
                         break;
                     case 3:
                         paused = true;
                         load();
                         y2Response(g);
+                        p.setY(570);
                         break;
                     case -3:
                         paused = true;
                         load();
                         n2Response(g);
+                        p.setY(570);
                         break;
                     case 4:
                         paused = true;
                         load();
                         y3Response(g);
+                        p.setY(460);
                         break;
                     case -4:
                         paused = true;
                         load();
                         n3Response(g);
+                        p.setY(460);
                         break;
                     case 5:
                         paused = true;
                         load();
                         y4Response(g);
+                        p.setY(70);
                         break;
                     case -5:
-                    paused = true;
+                        paused = true;
                         load();
                         n4Response(g);
+                        p.setY(70);
                         break;
                     case 6:
                         paused = true;
                         load();
                         y5Response(g);
+                        p.setY(470);
                         break;
                     case -6:
                         paused = true;
                         load();
                         n5Response(g);
+                        p.setY(470);
                         break;
                 }
                 break;
@@ -134,7 +153,6 @@ public class Level2 extends KeyAdapter {
      */
     public void load(){
         /** Resets the player and clears obstacles */
-        p = new Player(600, 300);
         obstacles.clear();
         walls.clear();
 
@@ -149,6 +167,9 @@ public class Level2 extends KeyAdapter {
         Obstacle b3;
 
         try{
+
+            bg = ImageIO.read(new File("./static/img/mazebg.png"));
+
             g1 = new Obstacle(117, 17, 40, 40, true, ImageIO.read(new File("./static/img/github.png")));
             g2 = new Obstacle(517, 417, 40, 40, true, ImageIO.read(new File("./static/img/brawlstars.png")));
             g3 = new Obstacle(993, 517, 40, 40, true, ImageIO.read(new File("./static/img/instagram.png")));
@@ -180,21 +201,21 @@ public class Level2 extends KeyAdapter {
         walls.add(new Wall(1150, 0, 25, 200));
         walls.add(new Wall(75, 275, 600, 25));
         walls.add(new Wall(750, 275, 25, 100));
-        walls.add(new Wall(500, 375, 275, 25));
-        walls.add(new Wall(1262, 75, 25,225));
-        walls.add(new Wall(850, 275, 412, 25));
+        walls.add(new Wall(475, 375, 300, 25));
+        walls.add(new Wall(1262, 75, 25,200));
+        walls.add(new Wall(850, 275, 437, 25));
         walls.add(new Wall(850, 275, 25, 300));
         walls.add(new Wall(950, 375, 450, 25));
-        walls.add(new Wall(1262, 375, 25, 200));
-        walls.add(new Wall(950, 500, 25, 175));
+        walls.add(new Wall(1262, 375, 25, 175));
+        walls.add(new Wall(950, 500, 25, 200));
         walls.add(new Wall(950, 475, 225, 25));
         walls.add(new Wall(750, 475, 25, 200));
-        walls.add(new Wall(375, 450, 100, 25));
+        walls.add(new Wall(375, 450, 125, 25));
         walls.add(new Wall(750, 275, 25, 100));
         walls.add(new Wall(225, 375, 175, 25));
-        walls.add(new Wall(475, 375, 25, 200));
+        walls.add(new Wall(475, 400, 25, 150));
         walls.add(new Wall(375, 400, 25, 75));
-        walls.add(new Wall(500, 550, 150, 25));
+        walls.add(new Wall(475, 550, 175, 25));
         walls.add(new Wall(75, 550, 325, 25));
         walls.add(new Wall(75, 375, 25, 175));
     }
@@ -204,8 +225,13 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void slide0(Graphics g) {
-        Slide s = new Slide(0, "need to write this txt");
-        s.display(g);
+        try{
+            Slide s = new Slide(bg, 0, "Now that you have learned the basic fundamentals of studying for your final exams. It is time for you to put your knowledge to the test!", false);
+            s.display(g);
+        } catch (Exception e){
+            Slide s = new Slide(0, "Now that you have learned the basic fundamentals of studying for your final exams. It is time for you to put your knowledge to the test!");
+            s.display(g);
+        }
     }
 
     /**
@@ -213,8 +239,13 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void slide1(Graphics g) {
-        Slide s = new Slide(0,"Control the player by using your arrow keys to move around the screen. Your goal is to go to all the stations in the maze and answer a series of questions.");
-        s.display(g);
+        try{
+            Slide s = new Slide(bg, 0,"Control the player by using the arrow keys on your keyboard to move around the maze. Your goal is to go to all the checkpoints and answer each question correctly. If you fail a checkpoint, you will be required to go back and try again. Get all of the questions correct to unlock level 3!", false);
+            s.display(g);
+        } catch (Exception e){
+            Slide s = new Slide(0,"Control the player by using the arrow keys on your keyboard to move around the maze. Your goal is to go to all the checkpoints and answer each question correctly. If you fail a checkpoint, you will be required to go back and try again. Get all of the questions correct to unlock level 3!");
+            s.display(g);
+        }
     }
 
     /** 
@@ -222,7 +253,7 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void slide3(Graphics g){
-        Slide s = new Slide(0, "Congradulations! You have completed the final learning level of this game. Now it is time for you to play the real game");
+        Slide s = new Slide(1, "Congradulations! You have completed the final learning level of this game. FINISH THIS");
         s.display(g);
 
         for (int i = 0; i < scores.length; i++){
@@ -276,7 +307,7 @@ public class Level2 extends KeyAdapter {
 
             switch(i){
                 case 0:
-                    Slide s0 = new Slide(1, true,  "Is Github a helpful resource in keeping an organized work enviornement?");
+                    Slide s0 = new Slide(0, true,  "Is Github a helpful resource in keeping an organized work enviornement?");
                     s0.display(g);
 
                     y0 = new Button("Yes 0", 950, 200, 300, 50);
@@ -290,7 +321,7 @@ public class Level2 extends KeyAdapter {
 
                     break;
                 case 1:
-                    Slide s1 = new Slide(1, true,  "Is brawl stars good?");
+                    Slide s1 = new Slide(0, true,  "Would the video game Brawl Stars be useful for passing your final exams?");
                     s1.display(g);
 
                     y1 = new Button("Yes 1", 950, 200, 300, 50);
@@ -304,7 +335,7 @@ public class Level2 extends KeyAdapter {
 
                     break;
                 case 2:
-                    Slide s2 = new Slide(1, true,  "It Instagram good?");
+                    Slide s2 = new Slide(0, true,  "Is Instagram an app that allows studens to focus better?");
                     s2.display(g);
 
                     y2 = new Button("Yes 2", 950, 200, 300, 50);
@@ -318,7 +349,7 @@ public class Level2 extends KeyAdapter {
                     
                     break;
                 case 3:
-                    Slide s3 = new Slide(-1, true,  "Is google sheets good?");
+                    Slide s3 = new Slide(0, true,  "Is google sheets a helpful software?");
                     s3.display(g);
 
                     y3 = new Button("Yes 3", 950, 200, 300, 50);
@@ -332,7 +363,7 @@ public class Level2 extends KeyAdapter {
                     
                     break;
                 case 4:
-                    Slide s4 = new Slide(-1, true,  "Is twitter good?");
+                    Slide s4 = new Slide(0, true,  "Does twitter aid students in search of academic success?");
                     s4.display(g);
 
                     y4 = new Button("Yes 4", 950, 200, 300, 50);
@@ -346,7 +377,7 @@ public class Level2 extends KeyAdapter {
                     
                     break;
                 case 5:
-                    Slide s5 = new Slide(-1, true,  "Is google docs good?");
+                    Slide s5 = new Slide(0, true,  "Is google docs a studying related application?");
                     s5.display(g);
 
                     y5 = new Button("Yes 5", 950, 200, 300, 50);
@@ -379,7 +410,7 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void n0Response(Graphics g){
-        Slide s = new Slide(-1, "Incorrect. Github is an open  easy to use software that is very helpful for programmers. It allows programmers to easily organize their projects, keep track of code version, and collaborate with otjer developers. Revisite this checkpoint to answer correctly.");
+        Slide s = new Slide(-1, "Incorrect, Github is an open  easy to use software that is very helpful for programmers. It allows programmers to easily organize their projects, keep track of code version, and collaborate with otjer developers. Revisite this checkpoint to answer correctly.");
         s.display(g);
     }
 
@@ -388,10 +419,8 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void y1Response(Graphics g){
-        Slide s = new Slide(1,  "Correct, brawl stars is bad");
+        Slide s = new Slide(-1,  "Incorrect, brawl stars is a third person shooter animated video game. There is zero scientific research that suggests that Brawl Stars will help students pass their exams. I hope this is not your main strategy in passing. Please revisite this checkpoint to answer correctly.");
         s.display(g);
-
-        scores[1] = 1;
     }
 
     /**
@@ -399,8 +428,10 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void n1Response(Graphics g){
-        Slide s = new Slide(-1, "Incorrect, brawl stars is bad, revisite");
+        Slide s = new Slide(1, "Correct, brawl stars is an educational video game.");
         s.display(g);
+
+        scores[1] = 1;
     }
 
 
@@ -409,10 +440,8 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void y2Response(Graphics g){
-        Slide s = new Slide(1, "Correct! Instagram is a distraction");
+        Slide s = new Slide(-1, "incorrect! Instagram is a distraction, reviste");
         s.display(g);
-        
-        scores[2] = 1;
     }
 
     /**
@@ -420,8 +449,10 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void n2Response(Graphics g){
-        Slide s = new Slide(-1, "Incorrect! Instagram is a distraction, revisite");
+        Slide s = new Slide(1, "correct! Instagram is a distraction");
         s.display(g);
+
+        scores[2] = 1;
     }
 
     /**
@@ -442,7 +473,6 @@ public class Level2 extends KeyAdapter {
     public void n3Response(Graphics g){
         Slide s = new Slide(-1, "Incorrect! Using google sheets... revisite");
         s.display(g);
-        
     }
 
     /**
@@ -450,10 +480,8 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void y4Response(Graphics g){
-        Slide s = new Slide(1, "twitter is bad");
+        Slide s = new Slide(-1, "incorrect, twitter is bad");
         s.display(g);
-
-        scores[4] = 1;
     }
 
     /**
@@ -461,8 +489,10 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void n4Response(Graphics g){
-        Slide s = new Slide(-1, "twitter is correct");
+        Slide s = new Slide(1, "correct, twitter is bad");
         s.display(g);
+
+        scores[4] = 1;
     }
 
     /**
@@ -579,5 +609,9 @@ public class Level2 extends KeyAdapter {
      */
     public int getCollidedObstacleIndex(){
         return collidedObstacleIndex;
+    }
+
+    public BufferedImage getBg(){
+        return bg;
     }
 }

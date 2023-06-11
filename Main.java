@@ -71,6 +71,8 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         int x = e.getX();
         int y = e.getY();
 
+        System.out.println("(" + x + ", " + y + ")");
+
         /** handles mouse clicks for each game state */
         if (state == 0 && s.cont.isClicked(x, y)) {
             if (name != null) state = 2;
@@ -140,7 +142,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                     break;
                 case 2:
                     int sum = 0;
-                    for (int n : l2.scores){ sum += n; System.out.println(sum);}
+                    for (int n : l2.scores) sum += n;
                     if (sum == 6){ 
                         l2.setSlide(3);
                     }
@@ -152,7 +154,6 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                         l2.setPause(false);
                         l2.setCollidedObstacleIndex(-1);
                     } else{
-
                         if (l2.y0 != null && l2.y0.isClicked(x, y) && l2.getCollidedObstacleIndex() == 0) l2.setResponseCounter(1);
                         else if (l2.n0 != null && l2.n0.isClicked(x, y) && l2.getCollidedObstacleIndex() == 0) l2.setResponseCounter(-1);
                         else if (l2.y1 != null && l2.y1.isClicked(x, y) && l2.getCollidedObstacleIndex() == 1) l2.setResponseCounter(2);
@@ -165,7 +166,6 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                         else if (l2.n4 != null && l2.n4.isClicked(x, y) && l2.getCollidedObstacleIndex() == 4) l2.setResponseCounter(-5);
                         else if (l2.y5 != null && l2.y5.isClicked(x, y) && l2.getCollidedObstacleIndex() == 5) l2.setResponseCounter(6);
                         else if (l2.n5 != null && l2.n5.isClicked(x, y) && l2.getCollidedObstacleIndex() == 5) l2.setResponseCounter(-6);
-
                     }
                     break;
                 
