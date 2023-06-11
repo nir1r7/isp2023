@@ -8,7 +8,7 @@ import javax.imageio.ImageIO;
 
 public class Level2 extends KeyAdapter {
     /** Player variable */
-    Player p = new Player(600, 300);
+    Player p = new Player(692,  430);
 
 
     /** ArrayLists for walls, obstacles and buttons */
@@ -55,7 +55,9 @@ public class Level2 extends KeyAdapter {
      */
     public void level2(Graphics g) {
 
-        //g.drawImage(bg, 0, 0, 1400, 700, null);
+        /** Load background image */
+        g.drawImage(bg, 0, 0, 1400, 700, null);
+
         /** Loads level based off of the slide number */
         switch(slideNum) {
             case 0:
@@ -225,13 +227,8 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void slide0(Graphics g) {
-        try{
-            Slide s = new Slide(bg, 0, "Now that you have learned the basic fundamentals of studying for your final exams. It is time for you to put your knowledge to the test!", false);
-            s.display(g);
-        } catch (Exception e){
-            Slide s = new Slide(0, "Now that you have learned the basic fundamentals of studying for your final exams. It is time for you to put your knowledge to the test!");
-            s.display(g);
-        }
+        Slide s = new Slide(0, "Now that you have learned the basic fundamentals of studying for your final exams. It is time for you to put your knowledge to the test!");
+        s.display(g);
     }
 
     /**
@@ -239,13 +236,8 @@ public class Level2 extends KeyAdapter {
      * @param g graphics
      */
     public void slide1(Graphics g) {
-        try{
-            Slide s = new Slide(bg, 0,"Control the player by using the arrow keys on your keyboard to move around the maze. Your goal is to go to all the checkpoints and answer each question correctly. If you fail a checkpoint, you will be required to go back and try again. Get all of the questions correct to unlock level 3!", false);
-            s.display(g);
-        } catch (Exception e){
-            Slide s = new Slide(0,"Control the player by using the arrow keys on your keyboard to move around the maze. Your goal is to go to all the checkpoints and answer each question correctly. If you fail a checkpoint, you will be required to go back and try again. Get all of the questions correct to unlock level 3!");
-            s.display(g);
-        }
+        Slide s = new Slide( 0,"Control the player by using the arrow keys on your keyboard to move around the maze. Your goal is to go to all the checkpoints and answer each question correctly. If you fail a checkpoint, you will be required to go back and try again. Get all of the questions correct to unlock level 3!");
+        s.display(g);
     }
 
     /** 
@@ -272,16 +264,16 @@ public class Level2 extends KeyAdapter {
             if (p.collided(w) != 0) {
                 switch (p.collided(w)){
                     case 1:
-                        p.updateX(-1);
+                        p.updateX(-2);
                         break;
                     case 2:
-                        p.updateY(-1);
+                        p.updateY(-2);
                         break;
                     case 3:
-                        p.updateX(1);
+                        p.updateX(2);
                         break;
                     case 4:
-                        p.updateY(1);
+                        p.updateY(2);
                         break;
                 }
             }
@@ -297,7 +289,7 @@ public class Level2 extends KeyAdapter {
         }
 
         g.setColor(Color.BLACK);
-        p.display(g);
+        p.display(0, g);
 
         // displays the respective question according the obstacle that the player collided with
         int i = temp;

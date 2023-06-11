@@ -37,6 +37,20 @@ public class Slide {
 
     /**
      * Slide constructor
+     * @param background background image
+     * @param n emotion
+     * @param text text on slide
+     * @param b has button or not
+     */
+    public Slide (int n, String text, boolean b){
+        txt = text;
+        emote = n;
+        hasbg = false;
+        button = b;
+    }
+
+    /**
+     * Slide constructor
      * @param n emotion
      * @param b has button or not
      * @param text text on slide

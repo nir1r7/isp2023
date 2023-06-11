@@ -45,7 +45,19 @@ public class Player {
         if (down) updateY(1);
     }
 
-    //public void display(Graphics g, )
+    public void display(int n, Graphics g) {
+        if (background != null) {
+            g.drawImage(background, (int)x, (int)y, w, h, null);
+        } else {
+            g.setColor(Color.WHITE);
+            g.fillRect((int)x, (int)y, w, h);
+        }
+
+        if (left) updateX(-2);
+        if (right) updateX(2);
+        if (up) updateY(-2);
+        if (down) updateY(2);
+    }
 
     public int collided(Obstacle o){
         if (x + w >= o.getX() && x <= o.getX() + o.getW() && y + h >= o.getY() && y <= o.getY() + o.getH()){

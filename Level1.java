@@ -25,11 +25,18 @@ public class Level1 extends MouseAdapter {
     Button y3;
     Button n3;
 
+    /** Main background image */
+    BufferedImage bg;
+
     /**
      * Level 1 constructor
      */
     public Level1(){
         slideNum = 0;
+
+        try{
+            bg = ImageIO.read(new File("./static/img/mainbackground.png"));
+        } catch (Exception e){}
     }
 
     /**
@@ -40,11 +47,10 @@ public class Level1 extends MouseAdapter {
         Font f1 = new Font("Serif", Font.PLAIN, 25);
         g.setFont(f1);
 
-        try {
-            BufferedImage bg = ImageIO.read(new File("./static/img/mainbackground.png"));
-            Slide s = new Slide(bg, 0, "Hello " + Main.name + ", my name is Pixel! I will be helping over the coming weeks to make sure you succeed on your exams! First things first, have you been using your time efficiently? Click the answer on the right side of the screen.", true);
-            s.display(g);
-        } catch (Exception e) {}
+        g.drawImage(bg, 0, 0, 1400, 700, null);
+
+        Slide s = new Slide(0, "Hello " + Main.name + ", my name is Pixel! I will be helping over the coming weeks to make sure you succeed on your exams! First things first, have you been using your time efficiently? Click the answer on the right side of the screen.", true);
+        s.display(g);
 
         int y = 200;
 
