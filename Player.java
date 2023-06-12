@@ -45,20 +45,6 @@ public class Player {
         if (down) updateY(1);
     }
 
-    public void display(int n, Graphics g) {
-        if (background != null) {
-            g.drawImage(background, (int)x, (int)y, w, h, null);
-        } else {
-            g.setColor(Color.WHITE);
-            g.fillRect((int)x, (int)y, w, h);
-        }
-
-        if (left) updateX(-2);
-        if (right) updateX(2);
-        if (up) updateY(-2);
-        if (down) updateY(2);
-    }
-
     public int collided(Obstacle o){
         if (x + w >= o.getX() && x <= o.getX() + o.getW() && y + h >= o.getY() && y <= o.getY() + o.getH()){
             if (o.good) {
@@ -66,22 +52,6 @@ public class Player {
             } else {
                 return -1;
             }
-        }
-        return 0;
-    }
-
-    public int collided(Wall wall){
-        if (x + w >= wall.getX() && x + w <= wall.getX() + 25 && y + h >= wall.getY() && y <= wall.getY() + wall.getH()){
-            return 1;
-        }
-        else if (x <= wall.getX() + wall.getW() && x >= wall.getX() + wall.getW() - 25 && y + h >= wall.getY() && y <= wall.getY() + wall.getH()){
-            return 3;
-        }
-        else if (y + h >= wall.getY() && y + h <= wall.getY() + 25 && x + w  >= wall.getX() && x <= wall.getX() + wall.getW()){
-            return 2;
-        }
-        else if (y <= wall.getY() + wall.getH() && y >= wall.getY() + wall.getH() - 25 && x + w  >= wall.getX() && x <= wall.getX() + wall.getW()){
-            return 4;
         }
         return 0;
     }

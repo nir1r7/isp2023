@@ -27,7 +27,7 @@ public class MainMenu {
             /** Draws background */
             BufferedImage bg = ImageIO.read(new File("./static/img/mainbackground.png"));
             g.drawImage(bg, 0, 0, 1400, 700, null);
-            BufferedImage back = ImageIO.read(new File("./static/img/back.png"));
+            BufferedImage back = ImageIO.read(new File("./static/img/backarrow.png"));
             g.drawImage(back, 25, 25, 104, 64, null);
             Font larger = Font.createFont(Font.TRUETYPE_FONT, new File("./static/fonts/stress.ttf")).deriveFont(50f);
             g.setFont(larger);

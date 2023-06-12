@@ -293,7 +293,7 @@ public class Level2 extends KeyAdapter {
         }
 
         g.setColor(Color.BLACK);
-        p.display(0, g);
+        //p.display(0, g);
 
         // displays the respective question according the obstacle that the player collided with
         int i = temp;
