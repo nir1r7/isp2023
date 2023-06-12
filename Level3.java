@@ -2,6 +2,8 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.imageio.ImageIO;
+import javax.swing.text.Style;
+
 import java.util.*;
 
 /**
@@ -137,6 +139,40 @@ public class Level3 {
     public void slide1(Graphics g) {
         Slide s = new Slide(bg, 0, "Control your mouse pointer by using your arrow keys to move around the screen. Collect study and assignment related apps to earn points, while avoiding distractions. Score 20 points to win without losing all of your health!", false);
         s.display(g);
+
+        try{
+            Font f = Font.createFont(Font.TRUETYPE_FONT, new File("./static/fonts/font.otf")).deriveFont(32f);
+            g.setFont(f);
+
+
+            BufferedImage brawlstars = ImageIO.read(new File("./static/img/brawlstars.png"));
+            BufferedImage instagram = ImageIO.read(new File("./static/img/instagram.png"));
+            BufferedImage snapchat = ImageIO.read(new File("./static/img/snapchat.png"));
+            BufferedImage twitter = ImageIO.read(new File("./static/img/twitter.png"));
+            BufferedImage youtube = ImageIO.read(new File("./static/img/youtube.png"));
+
+            BufferedImage github = ImageIO.read(new File("./static/img/github.png"));
+            BufferedImage googledocs = ImageIO.read(new File("./static/img/googledocs.png"));
+            BufferedImage googlesheets = ImageIO.read(new File("./static/img/googlesheets.png"));
+            BufferedImage googleslides = ImageIO.read(new File("./static/img/googleslides.png"));
+
+            int w = 80;
+
+            g.drawImage(brawlstars, 850, 150, w, w, null);
+            g.drawImage(instagram, 950, 150, w, w, null);
+            g.drawImage(snapchat, 850, 250, w, w, null);
+            g.drawImage(twitter, 950, 250, w, w, null);
+            g.drawImage(youtube, 900, 350, w, w, null);
+
+            g.drawImage(github, 380, 150, w, w, null);
+            g.drawImage(googledocs, 480, 150, w, w, null);
+            g.drawImage(googlesheets, 380, 250, w, w, null);
+            g.drawImage(googleslides, 480, 250, w, w, null);
+
+        } catch (Exception e){}
+
+        g.drawString("Study related apps", 310, 100);
+        g.drawString("Distractions", 840, 100);
     }
 
     /**

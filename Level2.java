@@ -124,7 +124,7 @@ public class Level2 extends KeyAdapter {
                         paused = true;
                         load();
                         n3Response(g);
-                        p.setY(460);
+                        p.setY(430);
                         break;
                     case 5:
                         paused = true;

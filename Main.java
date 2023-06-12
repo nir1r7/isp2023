@@ -23,7 +23,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
     /** Font used in game */
     static Font font;
 
-
+    /** Variables for the width and height of the screen */
     int width = 1400;
     int height = 700;
 
@@ -70,8 +70,6 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         /** x and y values of mouse click */
         int x = e.getX();
         int y = e.getY();
-
-        System.out.println("(" + x + ", " + y + ")");
 
         /** handles mouse clicks for each game state */
         if (state == 0) {
