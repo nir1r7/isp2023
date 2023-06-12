@@ -23,7 +23,7 @@ public class Wall extends Obstacle{
      * @param g graphics
      */
     public void display(Graphics g){
-        g.setColor(new Color(60, 207, 121));
+        g.setColor(new Color(0, 163, 255));
 
         g.fillRect((int) getX(), (int) getY(), getW(), getH());
     }
