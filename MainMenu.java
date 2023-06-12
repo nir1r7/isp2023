@@ -46,15 +46,18 @@ public class MainMenu {
         level3Button.display(g);
 
         /** Draws 'x's indicating locked */
-        int x = 780;
-        int y = 295;
-        if (!l2) {
-            g.drawLine(x, y, x + 20, y + 20);
-            g.drawLine(x, y + 20, x + 20, y);
-        }
-        if (!l3) {
-            g.drawLine(x, y + 80, x + 20, y + 100);
-            g.drawLine(x, y + 100, x + 20, y + 80);
-        }
+
+        try{
+            BufferedImage locked = ImageIO.read(new File("./static/img/locked.png"));
+            BufferedImage unlocked = ImageIO.read(new File("./static/img/unlocked.png"));
+
+            g.drawImage(unlocked, 790, 205, 33, 42, null);
+
+            if (!l2) g.drawImage(locked, 790, 285, 33, 42, null);
+            else g.drawImage(unlocked, 790, 285, 33, 42, null);
+
+            if (!l3) g.drawImage(locked, 790, 365, 33, 42, null);
+            else g.drawImage(unlocked, 790, 365, 33, 42, null);
+        } catch (Exception e){}
     }
 }

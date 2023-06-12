@@ -301,6 +301,13 @@ public class Level2 extends KeyAdapter {
         g.setColor(Color.BLACK);
         p.display(g);
 
+        if (scores[0] == 1) g.drawImage(checkmark, 117, 20, 40, 32, null);
+        if (scores[1] == 1) g.drawImage(checkmark, 517, 420 , 40, 32, null);
+        if (scores[2] == 1) g.drawImage(checkmark, 993, 520, 40, 32, null);
+        if (scores[3] == 1) g.drawImage(checkmark, 117, 496, 40, 32, null);
+        if (scores[4] == 1) g.drawImage(checkmark, 1193, 20, 40, 32, null);
+        if (scores[5] == 1) g.drawImage(checkmark, 1303 , 420, 40, 32, null);
+
         // displays the respective question according the obstacle that the player collided with
         int i = temp;
         collidedObstacleIndex = i;
@@ -394,13 +401,6 @@ public class Level2 extends KeyAdapter {
                     break;
             }
         }
-
-        if (scores[0] == 1) g.drawImage(checkmark, 117, 20, 40, 32, null);
-        if (scores[1] == 1) g.drawImage(checkmark, 517, 417 , 40, 32, null);
-        if (scores[2] == 1) g.drawImage(checkmark, 993, 517, 40, 32, null);
-        if (scores[3] == 1) g.drawImage(checkmark, 117, 493, 40, 32, null);
-        if (scores[4] == 1) g.drawImage(checkmark, 1193, 17, 40, 32, null);
-        if (scores[5] == 1) g.drawImage(checkmark, 1303 , 417, 40, 32, null);
     }
 
     /**
