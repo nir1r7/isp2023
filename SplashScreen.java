@@ -36,10 +36,10 @@ public class SplashScreen {
             g.setFont(f3);
             g.setColor(Color.BLACK);
 
-            cont = new CenteredButton("Continue", 600, 500, 200, 50);
+            cont = new CenteredButton("Continue", 600, 475, 200, 50);
             cont.display(g);
 
-            exit = new CenteredButton("Exit", 600, 575, 200, 50);
+            exit = new CenteredButton("Exit", 600, 550, 200, 50);
             exit.display(g);
         } catch (Exception e){}
     }
