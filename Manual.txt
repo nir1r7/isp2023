@@ -19,9 +19,8 @@ Level Guides:
     Level 2 - Maze level:
     In this level, the player will move through a maze, answering questions to earn points. Arrow 
     keys are used to navigate through the maze, and the mouse is used to answer the questtions.
-    There is a bug with collision in certain spots in level 2. Furthermore, the player movement
-    speed is based on the computer's performance, meaning that for some computers the player might
-    be faster or slower depending on the performance.
+    The player movement speed is based on the computer's performance, meaning that for some computers
+    the player might be faster or slower depending on the performance.
 
     Level 3 - Action level:
     In this level, the player will dodge a series of objects, while collecting others. Once the
