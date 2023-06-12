@@ -1,3 +1,2 @@
-# isp2023
-
-ISP for ICS4UO
+# ICS4U0 ISP
+## Finals Frenzy
