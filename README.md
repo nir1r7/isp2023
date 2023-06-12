@@ -10,4 +10,7 @@ Our vision for Finals Frenzy was to create a game that all teenagers could relat
 The main objective of Finals Frenzy is for the player to learn how to build good study habits and manage time efficiently to succeed during exam season. By the end of the game, players should have built good study skills and time management, as well as learned how to stay focused during exam season.
 
 ### Level Guides
-- #### test
+- #### Level 1 - Learning Level:
+- - In this level, the player will interact with the digital character named "Pixel" who will
+    teach them essential skills. The mouse is used to navigate through the level. Clicking the
+    buttons and clicking the slides will allow the player to continue, and change the dialogue.
