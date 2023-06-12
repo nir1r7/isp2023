@@ -64,7 +64,7 @@ public class Player {
     }
 
     public void updateX(double dx) {
-        if (this.x + w + dx <= 1400 && this.x + dx >= 0 && moving) {
+        if (this.x + w + dx <= 1385 && this.x + dx >= 0 && moving) {
             this.x += dx;
         }
     }
