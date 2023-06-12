@@ -49,6 +49,9 @@ public class Level2 extends KeyAdapter {
     /** Background image */
     BufferedImage bg;
 
+    /** Checkmark image */
+    BufferedImage checkmark;
+
     /**
      * Displays level 2 based off of slide number
      * @param g graphics
@@ -170,6 +173,7 @@ public class Level2 extends KeyAdapter {
 
         try{
 
+            checkmark = ImageIO.read(new File("./static/img/checkmark.png"));
             bg = ImageIO.read(new File("./static/img/mazebg.png"));
 
             g1 = new Obstacle(117, 17, 40, 40, true, ImageIO.read(new File("./static/img/github.png")));
@@ -384,6 +388,13 @@ public class Level2 extends KeyAdapter {
                     break;
             }
         }
+
+        if (scores[0] == 1) g.drawImage(checkmark, 117, 20, 40, 32, null);
+        if (scores[1] == 1) g.drawImage(checkmark, 517, 417 , 40, 32, null);
+        if (scores[2] == 1) g.drawImage(checkmark, 993, 517, 40, 32, null);
+        if (scores[3] == 1) g.drawImage(checkmark, 117, 493, 40, 32, null);
+        if (scores[4] == 1) g.drawImage(checkmark, 1193, 17, 40, 32, null);
+        if (scores[5] == 1) g.drawImage(checkmark, 1303 , 417, 40, 32, null);
     }
 
     /**
