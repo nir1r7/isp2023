@@ -10,4 +10,4 @@ Our vision for Finals Frenzy was to create a game that all teenagers could relat
 The main objective of Finals Frenzy is for the player to learn how to build good study habits and manage time efficiently to succeed during exam season. By the end of the game, players should have built good study skills and time management, as well as learned how to stay focused during exam season.
 
 ### Level Guides
-####- test
+- #### test
