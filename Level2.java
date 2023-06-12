@@ -8,7 +8,7 @@ import javax.imageio.ImageIO;
 
 public class Level2 extends KeyAdapter {
     /** Player variable */
-    Player p = new Player(692,  430);
+    Player2 p = new Player2(692,  430, 50, 50);
 
 
     /** ArrayLists for walls, obstacles and buttons */
@@ -51,6 +51,12 @@ public class Level2 extends KeyAdapter {
 
     /** Checkmark image */
     BufferedImage checkmark;
+
+    /** Sprites for different directions */
+    BufferedImage front;
+    BufferedImage back;
+    BufferedImage left;
+    BufferedImage right;
 
     /**
      * Displays level 2 based off of slide number
@@ -293,7 +299,7 @@ public class Level2 extends KeyAdapter {
         }
 
         g.setColor(Color.BLACK);
-        //p.display(0, g);
+        p.display(g);
 
         // displays the respective question according the obstacle that the player collided with
         int i = temp;
@@ -306,8 +312,8 @@ public class Level2 extends KeyAdapter {
                     Slide s0 = new Slide(0, true,  "Is Github a helpful resource in keeping an organized work enviornement?");
                     s0.display(g);
 
-                    y0 = new Button("Yes 0", 950, 200, 300, 50);
-                    n0 = new Button("No 0", 950, 350, 300, 50);
+                    y0 = new Button("Yes", 950, 200, 300, 50);
+                    n0 = new Button("No", 950, 350, 300, 50);
 
                     y0.display(g);
                     n0.display(g);
@@ -320,8 +326,8 @@ public class Level2 extends KeyAdapter {
                     Slide s1 = new Slide(0, true,  "Would the video game Brawl Stars be useful for passing your final exams?");
                     s1.display(g);
 
-                    y1 = new Button("Yes 1", 950, 200, 300, 50);
-                    n1 = new Button("No 1", 950, 350, 300, 50);
+                    y1 = new Button("Yes", 950, 200, 300, 50);
+                    n1 = new Button("No", 950, 350, 300, 50);
 
                     y1.display(g);
                     n1.display(g);
@@ -334,8 +340,8 @@ public class Level2 extends KeyAdapter {
                     Slide s2 = new Slide(0, true,  "Is Instagram an app that allows studens to focus better?");
                     s2.display(g);
 
-                    y2 = new Button("Yes 2", 950, 200, 300, 50);
-                    n2 = new Button("No 2", 950, 350, 300, 50);
+                    y2 = new Button("Yes", 950, 200, 300, 50);
+                    n2 = new Button("No", 950, 350, 300, 50);
 
                     y2.display(g);
                     n2.display(g);
@@ -348,8 +354,8 @@ public class Level2 extends KeyAdapter {
                     Slide s3 = new Slide(0, true,  "Is google sheets a helpful software?");
                     s3.display(g);
 
-                    y3 = new Button("Yes 3", 950, 200, 300, 50);
-                    n3 = new Button("No 3", 950, 350, 300, 50);
+                    y3 = new Button("Yes", 950, 200, 300, 50);
+                    n3 = new Button("No", 950, 350, 300, 50);
 
                     y3.display(g);
                     n3.display(g);
@@ -362,8 +368,8 @@ public class Level2 extends KeyAdapter {
                     Slide s4 = new Slide(0, true,  "Does twitter aid students in search of academic success?");
                     s4.display(g);
 
-                    y4 = new Button("Yes 4", 950, 200, 300, 50);
-                    n4 = new Button("No 4", 950, 350, 300, 50);
+                    y4 = new Button("Yes", 950, 200, 300, 50);
+                    n4 = new Button("No", 950, 350, 300, 50);
 
                     y4.display(g);
                     n4.display(g);
@@ -376,8 +382,8 @@ public class Level2 extends KeyAdapter {
                     Slide s5 = new Slide(0, true,  "Is google docs a studying related application?");
                     s5.display(g);
 
-                    y5 = new Button("Yes 5", 950, 200, 300, 50);
-                    n5 = new Button("No 5", 950, 350, 300, 50);
+                    y5 = new Button("Yes", 950, 200, 300, 50);
+                    n5 = new Button("No", 950, 350, 300, 50);
 
                     y5.display(g);
                     n5.display(g);

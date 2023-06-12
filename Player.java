@@ -25,6 +25,13 @@ public class Player {
         this.x = x;
         this.y = y;
     }
+
+    public Player(double x, double y, int w, int h) {
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h;
+    }
     
     public Player(double x, double y, BufferedImage background) {
         this.x = x;

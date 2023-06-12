@@ -1,5 +1,8 @@
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
+
+import javax.imageio.ImageIO;
 
 /**
  * Player class for Finals Frenzy, creates a user-controlled player for the game
@@ -7,8 +10,28 @@ import java.awt.image.BufferedImage;
  * @author Nirvan Rabbani, Sean Zhao
  */
 public class Player2 extends Player {
+
+    BufferedImage frontSprite;
+    BufferedImage backSprite;
+    BufferedImage leftSprite;
+    BufferedImage rightSprite;
+
     public Player2(double x, double y) {
         super(x, y);
+    }
+
+    public Player2(double x, double y, int w, int h) {
+        super(x, y, w, h);
+        try {
+            frontSprite = ImageIO.read(new File("./static/img/front.png"));
+            backSprite = ImageIO.read(new File("./static/img/back.png"));
+            leftSprite = ImageIO.read(new File("./static/img/left.png"));
+            rightSprite = ImageIO.read(new File("./static/img/right.png"));
+
+            background = frontSprite;
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
     }
     
     public Player2(double x, double y, BufferedImage background) {
@@ -22,10 +45,22 @@ public class Player2 extends Player {
             g.fillRect((int)x, (int)y, w, h);
         }
 
-        if (left) updateX(-1);
-        if (right) updateX(1);
-        if (up) updateY(-1);
-        if (down) updateY(1);
+        if (left) {
+            updateX(-1);
+            background = leftSprite;
+        }
+        if (right) {
+            updateX(1);
+            background = rightSprite;
+        }
+        if (up) {
+            updateY(-1);
+            background = backSprite;
+        }
+        if (down) {
+            updateY(1);
+            background = frontSprite;
+        }
     }
 
     public int collided(Wall wall){
