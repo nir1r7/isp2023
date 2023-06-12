@@ -74,9 +74,13 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
         System.out.println("(" + x + ", " + y + ")");
 
         /** handles mouse clicks for each game state */
-        if (state == 0 && s.cont.isClicked(x, y)) {
-            if (name != null) state = 2;
-            else state = 1;
+        if (state == 0) {
+            if (s.cont.isClicked(x, y)) {
+                if (name != null) state = 2;
+                else state = 1;
+            } else if (s.exit.isClicked(x, y)) {
+                frame.dispose();
+            }
         } else if (state == 2) {
             if (x >= 25 && x <= 129 && y >= 25 && y <= 89) {
                 state = 0;

@@ -82,12 +82,4 @@ public class Player {
     public void setY(int n){
         y = n;
     }
-
-    public void setMoving(boolean m){
-        moving = m;
-    }
-
-    public boolean isMoving(){
-        return moving;
-    }
 }

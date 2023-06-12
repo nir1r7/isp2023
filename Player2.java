@@ -78,4 +78,12 @@ public class Player2 extends Player {
         }
         return 0;
     }
+
+    public void setMoving(boolean m){
+        moving = m;
+    }
+
+    public boolean isMoving(){
+        return moving;
+    }
 }
