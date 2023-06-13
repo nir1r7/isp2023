@@ -11,7 +11,7 @@ import javax.imageio.ImageIO;
 public class MainMenu {
     /** booleans for locking level 2 and level 3 */
     private boolean l2 = false;
-    private boolean l3 = false;
+    private boolean l3 = true;
 
     /** Level Buttons */
     private CenteredButton level1Button;

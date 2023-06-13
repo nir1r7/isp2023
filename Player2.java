@@ -80,19 +80,19 @@ public class Player2 extends Player {
 
         /** Changes sprites based on the direction the player is moving */
         if (isLeft()) {
-            updateX(-2);
+            updateX(-1);
             setBg(leftSprite);
         }
         if (isRight()) {
-            updateX(2);
+            updateX(1);
             setBg(rightSprite);
         }
         if (isUp()) {
-            updateY(-2);
+            updateY(-1);
             setBg(backSprite);
         }
         if (isDown()) {
-            updateY(2);
+            updateY(1);
             setBg(frontSprite);
         }
     }
