@@ -10,13 +10,13 @@ import javax.imageio.ImageIO;
  */
 public class MainMenu {
     /** booleans for locking level 2 and level 3 */
-    boolean l2 = false;
-    boolean l3 = false;
+    private boolean l2 = false;
+    private boolean l3 = false;
 
-    /** Buttons */
-    CenteredButton level1Button;
-    CenteredButton level2Button;
-    CenteredButton level3Button;
+    /** Level Buttons */
+    private CenteredButton level1Button;
+    private CenteredButton level2Button;
+    private CenteredButton level3Button;
 
     /**
      * Displays the main menu
@@ -59,5 +59,48 @@ public class MainMenu {
             if (!l3) g.drawImage(locked, 790, 365, 33, 42, null);
             else g.drawImage(unlocked, 790, 365, 33, 42, null);
         } catch (Exception e){}
+    }
+
+    /**
+     * gets the boolean l2 to see if level 2 is locked
+     * @return l2
+     */
+    public boolean isLevel2Locked(){
+        return l2;
+    }
+
+    /**
+     * gets the boolean l3 to see if level 3 is locked
+     * @return
+     */
+    public boolean isLevel3Locked(){
+        return l3;
+    }
+
+    /**
+     * sets the boolean l2 to b
+     * @param b
+     */
+    public void setLevel2Locked(boolean b){
+        l2 = b;
+    }
+
+    /**
+     * sets teh boolean l3 to b
+     * @param b
+     */
+    public void setLevel3Locked(boolean b){
+        l3 = b;
+    }
+
+    /**
+     * gets the button for the level corresponding to n
+     * @param n
+     * @return level1Button || level2Buton || level3Button
+     */
+    public Button getLevelButton(int n){
+        if (n == 1) return level1Button;
+        if (n == 2) return level2Button;
+        return level3Button;
     }
 }

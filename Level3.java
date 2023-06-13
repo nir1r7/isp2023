@@ -14,24 +14,26 @@ public class Level3 {
     private int slideNum = 0;
 
     /** Background image */
-    BufferedImage bg;
+    private BufferedImage bg;
 
     /** Level parameters */
-    int goal = 20;
-    int good = 8;
-    int bad = 60;
+    private int goal = 20;
+    private int good = 8;
+    private int bad = 60;
 
     /** Starting score and health */
-    int score = 0;
-    int health = 3;
-    Player p;
+    private int score = 0;
+    private int health = 3;
+
+    /** Player variable */
+    private Player p;
     
     /** ArrayList of obstacles */
-    ArrayList<Obstacle> obstacles = new ArrayList<>();
+    private ArrayList<Obstacle> obstacles = new ArrayList<>();
     
     /** Buttons */
-    Button y;
-    Button n;
+    private Button y;
+    private Button n;
 
     /**
      * Displays level 3 from slide number
@@ -180,7 +182,7 @@ public class Level3 {
     public void game(Graphics g) {
         /** Draws background */
         g.drawImage(bg, 0, 0, 1400, 700, null);
-        g.setFont(Main.font);
+        g.setFont(Main.getMainFont());
         p.display(g);
         /** Loops through each obstacle, displaying it and checking for collisions */
         for (Obstacle o : obstacles) {
@@ -251,7 +253,7 @@ public class Level3 {
      * @param left left
      */
     public void setLeft(boolean left) {
-        p.left = left;
+        p.setLeft(left);
     }
 
     /**
@@ -259,7 +261,7 @@ public class Level3 {
      * @param right right
      */
     public void setRight(boolean right) {
-        p.right = right;
+        p.setRight(right);
     }
 
     /**
@@ -267,7 +269,7 @@ public class Level3 {
      * @param up up
      */
     public void setUp(boolean up) {
-        p.up = up;
+        p.setUp(up);
     }
 
     /**
@@ -275,7 +277,7 @@ public class Level3 {
      * @param down down
      */
     public void setDown(boolean down) {
-        p.down = down;
+        p.setDown(down);
     }
 
     /**
@@ -292,5 +294,18 @@ public class Level3 {
      */
     public int getSlideNum() {
         return slideNum;
+    }
+
+    /**
+     * Returns the yes button from the slide after the game ends
+     * @return y
+     */
+    public Button getYButton(){
+        return y;
+    }
+
+    /** Returns the no button from the slide after the game ends*/
+    public Button getNButton(){
+        return n;
     }
 }

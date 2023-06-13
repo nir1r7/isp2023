@@ -8,19 +8,19 @@ import java.awt.image.BufferedImage;
  */
 public class Player {
 
-    double x;
-    double y;
-    int w = 20;
-    int h = 20;
+    private double x;
+    private double y;
+    private int w = 20;
+    private int h = 20;
 
     /** Background image of the player */
-    BufferedImage background = null;
+    private BufferedImage background = null;
 
     /** Boolean variables which control player movement */
-    boolean left;
-    boolean right;
-    boolean up;
-    boolean down;
+    private boolean left;
+    private boolean right;
+    private boolean up;
+    private boolean down;
 
     /**
      * Player constructor
@@ -84,7 +84,7 @@ public class Player {
      */
     public int collided(Obstacle o){
         if (x + w >= o.getX() && x <= o.getX() + o.getW() && y + h >= o.getY() && y <= o.getY() + o.getH()){
-            if (o.good) {
+            if (o.getGood()) {
                 return 1; 
             } else {
                 return -1;
@@ -127,5 +127,117 @@ public class Player {
      */
     public void setY(int n){
         y = n;
+    }
+
+    /**
+     * Returns the x coordinate of the player
+     * @return x
+     */ 
+    public double getX(){
+        return x;
+    }
+
+    /**
+     * Returns the y coordinate of the player
+     * @return y
+     */
+    public double getY(){
+        return y;
+    }
+
+    /**
+     * returns the width of the player
+     * @return w
+     */
+    public int getW(){
+        return w;
+    }
+
+    /**
+     * returns the height of the player
+     * @return h
+     */
+    public int getH(){
+        return h;
+    }
+
+    /**
+     * checks if the player is going facing left
+     * @return left
+     */
+    public boolean isLeft(){
+        return left;
+    }
+
+    /**
+     * checks if the player facing right
+     * @return right
+     */
+    public boolean isRight(){
+        return right;
+    }
+
+    /**
+     * checks if the player is facing up
+     * @return up
+     */
+    public boolean isUp(){
+        return up;
+    }
+
+    /**
+     * checks if the player is facing down
+     * @return down
+     */
+    public boolean isDown(){
+        return down;
+    }
+
+    /**
+     * sets the left variable to b
+     * @param b
+     */
+    public void setLeft(boolean b){
+        left = b;
+    }
+
+    /**
+     * sets the right variable to b
+     * @param b
+     */
+    public void setRight(boolean b){
+        right = b;
+    }
+
+    /**
+     * sets the up variable to b
+     * @param b
+     */
+    public void setUp(boolean b){
+        up = b;
+    }
+
+    /**
+     * sets the down variable to b
+     * @param b
+     */
+    public void setDown(boolean b){
+        down = b;
+    }
+
+    /**
+     * Sets the background iamge of the player
+     * @param icon
+     */
+    public void setBg(BufferedImage icon){
+        background = icon;
+    }
+
+    /**
+     * Gets the background image of the player
+     * @return background
+     */
+    public BufferedImage getBg(){
+        return background;
     }
 }

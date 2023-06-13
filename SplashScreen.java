@@ -10,8 +10,8 @@ import javax.imageio.ImageIO;
  */
 public class SplashScreen {
     /** Continue button */
-    CenteredButton cont;
-    CenteredButton exit;
+    private CenteredButton cont;
+    private CenteredButton exit;
 
     /**
      * Displays the splash screen
@@ -42,5 +42,21 @@ public class SplashScreen {
             exit = new CenteredButton("Exit", 600, 550, 200, 50);
             exit.display(g);
         } catch (Exception e){}
+    }
+
+    /**
+     * gets the the continue button from the splashscreen
+     * @return cont
+     */
+    public Button getContinueButton(){
+        return cont;
+    }
+
+    /**
+     * gets the exit button from the splashscreen
+     * @return exit
+     */
+    public Button getExitButton(){
+        return exit;
     }
 }

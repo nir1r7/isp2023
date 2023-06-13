@@ -25,32 +25,33 @@ public class CenteredButton extends Button {
      */
     public void display(Graphics g) {
         g.setColor(Color.WHITE);
-        g.fillRoundRect(x, y, w, h, 10, 10);
+        g.fillRoundRect(getX(), getY(), getW(), getH(), 10, 10);
 
-        x += 30;
-        y += 35;
+        setX(getX() + 30);
+        setY(getY() + 35);
 
-        String[] words = txt.split(" ");
+        String[] words = getText().split(" ");
         String[] lines = { "", "", "", "" };
 
         int charCount = 0;
         int index = 0;
 
         g.setColor(Color.BLACK);
-        g.setFont(Main.font);
+        g.setFont(Main.getMainFont());
         /** Displays text in lines, centered */
         for (int i = 0; i < words.length; i++) {
-            if (charCount + words[i].length() > w / 10) {
+            if (charCount + words[i].length() > getW() / 10) {
 
                 String whiteSpace = "";
-                for (int j = 0; j < (w / 10 - charCount) / 2 + 1; i++) {
+                for (int j = 0; j < (getW() / 10 - charCount) / 2 + 1; i++) {
                     whiteSpace += ' ';
                 }
 
-                g.drawString(whiteSpace + lines[index], x, y);
+                g.drawString(whiteSpace + lines[index], getX(), getY());
+                
+                setY(getY() + 35);
+                setW(getW() + 40);
 
-                y += 35;
-                h += 40;
                 index++;
                 charCount = 0;
             }
@@ -59,13 +60,13 @@ public class CenteredButton extends Button {
             charCount += words[i].length() + 1;
         }
         String whiteSpace = "";
-        for (int j = 0; j < (w / 10 - charCount) / 2; j++) {
+        for (int j = 0; j < (getW() / 10 - charCount) / 2; j++) {
             whiteSpace += ' ';
         }
 
-        g.drawString(whiteSpace + lines[index], x, y);
+        g.drawString(whiteSpace + lines[index], getX(), getY());
 
-        x -= 10;
-        y -= (index + 1) * 35;   
+        setX(getX() - 10);
+        setY(getY() - (index + 1)*35);
     }
 }

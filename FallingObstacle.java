@@ -7,9 +7,12 @@ import java.awt.image.BufferedImage;
  * @author Nirvan Rabbani, Sean Zhao
  */
 public class FallingObstacle extends Obstacle {
-    double dy;
-    double rand = 50;
-    BufferedImage icon;
+    /** This distance of the y value */
+    private double dy;
+    /** The maximum random number */
+    private double rand = 50;
+    /** The icon of the falling obstacle */
+    private BufferedImage icon;
 
     /**
      * Falling obstacle constructor
@@ -32,11 +35,11 @@ public class FallingObstacle extends Obstacle {
      * @param dy distance of y changed
      */
     public void fall(double dy) {
-        this.y += dy;
+        setY(getY() + dy);
         /** If the object goes below the screen it respawns at a random position in a range */
-        if (this.y >= 700) {
-            this.x = Math.random() * 1400;
-            this.y = -200 + (rand - (Math.random() * 2 * rand));
+        if (getY() >= 700) {
+            setX(Math.random() * 1400);
+            setY(-200 + (rand - (Math.random() * 2 * rand)));
         }
     }
 
@@ -46,7 +49,7 @@ public class FallingObstacle extends Obstacle {
      */
     public void display(Graphics g) {
         g.setColor(Color.BLACK);
-        g.drawImage(icon, (int)x, (int)y, w, h, null);
+        g.drawImage(icon, (int)getX(), (int)getY(), getW(), getH(), null);
         fall(dy);
     }
 }

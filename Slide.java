@@ -9,16 +9,16 @@ import javax.imageio.ImageIO;
  * @author Nirvan Rabbani, Sean Zhao
  */
 public class Slide {
-    String txt;
+    private String txt;
 
     /** Emotion of pixel in the slide */
-    int emote;
+    private int emote;
 
     /** Background image */
-    BufferedImage bg;
-    boolean hasbg = false;
+    private BufferedImage bg;
+    private boolean hasbg = false;
 
-    boolean button;
+    private boolean button;
 
     /**
      * Slide constructor
@@ -92,7 +92,7 @@ public class Slide {
      * @param g
      */
     public void display(Graphics g){
-        g.setFont(Main.font);
+        g.setFont(Main.getMainFont());
 
         int y = 535;
         int x = 300;

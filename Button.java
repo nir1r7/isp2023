@@ -7,11 +7,11 @@ import java.awt.*;
  */
 public class Button{
     /** Parameters for button */
-    String txt;
-    int x;
-    int y;
-    int w;
-    int h;
+    private String txt;
+    private int x;
+    private int y;
+    private int w;
+    private int h;
     
     /**
      * Button contructor
@@ -49,7 +49,7 @@ public class Button{
         int index = 0;
 
         g.setColor(Color.BLACK);
-        g.setFont(Main.font);
+        g.setFont(Main.getMainFont());
         /** Displays text in lines */
         for (int i = 0; i < words.length; i++){
             if (charCount + words[i].length() > w/10){
@@ -143,6 +143,22 @@ public class Button{
      */
     public void setY(int n){
         y = n;
+    }
+
+    /**
+     * Sets the w of the button
+     * @param n the value to set it to
+     */
+    public void setW(int n){
+        w = n;
+    }
+
+    /**
+     * Gets the text of the button
+     * @return txt
+     */
+    public String getText(){
+        return txt;
     }
 
 }

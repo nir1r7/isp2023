@@ -7,16 +7,16 @@ import java.awt.image.BufferedImage;
  * @author Nirvan Rabbani, Sean Zhao
  */
 public class Obstacle{
-    double x;
-    double y;
-    int w;
-    int h;
+    private double x;
+    private double y;
+    private int w;
+    private int h;
 
     /** Whether the obstacle gives points or takes health */
-    boolean good;
+    private boolean good;
 
     /** Image of the obstacle */
-    BufferedImage img;
+    private BufferedImage img;
 
     /**
      * Obstacle constructor
@@ -130,5 +130,13 @@ public class Obstacle{
      */
     public void setY(double n) {
         y = n;
+    }
+
+    /**
+     * Gets the value of the good boolean variable
+     * @return good
+     */
+    public boolean getGood(){
+        return good;
     }
 }

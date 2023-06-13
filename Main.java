@@ -10,28 +10,28 @@ import java.io.File;
  */
 public class Main implements MouseListener, MouseMotionListener, KeyListener {
     /** Frame */
-    JFrame frame;
+    private JFrame frame;
     /** Drawing */
-    Drawing draw;
+    private Drawing draw;
     /** Instance variables for levels and screens */
-    Level1 l1 = new Level1();
-    Level2 l2 = new Level2();
-    Level3 l3 = new Level3();
-    SplashScreen s = new SplashScreen();
-    MainMenu m = new MainMenu();
+    private Level1 l1 = new Level1();
+    private Level2 l2 = new Level2();
+    private Level3 l3 = new Level3();
+    private SplashScreen s = new SplashScreen();
+    private MainMenu m = new MainMenu();
 
     /** Font used in game */
-    static Font font;
+    private static Font font;
 
     /** Variables for the width and height of the screen */
-    int width = 1400;
-    int height = 700;
+    private int width = 1400;
+    private  int height = 700;
 
     /** Variable for game state */
-    int state = 0;
+    private  int state = 0;
 
     /** Name of player */
-    static String name = null;
+    private static String name = null;
 
     /**
      * Constructor for main, initializes the frame
@@ -73,24 +73,24 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
 
         /** handles mouse clicks for each game state */
         if (state == 0) {
-            if (s.cont.isClicked(x, y)) {
+            if (s.getContinueButton().isClicked(x, y)) {
                 if (name != null) state = 2;
                 else state = 1;
-            } else if (s.exit.isClicked(x, y)) {
+            } else if (s.getExitButton().isClicked(x, y)) {
                 frame.dispose();
             }
         } else if (state == 2) {
             if (x >= 25 && x <= 129 && y >= 25 && y <= 89) {
                 state = 0;
             }
-            if (m.level1Button.isClicked(x, y)){
+            if (m.getLevelButton(1).isClicked(x, y)){
                 state = 3;
             }
-            else if (m.level2Button.isClicked(x, y) && m.l2){
+            else if (m.getLevelButton(2).isClicked(x, y) && m.isLevel2Locked()){
                 state = 4;
                 l2.load();
             }
-            else if (m.level3Button.isClicked(x, y) && m.l3){
+            else if (m.getLevelButton(3).isClicked(x, y) && m.isLevel3Locked()){
                 state = 5;
                 l3.load();
             }
@@ -131,7 +131,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                 case 7:
                 case 8:
                     state = 2;
-                    m.l2 = true;
+                    m.setLevel2Locked(true);
                     l1.setSlide(0);
             }            
         } else if (state == 4){
@@ -144,13 +144,13 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                     break;
                 case 2:
                     int sum = 0;
-                    for (int n : l2.scores) sum += n;
+                    for (int n : l2.getScores()) sum += n;
                     if (sum == 6){ 
                         l2.setSlide(3);
                     }
 
                     if (l2.getPause()){
-                        l2.p.setMoving(true);
+                        l2.getPlayer2().setMoving(true);
                         l2.load();
                         l2.setResponseCounter(0);
                         l2.setPause(false);
@@ -173,7 +173,7 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                 
                 case 3:
                     state = 2;
-                    m.l3 = true;
+                    m.setLevel3Locked(true);
                     l2.setSlide(0);
                     break;
                 }
@@ -190,11 +190,11 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                     l3.setSlide(0);
                     break;
                 case 4:
-                    if (l3.y.isClicked(x, y)) {
+                    if (l3.getYButton().isClicked(x, y)) {
                         l3.load();
                         l3.setSlide(2);
                     }
-                    if (l3.n.isClicked(x, y)) {
+                    if (l3.getNButton().isClicked(x, y)) {
                         state = 2;
                         l3.setSlide(0);
                     }
@@ -295,5 +295,21 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
 
             frame.setSize(width, height);
         }
+    }
+
+    /**
+     * Gets the main font of the game
+     * @return font
+     */
+    public static Font getMainFont(){
+        return font;
+    }
+
+    /**
+     * Gets the name of the user
+     * @return name
+     */
+    public static String getName(){
+        return name;
     }
 }

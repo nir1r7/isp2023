@@ -8,27 +8,24 @@ import javax.imageio.ImageIO;
 
 public class Level2 extends KeyAdapter {
     /** Player variable */
-    Player2 p = new Player2(692,  430, 50, 50);
+    private Player2 p = new Player2(692,  430, 50, 50);
 
 
     /** ArrayLists for walls, obstacles and buttons */
-    ArrayList<Wall> walls = new ArrayList<Wall>();
-    ArrayList<Obstacle> obstacles = new ArrayList<Obstacle>();
-    ArrayList<Button> buttons = new ArrayList<Button>();
-
-    int x = 700;
-    int y = 350;
+    private ArrayList<Wall> walls = new ArrayList<Wall>();
+    private ArrayList<Obstacle> obstacles = new ArrayList<Obstacle>();
+    private ArrayList<Button> buttons = new ArrayList<Button>();
 
     /** Slide number and responses */
     private int slideNum = 0;
     private int responseCounter = 0;
 
-    boolean paused = false;
+    private boolean paused = false;
 
     /** Index of obstacle on collision */
-    int collidedObstacleIndex = -1;
+    private int collidedObstacleIndex = -1;
 
-    int scores[] = {0, 0, 0, 0, 0, 0};
+    private int scores[] = {0, 0, 0, 0, 0, 0};
     
     /** Buttons for slide */
     Button y0;
@@ -529,7 +526,7 @@ public class Level2 extends KeyAdapter {
      * @param left boolean left
      */
     public void setLeft(boolean left) {
-        p.left = left;
+        p.setLeft(left);
     }
 
     /** 
@@ -537,7 +534,7 @@ public class Level2 extends KeyAdapter {
      * @param right boolean right
      */
     public void setRight(boolean right) {
-        p.right = right;
+        p.setRight(right);
     }
 
     /**
@@ -545,7 +542,7 @@ public class Level2 extends KeyAdapter {
      * @param up boolean up
      */
     public void setUp(boolean up) {
-        p.up = up;
+        p.setUp(up);
     }
 
     /**
@@ -553,7 +550,7 @@ public class Level2 extends KeyAdapter {
      * @param down boolean down
      */
     public void setDown(boolean down) {
-        p.down = down;
+        p.setDown(down);
     }
 
     /**
@@ -618,5 +615,21 @@ public class Level2 extends KeyAdapter {
      */
     public int getCollidedObstacleIndex(){
         return collidedObstacleIndex;
+    }
+
+    /**
+     * Gets the all the scores from the question of level 2
+     * @return scores
+     */
+    public int[] getScores(){
+        return scores;
+    }
+
+    /**
+     * gets the level 2 player
+     * @return p
+     */
+    public Player2 getPlayer2(){
+        return p;
     }
 }

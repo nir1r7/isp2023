@@ -12,13 +12,13 @@ import javax.imageio.ImageIO;
 public class Player2 extends Player {
 
     /** Sprites for each of the walking directions */
-    BufferedImage frontSprite;
-    BufferedImage backSprite;
-    BufferedImage leftSprite;
-    BufferedImage rightSprite;
+    private BufferedImage frontSprite;
+    private BufferedImage backSprite;
+    private BufferedImage leftSprite;
+    private BufferedImage rightSprite;
 
     /** Moving variable to restrict movement in slides */
-    boolean moving = true;
+    private boolean moving = true;
 
     /**
      * Player2 Constructor
@@ -33,7 +33,7 @@ public class Player2 extends Player {
             leftSprite = ImageIO.read(new File("./static/img/left.png"));
             rightSprite = ImageIO.read(new File("./static/img/right.png"));
 
-            background = frontSprite;
+            setBg(frontSprite);
         } catch (Exception e) {}
     }
 
@@ -52,7 +52,7 @@ public class Player2 extends Player {
             leftSprite = ImageIO.read(new File("./static/img/left.png"));
             rightSprite = ImageIO.read(new File("./static/img/right.png"));
 
-            background = frontSprite;
+            setBg(frontSprite);
         } catch (Exception e) {}
     }
     
@@ -72,28 +72,28 @@ public class Player2 extends Player {
      */
     public void display(Graphics g) {
         /** Draws the background depending if the player has a background */
-        if (background != null) {
-            g.drawImage(background, (int)x, (int)y, w, h, null);
+        if (getBg() != null) {
+            g.drawImage(getBg(), (int)getX(), (int)getY(), getW(), getH(), null);
         } else {
-            g.fillRect((int)x, (int)y, w, h);
+            g.fillRect((int)getX(), (int)getY(), getW(), getH());
         }
 
         /** Changes sprites based on the direction the player is moving */
-        if (left) {
-            updateX(-1);
-            background = leftSprite;
+        if (isLeft()) {
+            updateX(-2);
+            setBg(leftSprite);
         }
-        if (right) {
-            updateX(1);
-            background = rightSprite;
+        if (isRight()) {
+            updateX(2);
+            setBg(rightSprite);
         }
-        if (up) {
-            updateY(-1);
-            background = backSprite;
+        if (isUp()) {
+            updateY(-2);
+            setBg(backSprite);
         }
-        if (down) {
-            updateY(1);
-            background = frontSprite;
+        if (isDown()) {
+            updateY(2);
+            setBg(frontSprite);
         }
     }
 
@@ -103,8 +103,8 @@ public class Player2 extends Player {
      */
     public void updateX(double dx) {
         /** Only moves if moving is true */
-        if (this.x + w + dx <= 1385 && this.x + dx >= 0 && moving) {
-            this.x += dx;
+        if (getX() + getW() + dx <= 1385 && getX() + dx >= 0 && moving) {
+            setX((int)(getX() + dx));
         }
     }
 
@@ -114,8 +114,8 @@ public class Player2 extends Player {
      */
     public void updateY(double dy) {
         /** Only moves if moving is true */
-        if (this.y + h + dy <= 665 && this.y + dy >= 0 && moving) {
-            this.y += dy;
+        if (getY() + getH() + dy <= 665 && getY() + dy >= 0 && moving) {
+            setY((int)(getY() + dy));
         }
     }
 
@@ -125,16 +125,16 @@ public class Player2 extends Player {
      * @return the direction in which the wall is collided with or no collision at all
      */
     public int collided(Wall wall){
-        if (x + w >= wall.getX() && x + w <= wall.getX() + 25 && y + h >= wall.getY() && y <= wall.getY() + wall.getH()){
+        if (getX() + getW() >= wall.getX() && getX() + getW() <= wall.getX() + 25 && getY() + getH() >= wall.getY() && getY() <= wall.getY() + wall.getH()){
             return 1;
         }
-        else if (x <= wall.getX() + wall.getW() && x >= wall.getX() + wall.getW() - 25 && y + h >= wall.getY() && y <= wall.getY() + wall.getH()){
+        else if (getX() <= wall.getX() + wall.getW() && getX() >= wall.getX() + wall.getW() - 25 && getY() + getH() >= wall.getY() && getY() <= wall.getY() + wall.getH()){
             return 3;
         }
-        else if (y + h >= wall.getY() && y + h <= wall.getY() + 25 && x + w  >= wall.getX() && x <= wall.getX() + wall.getW()){
+        else if (getY() + getH() >= wall.getY() && getY() + getH() <= wall.getY() + 25 && getX() + getW() >= wall.getX() && getX() <= wall.getX() + wall.getW()){
             return 2;
         }
-        else if (y <= wall.getY() + wall.getH() && y >= wall.getY() + wall.getH() - 25 && x + w  >= wall.getX() && x <= wall.getX() + wall.getW()){
+        else if (getY() <= wall.getY() + wall.getH() && getY() >= wall.getY() + wall.getH() - 25 && getX() + getW()  >= wall.getX() && getX() <= wall.getX() + wall.getW()){
             return 4;
         }
         return 0;
