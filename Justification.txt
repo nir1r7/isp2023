@@ -1,0 +1,36 @@
+Finals Frenzy is a single-player game targeted towards people of ages 14 and 15 year olds who
+want help to make it through exams. A cross-sectional survey in the United States has shown
+that on an average day, 61% of teenagers are stressed over school. The Centers for Disease
+Control (CDC) reported a 70% increase in teen (10 - 17) suicide rate between 2006 and 2016 as
+a result of stress of school. This cause of stress comes from a variety of places:
+
+1. Family tensions and external pressure
+2. Time management stress and meeting deadlines
+3. Academic stress and exam pressure
+
+Knowing these three most predominant causes of stress for teens, we knew that we could help
+solve two of them: time management stress and exam pressure. Our goal is to help people succeed
+in their exams and build good study habits to help them succeed in school. We wanted to create
+something that helps students be less stressed during exam season. By teaching and testing the
+player through a series of levels, we tried to accomplish our vision. The main objective of
+Finals Frenzy is for the player to learn how to build good study habits and manage time
+efficiently to succeed during exam season. By the end of the game, players should have built
+good study skills and time management, as well as learned how to stay focused during exam season.
+
+References
+Clear, J. (n.d.). How to Build a New Habit: This is Your Strategy Guide. James Clear. Retrieved
+    June 13, 2023, from https://jamesclear.com/habit-guide
+
+The Impact Of A Clean Studying Environment For Teachers And Students. (2020, August 6).
+    AcademicGates. Retrieved June 13, 2023, from
+    https://www.academicgates.com/blog/the-impact-of-a-clean-studying-environment-for-te
+    achers-and-students/62/view
+
+Walker, T. (2018, May 14). As Teen Suicide Rate Increases, States Look to Schools to Address
+    Crisis | NEA. National Education Association. Retrieved June 13, 2023, from
+    https://www.nea.org/advocating-for-change/new-from-nea/teen-suicide-rate-increases-st
+    ates-look-schools-address-crisis
+
+Zauderer, s. (n.d.). 47 Student Stress Statistics (High School/College). Cross River Therapy.
+    Retrieved June 13, 2023, from
+    https://www.crossrivertherapy.com/student-stress-statistics
