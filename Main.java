@@ -25,10 +25,10 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
 
     /** Variables for the width and height of the screen */
     private int width = 1400;
-    private  int height = 700;
+    private int height = 700;
 
     /** Variable for game state */
-    private  int state = 0;
+    private int state = 0;
 
     /** Name of player */
     private static String name = null;

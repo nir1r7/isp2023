@@ -3,6 +3,8 @@ Finals Frenzy is a single-player game targeted towards people of ages 14 and 15 
 want help to make it through exams. Our goal is to help people succeed in their exams and build
 good study habits to help them succeed in school.
 
+Why 
+
 Game Objective:
 The main objective of Finals Frenzy is for the player to learn how to build good study habits
 and manage time efficiently to succeed during exam season. By the end of the game, players

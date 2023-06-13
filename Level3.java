@@ -304,7 +304,10 @@ public class Level3 {
         return y;
     }
 
-    /** Returns the no button from the slide after the game ends*/
+    /**
+     * Returns the no button from the slide after the game ends
+     * @return n
+     */
     public Button getNButton(){
         return n;
     }

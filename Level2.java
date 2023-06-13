@@ -44,16 +44,10 @@ public class Level2 extends KeyAdapter {
     Button n5;
 
     /** Background image */
-    BufferedImage bg;
+    private BufferedImage bg;
 
     /** Checkmark image */
-    BufferedImage checkmark;
-
-    /** Sprites for different directions */
-    BufferedImage front;
-    BufferedImage back;
-    BufferedImage left;
-    BufferedImage right;
+    private BufferedImage checkmark;
 
     /**
      * Displays level 2 based off of slide number

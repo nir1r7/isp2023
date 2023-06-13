@@ -24,15 +24,14 @@ public class Level1 extends MouseAdapter {
     Button n3;
 
     /** Main background image */
-    BufferedImage bg;
+    private BufferedImage bg;
 
     /**
      * Level 1 constructor
      */
     public Level1(){
         slideNum = 0;
-
-        try{
+        try{ 
             bg = ImageIO.read(new File("./static/img/mainbackground.png"));
         } catch (Exception e){}
     }
@@ -97,7 +96,7 @@ public class Level1 extends MouseAdapter {
         try{
             BufferedImage bg = ImageIO.read(new File("./static/img/defaultSchedule.png"));
 
-            Slide s = new Slide(bg, 0, "Another important study tip to get ready for you exams is to study on a schedule. Studying at the same time every day helps build a habit of studying faster. By sticking to a schedule, studying will become easier, almost like second nature. Do you currently have a study schedule?", true);
+            Slide s = new Slide(bg, 0, "Another important study tip to get ready for your exams is to study on a schedule. Studying at the same time every day helps build a habit of studying faster. By sticking to a schedule, studying will become easier, almost like second nature. Do you currently have a study schedule?", true);
             s.display(g);
         } catch (Exception e){
             Slide s = new Slide(0, "Another important study tip to get ready for you exams is to study on a schedule. Studying at the same time every day helps build a habit of studying faster. By sticking to a schedule, studying will become easier, almost like second nature. Do you currently have a study schedule?");
