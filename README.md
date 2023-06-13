@@ -13,7 +13,7 @@ The main objective of Finals Frenzy is for the player to learn how to build good
 - #### Level 1 - Learning Level:
     - In this level, the player will interact with the digital character named "Pixel" who will teach them essential skills. The mouse is used to navigate through the level. Clicking the buttons and clicking the slides will allow the player to continue, and change the dialogue.
 - #### Level 2 - Maze Level:
-    - In this level, the player will move through a maze, answering questions to earn points. Arrow keys are used to navigate through the maze, and the mouse is used to answer the questtions.
+    - In this level, the player will move through a maze, answering questions to earn points. Arrow keys are used to navigate through the maze, and the mouse is used to answer the questions.
 - #### Level 3 - Action Level:
     - In this level, the player will dodge a series of objects, while collecting others. Once the player collects 20 study or work related objects, the player will successfully beat the level. If the player loses all three lives, by touching distractions, the the player will lose. Arrow keys are used to control the character to dodge and collect.
 
