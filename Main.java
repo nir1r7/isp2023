@@ -121,10 +121,10 @@ public class Main implements MouseListener, MouseMotionListener, KeyListener {
                     l1.setSlide(6);
                     break;
                 case 6:
-                    if (l1.y1.isClicked(x, y)){
+                    if (l1.y2.isClicked(x, y)){
                         l1.setSlide(7);
                     }
-                    if (l1.n1.isClicked(x, y)){
+                    if (l1.n2.isClicked(x, y)){
                         l1.setSlide(8);
                     }
                     break;
